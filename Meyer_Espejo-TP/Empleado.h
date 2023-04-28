@@ -1,4 +1,4 @@
-
+#include "Libreria.h"
 
 #ifndef _EMPLEADO_H
 #define _EMPLEADO_H

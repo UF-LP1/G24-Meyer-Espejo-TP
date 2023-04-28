@@ -1,7 +1,7 @@
 
 #ifndef _CLIENTE_H
 #define _CLIENTE_H
-
+#include "Libreria.h"
 class Cliente {
 public:
     Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket);

@@ -1,7 +1,7 @@
 
 #ifndef _RECETA_H
 #define _RECETA_H
-
+#include "Libreria.h"
 class Receta {
 public:
     Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, string ObraSocial, string Dosificacion);

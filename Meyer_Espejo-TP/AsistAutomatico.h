@@ -1,3 +1,4 @@
+#include "Libreria.h"
 #ifndef _ASISTAUTOMATICO_H
 #define _ASISTAUTOMATICO_H
 
