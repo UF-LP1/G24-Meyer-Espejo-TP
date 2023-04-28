@@ -31,7 +31,7 @@ float Empleado::AplicarDescuento(Cliente miCliente) {
 
 float Empleado::FacturaryGeneraTicket(CarritoCompras miCarrito) {
     float discount = 0;
-    Ticket nuevoticket(float PrecioFinal, string DNI, eMetodoPago MetodoPago, string CUIT, bool Descuento)
+    Ticket nuevoticket(float PrecioFinal, string DNI, enum eMetodoPago MetodoPago, string CUIT, bool Descuento);
         if(get_obrasocial() == ObraSocialesVarias) {
 
             discount = rand() % 10 + 1;

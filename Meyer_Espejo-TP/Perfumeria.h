@@ -14,7 +14,7 @@ public:
     void set_ArticuloPerf(eArticuloPerf artPerf);
 
 private:
-    eArticuloPerf ArtPerf;
+    enum eArticuloPerf ArtPerf;
     string Size;
 };
 

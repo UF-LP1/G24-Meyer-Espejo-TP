@@ -14,12 +14,12 @@ void Cliente::Abonar(Ticket miTicket) {
 
 //constructor
 Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket) {
-	this->nombre = Nombre;
-	this->apellido = Apellido;
-	this->dni = DNI;
-	this->codigoSeguridad = CodigoSeguridad;
-	this->mail = Mail;
-	this->nroTicket = NroTicket;
+	this->Nombre = Nombre;
+	this->Apellido = Apellido;
+	this->DNI = DNI;
+	this->CodigoSeguridad = CodigoSeguridad;
+	this->Mail = Mail;
+	this->NroTicket = NroTicket;
 
 }
 
@@ -45,7 +45,7 @@ unsigned int Cliente::get_CodigoSeguridad() {
 
 
 string Cliente::get_NroTicket() {
-	return this->NroTicket;
+	return this-> NroTicket;
 }
 
 //setters

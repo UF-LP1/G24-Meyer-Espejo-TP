@@ -1,17 +1,17 @@
 
 #include "Local.h"
 
-Local::Local(string Nombre, string Direccion, date HorarioSemana, date HorarioFinDeSemana, string Contacto) {
-	this->nombre = Nombre;
-	this->direccion = Direccion;
-	this->horarioSemana = HorarioSemana;
-	this->horarioFinDeSemana = HorarioFinDeSemana;
-	this->contacto = Contacto;
+Local::Local(string Nombre, string Direccion, time_t HorarioSemana, time_t HorarioFinDeSemana, string Contacto) {
+	this->Nombre = Nombre;
+	this->Direccion = Direccion;
+	this->HorarioSemana = HorarioSemana;
+	this->HorarioFinDeSemana = HorarioFinDeSemana;
+	this->Contacto = Contacto;
 }
 Local::~Local() {}
 
 //getter
-date Local::get_HorarioFinDeSemana() {
+time_t Local::get_HorarioFinDeSemana() {
 	return this->HorarioFinDeSemana;
 }
 void Local::set_Contacto(string contacto) {

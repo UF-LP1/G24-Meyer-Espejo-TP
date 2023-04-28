@@ -1,11 +1,11 @@
 #include "Receta.h"
 
 Receta::Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, string ObraSocial, string Dosificacion) :NroMatricula(NroMatricula) {
-    this->medicamento = Medicamento;
-    this->medico = Medico;
-    this->nroAfiliado = NroAfiliado;
-    this->obraSocial = ObraSocial;
-    this->dosificacion = Dosificacion;
+    this->Medicamento = Medicamento;
+    this->Medico = Medico;
+    this->NroAfiliado = NroAfiliado;
+    this->ObraSocial = ObraSocial;
+    this->Dosificacion = Dosificacion;
 }
 
 Receta::~Receta() {}

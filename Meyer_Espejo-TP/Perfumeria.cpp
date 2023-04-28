@@ -7,7 +7,7 @@ Perfumeria::Perfumeria() :Articulos(float Precio, unsigned int Stock) {
 Perfumeria::~Perfumeria() {
 
 }
-enum Perfumeria::get_ArticuloPerf(eArticuloPerf ArtPerf) {
+enum Perfumeria::get_ArticuloPerf( eArticuloPerf ArtPerf) {
     return this->eArticuloPerf;
 }
 

@@ -11,7 +11,7 @@ public:
     Ortopedia();
     ~Ortopedia();
 
-    enum get_ArticuloOrt(enum eArticuloOrt ArtOrtop);
+    enum get_ArticuloOrt( eArticuloOrt ArtOrtop);
     void setArtOrt(enum eArticuloOrt artOrtop);
 
 private:
