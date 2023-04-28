@@ -1,34 +1,20 @@
-/**
- * Project Untitled
- */
-
 
 #ifndef _ORTOPEDIA_H
 #define _ORTOPEDIA_H
 
 #include "Articulos.h"
+#include "eArticuloOrt.h"
 
 
-class Ortopedia: public Articulos {
-public: 
-    
-/**
- * @param eArticuloOrt
- * @param float
- * @param unsigned in int
- */
-void Ortopedia(void eArticuloOrt, void float, void unsigned in int);
-    
-enum get ArticuloOrt();
-    
-/**
- * @param eArticuloOrt ArtOrtop
- */
-enum setArtOrt(void eArticuloOrt ArtOrtop);
-protected: 
-    
-void Ortopedia();
-private: 
+class Ortopedia : public Articulos {
+public:
+    Ortopedia();
+    ~Ortopedia();
+
+    enum get_ArticuloOrt(eArticuloOrt ArtOrtop);
+    void setArtOrt(eArticuloOrt artOrtop);
+
+private:
     eArticuloOrt ArtOrtop;
 };
 

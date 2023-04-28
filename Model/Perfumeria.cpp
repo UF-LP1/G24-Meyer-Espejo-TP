@@ -1,38 +1,17 @@
-/**
- * Project Untitled
- */
-
-
 #include "Perfumeria.h"
+#include "eArticuloPerf.h"
 
-/**
- * Perfumeria implementation
- */
-
-
-/**
- * @param eArticuloPerf; in unsigned int
- * @param float
- * @param string
- */
-void Perfumeria::Perfumeria(void eArticuloPerf; in unsigned int, void float, void string) {
+Perfumeria::Perfumeria() :Articulos(float Precio, unsigned int Stock) {
 
 }
+Perfumeria::~Perfumeria() {
 
-/**
- * @return enum
- */
-enum Perfumeria::get ArticuloPerf() {
-    return null;
+}
+enum Perfumeria::get_ArticuloPerf(eArticuloPerf ArtPerf) {
+    return this->eArticuloPerf;
 }
 
-/**
- * @return enum
- */
-enum Perfumeria::set ArticuloPerf() {
-    return null;
-}
 
-void Perfumeria::Perfumeria() {
-
+void Perfumeria::set_ArticuloPerf(eArticuloPerf artPerf) {
+    this->ArtPerf = artPerf;
 }

@@ -1,41 +1,20 @@
-/**
- * Project Untitled
- */
-
 
 #include "Local.h"
 
-/**
- * Local implementation
- */
+Local::Local(string Nombre, string Direccion, date HorarioSemana, date HorarioFinDeSemana, string Contacto) {
+	this->nombre = Nombre;
+	this->direccion = Direccion;
+	this->horarioSemana = HorarioSemana;
+	this->horarioFinDeSemana = HorarioFinDeSemana;
+	this->contacto = Contacto;
+}
+Local::~Local() {}
 
-
-/**
- * @param string
- * @param string
- * @param date
- * @param date
- * @param string
- */
-void Local::Local(void string, void string, void date, void date, void string) {
-
+//getter
+date Local::get_HorarioFinDeSemana() {
+	return this->HorarioFinDeSemana;
+}
+void Local::set_Contacto(string contacto) {
+	this->Contacto = contacto;
 }
 
-/**
- * @param string contacto
- * @return string
- */
-string Local::set Contacto(void string contacto) {
-    return "";
-}
-
-/**
- * @return date
- */
-date Local::get HorarioSemana() {
-    return null;
-}
-
-void Local::Local() {
-
-}

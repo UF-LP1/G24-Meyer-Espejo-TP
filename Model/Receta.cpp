@@ -1,79 +1,40 @@
-/**
- * Project Untitled
- */
-
-
 #include "Receta.h"
 
-/**
- * Receta implementation
- */
-
-
-/**
- * @param string
- * @param string
- * @param unsigned int
- * @param string
- * @param string
- * @param string
- */
-void Receta::Receta(void string, void string, void unsigned int, void string, void string, void string) {
-
+Receta::Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, string ObraSocial, string Dosificacion) :NroMatricula(NroMatricula) {
+    this->medicamento = Medicamento;
+    this->medico = Medico;
+    this->nroAfiliado = NroAfiliado;
+    this->obraSocial = ObraSocial;
+    this->dosificacion = Dosificacion;
 }
 
-/**
- * @return string
- */
+Receta::~Receta() {}
+
 string Receta::get_medicamento() {
-    return "";
+    return this->Medicamento;
 }
 
-/**
- * @return string
- */
 string Receta::get_dosificacion() {
-    return "";
+    return this->Dosificacion;
 }
 
-/**
- * @return string
- */
 string Receta::get_nroAfiliado() {
-    return "";
+    return this->NroAfiliado;
 }
 
-/**
- * @return string
- */
 string Receta::get_obrasocial() {
-    return "";
+    return this->ObraSocial;
 }
 
-/**
- * @param string ObraSocial
- * @return string
- */
-string Receta::set_obrasocial(void string ObraSocial) {
-    return "";
+
+void Receta::set_ObraSocial(sting obrasocial) {
+    this->ObraSocial = obrasocial;
 }
 
-/**
- * @param string Dosificacion
- * @return string
- */
-string Receta::set_dosificacion(void string Dosificacion) {
-    return "";
+void Receta::set_Dosificacion(string dosificacion) {
+    this->Dosificacion = dosificacion;
 }
 
-/**
- * @param string Medicamento
- * @return string
- */
-string Receta::set_medicamento(void string Medicamento) {
-    return "";
-}
-
-void Receta::Receta() {
-
+void Receta::set_Medicamento(string medicamento) {
+    this->Medicamento = medicamento;
 }

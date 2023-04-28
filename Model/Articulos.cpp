@@ -1,53 +1,31 @@
-/**
- * Project Untitled
- */
+
 
 
 #include "Articulos.h"
 
-/**
- * Articulos implementation
- */
-
-
-/**
- * @param float
- * @param unsigned int
- */
-void Articulos::Articulos(void float, void unsigned int) {
-
+Articulos::Articulos(float Precio, unsigned int Stock) {
+	this->precio = Precio;
+	this->stock = Stock;
 }
 
-/**
- * @return float
- */
-float Articulos::getPrecio() {
-    return 0.0;
+Articulos::~Articulos() {}
+
+//getters
+
+float Articulos::get_Precio() {
+	return this->Precio;
 }
 
-/**
- * @param float Precio
- * @return float
- */
-float Articulos::setPrecio(void float Precio) {
-    return 0.0;
+unsigned int Articulos::get_Stock() {
+	return this->Stock;
 }
 
-/**
- * @return unsigned int
- */
-unsigned int Articulos::getStock() {
-    return null;
+//setters
+void Articulos::set_Precio(float precio) {
+	this->Precio = precio;
 }
 
-/**
- * @param unsigned int Stock
- * @return float
- */
-float Articulos::setStock(void unsigned int Stock) {
-    return 0.0;
+void Articulos::set_Stock(unsigned int stock) {
+	this->Stock = stock;
 }
 
-void Articulos::Articulos() {
-
-}

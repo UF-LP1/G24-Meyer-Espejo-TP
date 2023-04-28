@@ -1,103 +1,54 @@
-/**
- * Project Untitled
- */
-
-
 #include "Cliente.h"
 
-/**
- * Cliente implementation
- */
-
-
-/**
- * @param string
- * @param string
- * @param string
- * @param string
- * @param int
- * @param string
- * @param string
- * @param int
- * @param bool
- */
-void Cliente::Cliente(void string, void string, void string, void string, void int, void string, void string, void int, void bool) {
-
-}
-
-/**
- * @param miAsistAutomatico
- * @return unsigned int
- */
 unsigned int Cliente::SacarTicket(AsistAutomatico miAsistAutomatico) {
-    return null;
+
 }
 
-/**
- * @return void
- */
 void Cliente::EntregarSolicitado() {
-    return;
+
 }
 
-/**
- * @param miTicket
- * @return void
- */
 void Cliente::Abonar(Ticket miTicket) {
-    return;
+
 }
 
-/**
- * @return string
- */
-string Cliente::get Mail() {
-    return "";
+//constructor
+Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket) {
+	this->nombre = Nombre;
+	this->apellido = Apellido;
+	this->dni = DNI;
+	this->codigoSeguridad = CodigoSeguridad;
+	this->mail = Mail;
+	this->nroTicket = NroTicket;
+
 }
 
-/**
- * @param unsigned int CodigoSeguridad
- * @return unsigned int
- */
-unsigned int Cliente::set CodigoSeguridad(void unsigned int CodigoSeguridad) {
-    return null;
+//destructor
+Cliente::~Cliente() {
 }
 
-/**
- * @return string
- */
-string Cliente::get DNI() {
-    return "";
+
+//getters
+string Cliente::get_Mail()
+{
+	return this->Mail;
 }
 
-/**
- * @return const string
- */
-const string Cliente::get NroAfiliado() {
-    return null;
+string Cliente::get_DNI() {
+	return this->DNI;
 }
 
-/**
- * @return unsigned int
- */
-unsigned int Cliente::get CodigoSeguridad() {
-    return null;
+
+unsigned int Cliente::get_CodigoSeguridad() {
+	return this->CodigoSeguridad;
 }
 
-/**
- * @return string
- */
-string Cliente::get Receta() {
-    return "";
+
+string Cliente::get_NroTicket() {
+	return this->NroTicket;
 }
 
-/**
- * @return unsigned int
- */
-unsigned int Cliente::get NroTicket() {
-    return null;
-}
-
-void Cliente::Cliente() {
-
+//setters
+void Cliente::set_CodigoSeguridad(unsigned int codigoSeguridad) {
+	this->CodigoSeguridad = codigoSeguridad;
 }

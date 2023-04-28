@@ -1,43 +1,24 @@
-/**
- * Project Untitled
- */
 
+//listo
 
 #ifndef _ARTICULOS_H
 #define _ARTICULOS_H
 
-#include "Farmacia.h"
-#include "Perfumeria.h"
-#include "Ortopedia.h"
+class Articulos {
 
+public:
+    Articulos(float Precio, unsigned int Stock);
+    ~Articulos();
 
-class Articulos: public Farmacia, public Perfumeria, public Ortopedia {
-public: 
-    
-/**
- * @param float
- * @param unsigned int
- */
-void Articulos(void float, void unsigned int);
-    
-float getPrecio();
-    
-/**
- * @param float Precio
- */
-float setPrecio(void float Precio);
-    
-unsigned int getStock();
-    
-/**
- * @param unsigned int Stock
- */
-float setStock(void unsigned int Stock);
-protected: 
+    float get_Precio();
+    unsigned int get_Stock();
+
+    void set_Precio(float precio);
+    void set_Stock(unsigned int stock);
+
+protected:
     float Precio;
     unsigned int Stock;
-    
-void Articulos();
 };
 
-#endif //_ARTICULOS_H
+#endif //_ARTICULO

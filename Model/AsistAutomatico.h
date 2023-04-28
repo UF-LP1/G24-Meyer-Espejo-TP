@@ -1,37 +1,16 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _ASISTAUTOMATICO_H
 #define _ASISTAUTOMATICO_H
 
 class AsistAutomatico {
-public: 
-    
-/**
- * @param eNecesidad
- * @param unsigned int
- */
-void AsistAutomatico(void eNecesidad, void unsigned int);
-    
-/**
- * @param eNecesidad necesidad
- */
-string ImprimirTicket(void eNecesidad necesidad);
-    
-enum get Necesidad();
-    
-/**
- * @param eNecesidad necesidad
- */
-enum set Necesidad(void eNecesidad necesidad);
-    
-string get NroTurno();
-protected: 
-    
-void AsistAutomatico();
-private: 
+public:
+    AsistAutomatico();
+    ~AsistAutomatico();
+    string ImprimirTicket(eNecesidad necesidad);
+    enum get_Necesidad();
+    void set_Necesidad(eNecesidad necesidad);
+    string get_NroTurno();
+
+private:
     eNecesidad Necesidad;
     string NroTurno;
 };

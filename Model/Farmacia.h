@@ -1,34 +1,17 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _FARMACIA_H
 #define _FARMACIA_H
 
 #include "Articulos.h"
+#include "eFarmacia.h"
 
+class Farmacia : public Articulos {
+public:
+    Farmacia(); //constructor por defecto
+    ~Farmacia();
+    enum get_ArtFarm(eFarmacia ArtFarm);
+    void setArtFarm(eFarmacia artfarm);
 
-class Farmacia: public Articulos {
-public: 
-    
-/**
- * @param eFarmacia
- * @param float
- * @param unsigned int
- */
-void Farmacia(void eFarmacia, void float, void unsigned int);
-    
-enum get ArtFarm();
-    
-/**
- * @param eFarmacia artfarm
- */
-enum setArtFarm(void eFarmacia artfarm);
-protected: 
-    
-void Farmaceutico();
-private: 
+private:
     eFarmacia ArtFarm;
 };
 

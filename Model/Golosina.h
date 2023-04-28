@@ -1,11 +1,15 @@
-/**
- * Project Untitled
- */
+#pragma once
 
+#include "Articulos.h"
+#include "egolosina.h"
 
-#ifndef _GOLOSINA_H
-#define _GOLOSINA_H
+class Golosina::public Articulos {
+public:
+	Golosina();
+	~Golosina();
+	enum getArtgolo(egolosina Artgolo);
+	enum setArtgolo(egolosina Artgolo);
 
-enum golosina { Caramelo, Chupetin, Chicle, Pastilla };
-
-#endif //_GOLOSINA_H
+	private;
+	egolosina ArtGolo;
+};

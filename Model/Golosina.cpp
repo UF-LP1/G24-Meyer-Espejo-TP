@@ -1,39 +1,15 @@
-/**
- * Project Untitled
- */
-
 
 #include "Golosina.h"
+#include "egolosina.h"
 
-/**
- * Golosina implementation
- */
-
-
-/**
- * @param golosina
- * @param float
- * @param unsigned int
- */
-void Golosina::Golosina(void golosina, void float, void unsigned int) {
+Golosina::Golosina() :Articulos(float Precio, unsigned int Stock) {
 
 }
+Golosina::~Golosina() {}
 
-/**
- * @return enum
- */
-enum Golosina::getArtgolo() {
-    return null;
+enum Golosina::getArtgolo(egolosina Artgolo) {
+	return this->Artgolo;
 }
-
-/**
- * @param golosina artgolo
- * @return enum
- */
-enum Golosina::setArtgolo(void golosina artgolo) {
-    return null;
-}
-
-void Golosina::Golosina() {
-
+enum Golosina::setArtgolo(egolosina Artgolo) {
+	this->Artgolo = Artgolo;
 }
