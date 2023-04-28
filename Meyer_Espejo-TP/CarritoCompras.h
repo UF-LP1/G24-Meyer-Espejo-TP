@@ -6,10 +6,10 @@ class CarritoCompras {
 public:
     CarritoCompras(float MontoTotal, unsigned int Nro);
     ~CarritoCompras();
-    float CalcMontoTotal(Perfumeria miPerfumeria, Golosina miGolosina, Ortopedia miOrtopedia, Farmacia miFarmacia);
+    float CalcMontoTotal(ListaArticulos);
     void set_MontoTotal(float montoTotal);
     float get_MontoTotal();
-    bool AgregarArticulos(Articulos miArticulos);
+    bool AgregarArticulos(Articulos miArticulo);
     const unsigned int get_Nro();
 
 private:
