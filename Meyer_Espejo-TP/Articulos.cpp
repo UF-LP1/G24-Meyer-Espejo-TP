@@ -4,8 +4,8 @@
 #include "Articulos.h"
 
 Articulos::Articulos(float Precio, unsigned int Stock) {
-	this->precio = Precio;
-	this->stock = Stock;
+	this->Precio =0;
+	this->Stock =0;
 }
 
 Articulos::~Articulos() {}

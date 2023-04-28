@@ -10,10 +10,6 @@ Cajero::~Cajero() {
 
 }
 
-float Cajero::CalcMontoTotal(Perfumeria miPerfumeria, Golosina miGolosina, Ortopedia miOrtopedia, Farmacia miFarmacia) {
-
-}
-
 bool Cajero::Cobrar(Ticket miTicket) {
 
 }

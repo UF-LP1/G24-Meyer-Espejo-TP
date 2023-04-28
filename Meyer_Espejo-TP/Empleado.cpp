@@ -1,11 +1,13 @@
 #include "Empleado.h"
+#include "Libreria.h"
+#include "Cliente.h"
 
 //constructor
-Empleado::Empleado(string Nombre, string Apellido, date HorarioLaboral, float Sueldo) {
-    this->nombre = Nombre;
-    this->apellido = Apellido;
-    this->horarioLaboral = HorarioLaboral;
-    this->sueldo = Sueldo;
+Empleado::Empleado(string Nombre, string Apellido, float Sueldo) {
+    this->Nombre = Nombre;
+    this->Apellido = Apellido;
+    this->Sueldo = Sueldo;
+    this->HorarioLaboral = "0";
 }
 
 //destructor
@@ -22,7 +24,7 @@ void Empleado::ExpenderSolictado(Cliente miCliente) {
 
 }
 
-float Empleado::AplicarDescuento(void miCliente.Cliente) {
+float Empleado::AplicarDescuento(Cliente miCliente) {
 
 }
 
@@ -33,9 +35,7 @@ float Empleado::FacturaryGeneraTicket() {
 
 //setters
     //crear un parametro de NuevaHoraLaboral
-void Empleado::set_HorarioLaboral(date nuevaHoraLaboral) {
-    this->HorarioLaboral = nuevoHorarioLaboral;
-}
+void Empleado::set_HorarioLaboral(time_t nuevaHoraLaboral) {}
 
 //crear un parametro de NuevoSueldo
 void Empleado::set_Sueldo(float nuevoSueldo) {
@@ -43,9 +43,7 @@ void Empleado::set_Sueldo(float nuevoSueldo) {
 }
 
 //getters
-date Empleado::get_HorarioLaboral() {
-    return this->HorarioLaboral;
-}
+time_t Empleado::get_HorarioLaboral() {}
 
 float Empleado::get_Sueldo() {
     return this->Sueldo;

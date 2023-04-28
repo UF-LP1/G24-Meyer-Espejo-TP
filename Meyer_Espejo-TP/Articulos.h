@@ -4,6 +4,8 @@
 #ifndef _ARTICULOS_H
 #define _ARTICULOS_H
 
+#include <vector>
+
 class Articulos {
 
 public:
@@ -19,6 +21,10 @@ public:
 protected:
     float Precio;
     unsigned int Stock;
+
+   
+    
+
 };
 
 #endif //_ARTICULO

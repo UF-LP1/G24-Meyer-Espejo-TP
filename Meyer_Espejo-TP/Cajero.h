@@ -2,9 +2,11 @@
 
 #ifndef _CAJERO_H
 #define _CAJERO_H
-
+#include "Libreria.h"
 #include "Empleado.h"
-
+#include "Ticket.h"
+#include "CarritoCompras.h"
+#include "Cliente.h"
 
 class Cajero : public Empleado {
 public:
@@ -12,7 +14,6 @@ public:
     Cajero();
     ~Cajero();
 
-    float CalcMontoTotal(Perfumeria miPerfumeria, Golosina miGolosina, Ortopedia miOrtopedia, Farmacia miFarmacia);
     bool Cobrar(Ticket miTicket);
     void EntregarPedidoyRecibo(CarritoCompras miCarrito, Ticket miTicket);
     bool EntregatRecibo(Cliente miCliente);
