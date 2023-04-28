@@ -3,7 +3,7 @@
 
 class AsistAutomatico {
 public:
-    AsistAutomatico();
+    AsistAutomatico(eNecesidad Necesidad,string NroTurno);
     ~AsistAutomatico();
     string ImprimirTicket(eNecesidad necesidad);
     enum get_Necesidad();
