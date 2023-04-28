@@ -1,6 +1,6 @@
 
 #include "CarritoCompras.h"
-
+//act
 CarritoCompras::CarritoCompras(float MontoTotal, unsigned int Nro) : Nro(Nro) {
     this->MontoTotal = MontoTotal;
 }
