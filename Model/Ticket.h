@@ -1,28 +1,19 @@
-/**
- * Project Untitled
- */
 
 
 #ifndef _TICKET_H
 #define _TICKET_H
 
 class Ticket {
-public: 
-    
-/**
- * @param float
- * @param const string
- * @param eMetodoPago
- * @param const string
- * @param bool
- */
-void Ticket(void float, void const string, void eMetodoPago, void const string, void bool);
-    
-bool AplicarDescuento();
-protected: 
-    
-void Ticket();
-private: 
+public:
+
+
+    Ticket(float PrecioFinal, string DNI, eMetodoPago MetodoPago, string CUIT, bool Descuento);
+    ~Ticket();
+
+    bool AplicarDescuento();
+
+
+private:
     float PrecioFinal;
     const string DNI;
     eMetodoPago MetodoPago;

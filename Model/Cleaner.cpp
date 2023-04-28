@@ -1,32 +1,18 @@
-/**
- * Project Untitled
- */
+
 
 
 #include "Cleaner.h"
 
-/**
- * Cleaner implementation
- */
 
+Cleaner::Cleaner() :Empleado(string Nombre, string Apellido, date Horario_Laboral, float Sueldo)
+{
 
-/**
- * @param string
- * @param string
- * @param date
- * @param float
- */
-void Cleaner::Cleaner(void string, void string, void date, void float) {
+}
+Cleaner::~Cleaner() {
 
 }
 
-/**
- * @return bool
- */
 bool Cleaner::LimpiarOrdenar() {
-    return false;
-}
-
-void Cleaner::Cleaner() {
 
 }
+

@@ -1,41 +1,23 @@
-/**
- * Project Untitled
- */
+
 
 
 #include "EmpleadoOrtopedia.h"
 
-/**
- * EmpleadoOrtopedia implementation
- */
 
+EmpleadoOrtopedia::EmpleadoOrtopedia() :Empleado(string Nombre, string Apellido, date Horario_Laboral, float Sueldo) {
 
-/**
- * @param string
- * @param string
- * @param date
- * @param float
- */
-void EmpleadoOrtopedia::EmpleadoOrtopedia(void string, void string, void date, void float) {
+}
+EmpleadoOrtopedia::~EmpleadoOrtopedia()
+{
 
 }
 
-/**
- * @param miArticulos
- * @return void
- */
+
 void EmpleadoOrtopedia::AsesorarArtOrtop(Articulos miArticulos) {
-    return;
+
 }
 
-/**
- * @param miArticulos
- * @return void
- */
 void EmpleadoOrtopedia::Empacar(Articulos miArticulos) {
-    return;
-}
-
-void EmpleadoOrtopedia::EmpleadoOrtopedia() {
 
 }
+

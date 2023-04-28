@@ -1,33 +1,20 @@
-/**
- * Project Untitled
- */
 
 
 #include "Ticket.h"
 
-/**
- * Ticket implementation
- */
 
+Ticket::Ticket(float PrecioFinal, string DNI, eMetodoPago MetodoPago, string CUIT, bool Descuento) {
+    this->precioFinal = PrecioFinal;
+    this->dni = DNI;
+    this->metodopago = MetodoPago;
+    this->cuit = CUIT;
+    this->descuento = Descuento;
 
-/**
- * @param float
- * @param const string
- * @param eMetodoPago
- * @param const string
- * @param bool
- */
-void Ticket::Ticket(void float, void const string, void eMetodoPago, void const string, void bool) {
+}
+Ticket::~Ticket() {
 
 }
 
-/**
- * @return bool
- */
 bool Ticket::AplicarDescuento() {
-    return false;
-}
-
-void Ticket::Ticket() {
 
 }
