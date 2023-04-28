@@ -1,14 +1,14 @@
 #include "Libreria.h"
 #ifndef _ASISTAUTOMATICO_H
 #define _ASISTAUTOMATICO_H
+#include "eNecesidad.h"
 
 class AsistAutomatico {
 public:
-    AsistAutomatico(eNecesidad Necesidad,string NroTurno);
+    AsistAutomatico(string NroTurno);
     ~AsistAutomatico();
-    string ImprimirTicket(eNecesidad necesidad);
-    enum get_Necesidad();
-    void set_Necesidad(eNecesidad necesidad);
+    string ImprimirTicket(enum eNecesidad necesidad);
+    void set_Necesidad(enum eNecesidad necesidad);
     string get_NroTurno();
 
 private:

@@ -1,8 +1,11 @@
 
 #include "AsistAutomatico.h"
-AsistAutomatico::AsistAutomatico(eNecesidad Necesidad, string NroTurno) {
-    this->necesidad = Necesidad;
-    this->nroTurno = NroTurno;
+#include "eNecesidad.h"
+
+
+
+AsistAutomatico::AsistAutomatico(string NroTurno) {
+    this->NroTurno=NroTurno;
 }
 AsistAutomatico::~AsistAutomatico() {}
 
@@ -10,18 +13,12 @@ string AsistAutomatico::get_NroTurno() {
     return this->NroTurno;
 }
 
-string AsistAutomatico::ImprimirTicket(eNecesidad necesidad) {
+string AsistAutomatico::ImprimirTicket(enum eNecesidad necesidad) {}
 
-}
-
-enum AsistAutomatico::get_Necesidad() {
-    return this->necesidad;
-}
-
-void AsistAutomatico::set_Necesidad(eNecesidad necesidad) {
+void AsistAutomatico::set_Necesidad(enum eNecesidad necesidad) {
     this->Necesidad = necesidad;
 }
 
-string AsistAutomatico::get NroTurno() {
+string AsistAutomatico::get_NroTurno() {
     return this->NroTurno;
 }
