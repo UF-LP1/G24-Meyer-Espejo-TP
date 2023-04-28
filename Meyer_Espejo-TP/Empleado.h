@@ -7,7 +7,7 @@
 class Empleado {
 public:
 
-    Empleado(string Nombre, string Apellido, float Sueldo);
+    Empleado(string Nombre, string Apellido, float Sueldo, time_t Horariolaboral);
     ~Empleado();
     void set_Sueldo(float sueldo);
     time_t get_HorarioLaboral();
@@ -15,7 +15,7 @@ public:
     unsigned int LlamarPorTicket(Cliente miCliente);
     void ExpenderSolictado(Cliente miCliente);
     float AplicarDescuento(Cliente miCliente);
-    float FacturaryGeneraTicket();
+    float FacturaryGeneraTicket(CarritoCompras miCarrito);
     void set_HorarioLaboral(time_t horarioLaboral);
 
 protected:

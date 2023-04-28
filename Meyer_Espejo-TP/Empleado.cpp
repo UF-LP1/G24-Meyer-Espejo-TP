@@ -3,11 +3,11 @@
 #include "Cliente.h"
 
 //constructor
-Empleado::Empleado(string Nombre, string Apellido, float Sueldo) {
+Empleado::Empleado(string Nombre, string Apellido, float Sueldo,time_t Horariolaboral) {
     this->Nombre = Nombre;
     this->Apellido = Apellido;
     this->Sueldo = Sueldo;
-    this->HorarioLaboral = "0";
+    this->Horariolaboral = Horariolaboral;
 }
 
 //destructor
@@ -29,7 +29,23 @@ float Empleado::AplicarDescuento(Cliente miCliente) {
 }
 
 
-float Empleado::FacturaryGeneraTicket() {
+float Empleado::FacturaryGeneraTicket(CarritoCompras miCarrito) {
+    float discount = 0;
+    Ticket nuevoticket(float PrecioFinal, string DNI, eMetodoPago MetodoPago, string CUIT, bool Descuento)
+        if(get_obrasocial() == ObraSocialesVarias) {
+
+            discount = rand() % 10 + 1;
+            discount = discount / 100;
+
+
+
+        }
+        else
+            nuevoticket.PrecioFinal = CalcMontoTotal(ListaArticulos);
+
+
+
+
 
 }
 
