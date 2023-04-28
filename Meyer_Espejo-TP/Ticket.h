@@ -1,4 +1,8 @@
+
+#include "eMetodoPago.h"
 #include "Libreria.h"
+
+
 
 #ifndef _TICKET_H
 #define _TICKET_H

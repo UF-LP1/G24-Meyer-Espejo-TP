@@ -6,13 +6,13 @@
 
 class Farmacia : public Articulos {
 public:
-    Farmacia(); //constructor por defecto
+    Farmacia(float Precio, unsigned int Stock, enum eFarmacia ArtFarm);
     ~Farmacia();
-    enum get_ArtFarm(eFarmacia ArtFarm);
-    void setArtFarm(eFarmacia artfarm);
+   // enum get_ArtFarm(enum eFarmacia ArtFarm);
+   // void setArtFarm(enum eFarmacia artfarm);
 
 private:
-    eFarmacia ArtFarm;
+    enum eFarmacia ArtFarm;
 };
 
 #endif //_FARMACIA_H

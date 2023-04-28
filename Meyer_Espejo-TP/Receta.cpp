@@ -27,14 +27,14 @@ string Receta::get_obrasocial() {
 }
 
 
-void Receta::set_ObraSocial(sting obrasocial) {
-    this->ObraSocial = obrasocial;
-}
-
-void Receta::set_Dosificacion(string dosificacion) {
-    this->Dosificacion = dosificacion;
-}
-
-void Receta::set_Medicamento(string medicamento) {
-    this->Medicamento = medicamento;
-}
+//void Receta::set_ObraSocial(string obrasocial) {
+//    this->ObraSocial = obrasocial;
+//}
+//
+//void Receta::set_Dosificacion(string dosificacion) {
+//    this->Dosificacion = dosificacion;
+//}
+//
+//void Receta::set_Medicamento(string medicamento) {
+//    this->Medicamento = medicamento;
+//}

@@ -36,7 +36,7 @@ float Empleado::FacturaryGeneraTicket(CarritoCompras miCarrito) {
 
             discount = rand() % 10 + 1;
             discount = discount / 100;
-
+            nuevoticket.PrecioFinal = CalcMontoTotal(ListaArticulos)*discount;
 
 
         }

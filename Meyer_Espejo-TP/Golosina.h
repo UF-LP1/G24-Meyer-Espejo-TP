@@ -1,15 +1,15 @@
 #pragma once
 #include "Libreria.h"
 #include "Articulos.h"
-#include "egolosina.h"
+#include "Golosina.h"
 
-class Golosina::public Articulos {
+class Golosina:public Articulos {
 public:
 	Golosina();
 	~Golosina();
-	enum getArtgolo(egolosina Artgolo);
-	enum setArtgolo(egolosina Artgolo);
+	/*enum getArtgolo(enum golosina Artgolo);
+	enum setArtgolo(enum golosina Artgolo);*/
 
-	private;
-	egolosina ArtGolo;
+private:
+	enum golosina ArtGolo;
 };

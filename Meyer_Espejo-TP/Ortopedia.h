@@ -11,11 +11,11 @@ public:
     Ortopedia();
     ~Ortopedia();
 
-    enum get_ArticuloOrt(eArticuloOrt ArtOrtop);
-    void setArtOrt(eArticuloOrt artOrtop);
+    enum get_ArticuloOrt(enum eArticuloOrt ArtOrtop);
+    void setArtOrt(enum eArticuloOrt artOrtop);
 
 private:
-    eArticuloOrt ArtOrtop;
+   enum eArticuloOrt ArtOrtop;
 };
 
 #endif //_ORTOPEDIA_H
