@@ -10,7 +10,7 @@ public:
     Cleaner();
     ~Cleaner();
 
-    bool LimpiarOrdenar();
+    /*bool LimpiarOrdenar();*/
 
 };
 

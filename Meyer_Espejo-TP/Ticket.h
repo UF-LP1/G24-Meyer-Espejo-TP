@@ -11,10 +11,10 @@ class Ticket {
 public:
 
 
-    Ticket(float PrecioFinal, string DNI, eMetodoPago MetodoPago, string CUIT, bool Descuento);
+    Ticket(float PrecioFinal, string DNI,enum eMetodoPago MetodoPago, string CUIT);
     ~Ticket();
 
-    bool AplicarDescuento();
+    /*bool AplicarDescuento();*/
 
 
 private:
@@ -22,7 +22,6 @@ private:
     const string DNI;
     eMetodoPago MetodoPago;
     const string CUIT;
-    bool Descuento;
 };
 
 #endif //_TICKET_H

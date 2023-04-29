@@ -7,6 +7,10 @@ Articulos::Articulos(float Precio, unsigned int Stock) {
 	this->Precio =0;
 	this->Stock =0;
 }
+Articulos::Articulos(Precio,Stock) {
+	this->Precio = 0;
+	this->Stock = 0;
+}
 
 Articulos::~Articulos() {}
 
@@ -20,12 +24,12 @@ unsigned int Articulos::get_Stock() {
 	return this->Stock;
 }
 
-//setters
-void Articulos::set_Precio(float precio) {
-	this->Precio = precio;
-}
-
-void Articulos::set_Stock(unsigned int stock) {
-	this->Stock = stock;
-}
+////setters
+//void Articulos::set_Precio(float precio) {
+//	this->Precio = precio;
+//}
+//
+//void Articulos::set_Stock(unsigned int stock) {
+//	this->Stock = stock;
+//}
 

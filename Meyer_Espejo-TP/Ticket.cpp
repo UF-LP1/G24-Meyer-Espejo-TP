@@ -3,18 +3,14 @@
 #include "Ticket.h"
 
 
-Ticket::Ticket(float PrecioFinal, string DNI, eMetodoPago MetodoPago, string CUIT, bool Descuento) {
+Ticket::Ticket(float PrecioFinal, string DNI,enum eMetodoPago MetodoPago, string CUIT):DNI(DNI),CUIT(CUIT) {
     this->PrecioFinal = PrecioFinal;
-    this->DNI = DNI;
     this->MetodoPago = MetodoPago;
-    this->CUIT = CUIT;
-    this->Descuento = Descuento;
-
 }
 Ticket::~Ticket() {
 
 }
 
-bool Ticket::AplicarDescuento() {
-
-}
+//bool Ticket::AplicarDescuento() {
+//
+//}

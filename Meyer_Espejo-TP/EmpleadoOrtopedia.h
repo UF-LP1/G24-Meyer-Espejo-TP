@@ -2,6 +2,7 @@
 #define _EMPLEADOORTOPEDIA_H
 
 #include "Empleado.h"
+#include "Articulos.h"
 
 
 class EmpleadoOrtopedia : public Empleado {
@@ -10,9 +11,9 @@ public:
     EmpleadoOrtopedia();
     ~EmpleadoOrtopedia();
 
-    void AsesorarArtOrtop(Articulos miArticulos);
+   /* void AsesorarArtOrtop(Articulos miArticulos);
 
-    void Empacar(Articulos miArticulos);
+    void Empacar(Articulos miArticulos);*/
 
 
 };

@@ -8,10 +8,10 @@
 class Perfumeria : public Articulos {
 
 public:
-    Perfumeria();
+    Perfumeria(float precio, unsigned int stock,string Size,enum eArticuloPerf ArtPerf);
     ~Perfumeria();
-    enum get_ArticuloPerf();
-    void set_ArticuloPerf(eArticuloPerf artPerf);
+    /*enum get_ArticuloPerf();
+    void set_ArticuloPerf(enum eArticuloPerf artPerf);*/
 
 private:
     enum eArticuloPerf ArtPerf;

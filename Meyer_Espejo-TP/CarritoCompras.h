@@ -1,4 +1,6 @@
 #include "Libreria.h"
+#include "Articulos.h"
+
 #ifndef _CARRITOCOMPRAS_H
 #define _CARRITOCOMPRAS_H
 //act
@@ -7,10 +9,10 @@ public:
     CarritoCompras(float MontoTotal, unsigned int Nro);
     ~CarritoCompras();
     float CalcMontoTotal(ListaArticulos);
-    void set_MontoTotal(float montoTotal);
+    //void set_MontoTotal(float montoTotal);
     float get_MontoTotal();
-    bool AgregarArticulos(Articulos miArticulo);
-    const unsigned int get_Nro();
+    //bool AgregarArticulos(Articulos miArticulo);
+    //const unsigned int get_Nro();
 
 private:
     float MontoTotal;

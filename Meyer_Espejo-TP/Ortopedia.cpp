@@ -1,16 +1,18 @@
 #include "Ortopedia.h"
 #include "eArticuloOrt.h"
 
-Ortopedia::Ortopedia():Articulos(float Precio, unsigned int Stock) {
-
+Ortopedia::Ortopedia(float Precio,unsigned int Stock, enum eArticuloOrt ArtOrtop) :Articulos(Precio,Stock) {
+	this->Precio = Precio;
+	this->Stock = Stock;
+	this->ArtOrtop = ArtOrtop;
 }
 
 Ortopedia::~Ortopedia() {}
 
-enum Ortopedia::get_ArticuloOrt( eArticuloOrt ArtOrtop) {
-    return this->ArtOrtop;
-}
-
-void Ortopedia::setArtOrt(eArticuloOrt artOrtop) {
-    this->ArtOrtp = artOrtop;
-}
+//enum Ortopedia::get_ArticuloOrt() {
+//    return this->ArtOrtop;
+//}
+//
+//enum Ortopedia::setArtOrt(enum eArticuloOrt artOrtop) {
+//    this->ArtOrtp = artOrtop;
+//}

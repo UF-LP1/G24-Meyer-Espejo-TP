@@ -15,8 +15,8 @@ public:
     ~Cajero();
 
     bool Cobrar(Ticket miTicket);
-    void EntregarPedidoyRecibo(CarritoCompras miCarrito, Ticket miTicket);
-    bool EntregatRecibo(Cliente miCliente);
+    /*void EntregarPedidoyRecibo(CarritoCompras miCarrito, Ticket miTicket);
+    bool EntregatRecibo(Cliente miCliente);*/
 
 };
 

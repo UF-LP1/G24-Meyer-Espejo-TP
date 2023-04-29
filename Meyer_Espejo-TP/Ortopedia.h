@@ -8,11 +8,11 @@
 
 class Ortopedia : public Articulos {
 public:
-    Ortopedia();
+    Ortopedia(float precio,unsigned int Stock,enum eArticuloOrt ArtOrtop);
     ~Ortopedia();
 
-    enum get_ArticuloOrt( eArticuloOrt ArtOrtop);
-    void setArtOrt(enum eArticuloOrt artOrtop);
+   /* enum get_ArticuloOrt();
+    enum setArtOrt(enum eArticuloOrt artOrtop);*/
 
 private:
    enum eArticuloOrt ArtOrtop;

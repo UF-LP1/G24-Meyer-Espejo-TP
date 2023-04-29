@@ -4,21 +4,19 @@
 
 
 
-AsistAutomatico::AsistAutomatico(string NroTurno) {
+AsistAutomatico::AsistAutomatico(string NroTurno, eNecesidad Necesidad) {
     this->NroTurno=NroTurno;
 }
 AsistAutomatico::~AsistAutomatico() {}
 
-string AsistAutomatico::get_NroTurno() {
-    return this->NroTurno;
-}
+//string AsistAutomatico::get_NroTurno() {
+//    return this->NroTurno;
+//}
+//
+//string AsistAutomatico::ImprimirTicket(enum eNecesidad necesidad) {}
 
-string AsistAutomatico::ImprimirTicket(enum eNecesidad necesidad) {}
+//void AsistAutomatico::set_Necesidad(enum eNecesidad necesidad) {
+//    this->Necesidad = necesidad;
+//}
 
-void AsistAutomatico::set_Necesidad(enum eNecesidad necesidad) {
-    this->Necesidad = necesidad;
-}
 
-string AsistAutomatico::get_NroTurno() {
-    return this->NroTurno;
-}

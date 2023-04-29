@@ -2,7 +2,7 @@
 #include "Golosina.h"
 
 
-Golosina::Golosina() :Articulos(float Precio, unsigned int Stock) {
+Golosina::Golosina(float Precio, unsigned int Stock, enum golosina ArtGolo) :Articulos(float Precio,unsigned int Stock) {
 
 }
 Golosina::~Golosina() {}

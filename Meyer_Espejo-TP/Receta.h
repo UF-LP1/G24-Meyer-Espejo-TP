@@ -14,9 +14,9 @@ public:
 
     string get_obrasocial();
 
-    void set_ObraSocial(string obrasocial);
+    /*void set_ObraSocial(string obrasocial);
     void set_Dosificacion(string dosificacion);
-    void set_Medicamento(string medicamento);
+    void set_Medicamento(string medicamento);*/
 
 private:
     string Medicamento;

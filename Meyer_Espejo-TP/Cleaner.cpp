@@ -12,7 +12,7 @@ Cleaner::~Cleaner() {
 
 }
 
-bool Cleaner::LimpiarOrdenar() {
-
-}
+//bool Cleaner::LimpiarOrdenar() {
+//
+//}
 

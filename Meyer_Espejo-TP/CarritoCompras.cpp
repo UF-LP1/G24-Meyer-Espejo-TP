@@ -15,26 +15,24 @@ float CarritoCompras::CalcMontoTotal(ListaArticulos) {
         monto = monto + ListaArticulos[i].Precio;
     }
 
-
-
     return(monto);
 
 }
 
 
-void CarritoCompras::set_MontoTotal(float montoTotal) {
-    this->MontoTotal = montoTotal;
-}
+//void CarritoCompras::set_MontoTotal(float montoTotal) {
+//    this->MontoTotal = montoTotal;
+//}
 
 float CarritoCompras::get_MontoTotal() {
     return this->MontoTotal;
 }
 
-bool CarritoCompras::AgregarArticulos(Articulos miArticulo) {
+b/*ool CarritoCompras::AgregarArticulos(Articulos miArticulo) {
 
 }
 
 const unsigned int CarritoCompras::get_Nro() {
     return this->Nro;
-}
+}*/
 
