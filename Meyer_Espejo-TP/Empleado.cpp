@@ -3,6 +3,7 @@
 #include "Cliente.h"
 #include "CarritoCompras.h"
 #include "Ticket.h"
+#include "Receta.h"
 
 //constructor
 Empleado::Empleado(string nombre, string apellido, float sueldo,time_t horariolaboral) {
@@ -34,16 +35,16 @@ float Empleado::AplicarDescuento(Cliente miCliente) {
 float Empleado::FacturaryGeneraTicket(CarritoCompras miCarrito) {
     float discount = 0;
     Ticket nuevoticket(float PrecioFinal, string DNI, enum eMetodoPago MetodoPago, string CUIT);
-        if(get_obrasocial() == ObraSocialesVarias) {
+        if(Receta:get_obrasocial() == ObraSocialesVarias) {
 
             discount = rand() % 10 + 1;
             discount = discount / 100;
-            nuevoticket.PrecioFinal = CalcMontoTotal(ListaArticulos)*discount;
+            nuevoticket.PrecioFinal = CalcMontoTotal(ListaPedido)*discount;
 
 
         }
         else
-            nuevoticket.PrecioFinal = CalcMontoTotal(ListaArticulos);
+            nuevoticket.PrecioFinal = CalcMontoTotal(ListaPedido);
 
 
 

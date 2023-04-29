@@ -11,6 +11,10 @@ Ticket::~Ticket() {
 
 }
 
+float Ticket::getPrecioFinal() {
+    return this->PrecioFinal;
+}
+
 //bool Ticket::AplicarDescuento() {
 //
 //}

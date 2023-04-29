@@ -14,7 +14,7 @@ public:
     Cajero(string nombre, string apellido, time_t horario_Laboral, float sueldo);
     ~Cajero();
 
-    bool Cobrar(Ticket miTicket);
+    bool Cobrar(Ticket miTicket, CarritoCompras ListaPedido);
     /*void EntregarPedidoyRecibo(CarritoCompras miCarrito, Ticket miTicket);
     bool EntregatRecibo(Cliente miCliente);*/
 

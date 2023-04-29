@@ -15,7 +15,7 @@ public:
     ~Ticket();
 
     /*bool AplicarDescuento();*/
-
+    float getPrecioFinal();
 
 private:
     float PrecioFinal;

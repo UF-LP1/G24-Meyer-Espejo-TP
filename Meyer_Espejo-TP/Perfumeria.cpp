@@ -1,11 +1,11 @@
 #include "Perfumeria.h"
 #include "eArticuloPerf.h"
+#include "Articulos.h"
 
-Perfumeria::Perfumeria(float precio, unsigned int stock, string Size, enum eArticuloPerf ArtPerf) :Articulos(Precio,Stock) {
-	this->Precio = Precio;
-	this->Stock = Stock;
-	this->Size = Size; 
-	this->ArtPerf = ArtPerf;
+Perfumeria::Perfumeria(float precio, unsigned int stock, unsigned int codigo, string size, enum eArticuloPerf artPerf) :Articulos(precio,stock,codigo) {
+	
+	this->Size = size; 
+	this->ArtPerf = artPerf;
 }
 Perfumeria::~Perfumeria() {}
 

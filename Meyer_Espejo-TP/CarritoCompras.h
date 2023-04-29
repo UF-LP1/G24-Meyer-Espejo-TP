@@ -8,10 +8,10 @@ class CarritoCompras {
 public:
     CarritoCompras(float MontoTotal, unsigned int Nro);
     ~CarritoCompras();
-    float CalcMontoTotal(ListaArticulos);
+    float CalcMontoTotal(Articulos ListaPedido);
     //void set_MontoTotal(float montoTotal);
     float get_MontoTotal();
-    //bool AgregarArticulos(Articulos miArticulo);
+    bool AgregarArticulos(Articulos miArticulo,Articulos ListaArticulos,Articulos ListaPedido);
     //const unsigned int get_Nro();
 
 private:
