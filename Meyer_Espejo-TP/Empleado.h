@@ -8,7 +8,7 @@
 class Empleado {
 public:
 
-    Empleado(string Nombre, string Apellido, float Sueldo, time_t Horariolaboral);
+    Empleado(string nombre, string apellido, float sueldo, time_t horariolaboral);
     ~Empleado();
     /*void set_Sueldo(float sueldo);
     time_t get_HorarioLaboral();

@@ -5,11 +5,11 @@
 #include "Ticket.h"
 
 //constructor
-Empleado::Empleado(string Nombre, string Apellido, float Sueldo,time_t Horariolaboral) {
-    this->Nombre = Nombre;
-    this->Apellido = Apellido;
-    this->Sueldo = Sueldo;
-    this->Horariolaboral = Horariolaboral;
+Empleado::Empleado(string nombre, string apellido, float sueldo,time_t horariolaboral) {
+    this->Nombre = nombre;
+    this->Apellido = apellido;
+    this->Sueldo = sueldo;
+    this->Horariolaboral = horariolaboral;
 }
 
 //destructor
