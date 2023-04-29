@@ -2,14 +2,11 @@
 
 
 #include "EmpleadoPerfumeria.h"
-EmpleadoPerfumeria::EmpleadoPerfumeria(string Nombre, string Apellido, time_t Horario_Laboral, float Sueldo) :Empleado(Nombre,Apellido,Horario_Laboral,Sueldo) {
+EmpleadoPerfumeria::EmpleadoPerfumeria(string nombre, string apellido, time_t horario_Laboral, float sueldo) :Empleado(nombre,apellido,horario_Laboral,sueldo) {}
 
-}
-EmpleadoPerfumeria::~EmpleadoPerfumeria() {
+EmpleadoPerfumeria::~EmpleadoPerfumeria() {}
 
-}
+//void EmpleadoPerfumeria::AsesorarPerfum(Articulos miArticulos) {}
 
-//void EmpleadoPerfumeria::AsesorarPerfum(Articulos miArticulos) {
 
-}
 

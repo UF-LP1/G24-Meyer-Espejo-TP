@@ -7,7 +7,7 @@
 class Cleaner : public Empleado {
 public:
 
-    Cleaner();
+    Cleaner(string nombre, string apellido, time_t horario_Laboral, float sueldo);
     ~Cleaner();
 
     /*bool LimpiarOrdenar();*/

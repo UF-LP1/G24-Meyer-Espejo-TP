@@ -1,10 +1,9 @@
 #include "Farmacia.h"
 #include "eFarmacia.h"
 
-Farmacia::Farmacia(float Precio, unsigned int Stock, enum eFarmacia ArtFarm):Articulos(Precio, Stock) {
-	this->Precio = Precio;
-	this->Stock = Stock;
-	this->ArtFarm = ArtFarm;
+Farmacia::Farmacia(float precio, unsigned int stock, unsigned int codigo, enum eFarmacia artFarm):Articulos(precio, stock,codigo) {
+	
+	this->ArtFarm = artFarm;
 }
 Farmacia::~Farmacia() {}
 

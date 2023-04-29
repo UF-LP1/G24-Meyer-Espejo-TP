@@ -1,10 +1,8 @@
 #include "Ortopedia.h"
 #include "eArticuloOrt.h"
 
-Ortopedia::Ortopedia(float Precio,unsigned int Stock, enum eArticuloOrt ArtOrtop) :Articulos(Precio,Stock) {
-	this->Precio = Precio;
-	this->Stock = Stock;
-	this->ArtOrtop = ArtOrtop;
+Ortopedia::Ortopedia(float precio, unsigned int stock, unsigned int codigo, enum eArticuloOrt artOrtop):Articulos(precio, stock, codigo) {
+	this->ArtOrtop = artOrtop;
 }
 
 Ortopedia::~Ortopedia() {}

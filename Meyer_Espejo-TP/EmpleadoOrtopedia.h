@@ -8,7 +8,7 @@
 class EmpleadoOrtopedia : public Empleado {
 public:
 
-    EmpleadoOrtopedia();
+    EmpleadoOrtopedia(string nombre, string apellido, time_t horario_Laboral, float sueldo);
     ~EmpleadoOrtopedia();
 
    /* void AsesorarArtOrtop(Articulos miArticulos);

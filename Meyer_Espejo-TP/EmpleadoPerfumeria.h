@@ -8,7 +8,7 @@
 class EmpleadoPerfumeria : public Empleado {
 public:
 
-    EmpleadoPerfumeria(string Nombre, string Apellido,time_t Horario_Laboral, float Sueldo);
+    EmpleadoPerfumeria(string nombre, string apellido, time_t horario_Laboral, float sueldo);
     ~EmpleadoPerfumeria();
 
     /*void AsesorarPerfum(Articulos miArticulos);*/

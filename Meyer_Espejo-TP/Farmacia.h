@@ -6,7 +6,7 @@
 
 class Farmacia : public Articulos {
 public:
-    Farmacia(float Precio, unsigned int Stock,enum eFarmacia ArtFarm);
+    Farmacia(float precio, unsigned int stock, unsigned int codigo, enum eFarmacia artFarm);
     ~Farmacia();
    // enum get_ArtFarm(enum eFarmacia ArtFarm);
    // void setArtFarm(enum eFarmacia artfarm);

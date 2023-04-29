@@ -11,7 +11,7 @@
 class Cajero : public Empleado {
 public:
 
-    Cajero();
+    Cajero(string nombre, string apellido, time_t horario_Laboral, float sueldo);
     ~Cajero();
 
     bool Cobrar(Ticket miTicket);

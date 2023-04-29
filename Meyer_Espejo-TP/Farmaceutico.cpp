@@ -3,9 +3,9 @@
 #include "Farmaceutico.h"
 
 
-Farmaceutico::Farmaceutico(string Nombre ,string Apellido, float Sueldo, time_t HorarioLaboral, unsigned int NroMatricula):Empleado(Nombre,Apellido,Sueldo,HorarioLaboral) {
-	
-
+Farmaceutico::Farmaceutico(string nombre, string apellido, float sueldo, time_t horarioLaboral, unsigned int nroMatricula) :Empleado(nombre, apellido, sueldo, horarioLaboral) {
+	this->NroMatricula = nroMatricula;
+}
 Farmaceutico::~Farmaceutico() {}
 
 

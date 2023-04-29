@@ -8,7 +8,7 @@
 
 class Ortopedia : public Articulos {
 public:
-    Ortopedia(float precio,unsigned int Stock,enum eArticuloOrt ArtOrtop);
+    Ortopedia(float precio, unsigned int stock, unsigned int codigo,enum eArticuloOrt artOrtop);
     ~Ortopedia();
 
    /* enum get_ArticuloOrt();

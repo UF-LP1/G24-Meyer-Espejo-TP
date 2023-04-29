@@ -4,7 +4,7 @@
 #include "EmpleadoOrtopedia.h"
 
 
-EmpleadoOrtopedia::EmpleadoOrtopedia() :Empleado(string Nombre, string Apellido, date Horario_Laboral, float Sueldo) {
+EmpleadoOrtopedia::EmpleadoOrtopedia(string nombre, string apellido, time_t horario_Laboral, float sueldo) :Empleado(nombre,apellido,horario_Laboral,sueldo) {
 
 }
 EmpleadoOrtopedia::~EmpleadoOrtopedia(){}

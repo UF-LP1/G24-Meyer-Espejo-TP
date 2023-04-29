@@ -2,8 +2,8 @@
 #include "Golosina.h"
 
 
-Golosina::Golosina(float Precio, unsigned int Stock, enum golosina ArtGolo) :Articulos(float Precio,unsigned int Stock) {
-
+Golosina::Golosina(float precio, unsigned int stock, unsigned int codigo, enum golosina artGolo):Articulos(precio,stock,codigo) {
+	this->ArtGolo = artGolo;
 }
 Golosina::~Golosina() {}
 

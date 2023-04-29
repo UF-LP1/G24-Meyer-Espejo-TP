@@ -3,7 +3,7 @@
 
 
 
-Cajero::Cajero(string Nombre,string Apellido,float Sueldo, time_t Horariolaboral) :Empleado(Nombre,Apellido,Sueldo,Horariolaboral) {
+Cajero::Cajero(string nombre, string apellido, time_t horario_Laboral, float sueldo) :Empleado(nombre,apellido, horario_Laboral,sueldo) {
 
 }
 Cajero::~Cajero() {}

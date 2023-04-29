@@ -9,12 +9,13 @@
 class Articulos {
 
 public:
-    Articulos(float Precio, unsigned int Stock,unsigned int Codigo);
+    Articulos(float precio, unsigned int stock,unsigned int codigo);
     ~Articulos();
     
         
     float get_Precio();
     unsigned int get_Stock();
+    unsigned int get_Codigo();
 
    /* void set_Precio(float precio);
     void set_Stock(unsigned int stock);*/

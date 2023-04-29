@@ -10,7 +10,7 @@ class Farmaceutico : public Empleado {
 public:
 
 
-    Farmaceutico(string Nombre, string Apellido, time_t HorarioLaboral, float Sueldo, unsigned int NroMatricula);
+    Farmaceutico(string nombre, string apellido, float sueldo, time_t horarioLaboral, unsigned int nroMatricula);
     ~Farmaceutico();
 
 
