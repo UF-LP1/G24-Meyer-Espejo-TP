@@ -9,7 +9,7 @@
 class Articulos {
 
 public:
-    Articulos(float Precio, unsigned int Stock);
+    Articulos(float Precio, unsigned int Stock,unsigned int Codigo);
     ~Articulos();
     
         
@@ -20,6 +20,7 @@ public:
     void set_Stock(unsigned int stock);*/
 
 protected:
+    unsigned int Codigo;
     float Precio;
     unsigned int Stock;
 

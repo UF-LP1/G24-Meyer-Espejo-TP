@@ -3,14 +3,12 @@
 
 #include "Articulos.h"
 
-Articulos::Articulos(float Precio, unsigned int Stock) {
-	this->Precio =0;
-	this->Stock =0;
+Articulos::Articulos(float Precio, unsigned int Stock,unsigned int Codigo) {
+	this->Precio =Precio;
+	this->Stock =Stock;
+	this->Codigo = Codigo;
 }
-Articulos::Articulos(Precio,Stock) {
-	this->Precio = 0;
-	this->Stock = 0;
-}
+
 
 Articulos::~Articulos() {}
 
