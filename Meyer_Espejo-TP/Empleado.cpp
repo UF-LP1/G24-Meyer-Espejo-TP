@@ -18,39 +18,36 @@ Empleado::~Empleado() {
 
 }
 
-/*u*//*nsigned int Empleado::LlamarPorTicket(Cliente miCliente) {
 
-}
-
-
-void Empleado::ExpenderSolictado(Cliente miCliente) {
-
-}
-
-float Empleado::AplicarDescuento(Cliente miCliente) {
-
-}*/
-
-
-float Empleado::FacturaryGeneraTicket(CarritoCompras miCarrito) {
+float Empleado::CalcularDescuento(Receta miReceta, enum eObrasSocialesVarias) {
     float discount = 0;
-    Ticket nuevoticket(float PrecioFinal, string DNI, enum eMetodoPago MetodoPago, string CUIT);
-        if(Receta:get_obrasocial() == ObraSocialesVarias) {
 
-            discount = rand() % 10 + 1;
-            discount = discount / 100;
-            nuevoticket.PrecioFinal = CalcMontoTotal(ListaPedido)*discount;
+        
+    if (miReceta.get_obrasocial() == eObraSocialesVarias()) {
 
+        discount = rand() % 10 + 1;
+        discount = discount / 100;
 
-        }
-        else
-            nuevoticket.PrecioFinal = CalcMontoTotal(ListaPedido);
-
-
-
-
-
+        return discount;
+    }
+    else
+        return 0.0; //no lleva descuento
 }
+
+
+//unsigned int Empleado::LlamarPorTicket(Cliente miCliente) {
+//
+//}
+//
+//
+//void Empleado::ExpenderSolictado(Cliente miCliente) {
+//
+//}
+//
+//
+//
+//
+//
 
 ////setters
 //    //crear un parametro de NuevaHoraLaboral

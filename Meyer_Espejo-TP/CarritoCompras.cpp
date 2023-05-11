@@ -3,23 +3,27 @@
 #include <vector>
 #include "Articulos.h"
 
-//act
-CarritoCompras::CarritoCompras(float MontoTotal, unsigned int Nro) : Nro(Nro) {
-    this->MontoTotal = MontoTotal;
+
+CarritoCompras::CarritoCompras( unsigned int Nro, vector<Articulos>listaarticulos) : Nro(Nro) {
+    for (int i = 0; i < listaarticulos.size(); i++)
+    {
+        this->ListaArticulos.push_back(listaarticulos[i]);
+    }
+    this->MontoTotal = 0;
 }
 
 CarritoCompras::~CarritoCompras() {}
 
 
 
-float CarritoCompras::CalcMontoTotal(Articulos ListaPedido) {
+float CarritoCompras::CalcMontoTotal(vector<Articulos>ListaArticulos) {
     float monto = 0;
     int Tamanio = 0;
-    Tamanio = ListaPedido.size();
+    Tamanio = ListaArticulos.size();
     for (int i = 0; i < Tamanio; i++) {
-        monto = monto + ListaPedido*[i].Precio;
+        monto = monto + ListaArticulos[i].get_Precio();
     }
-
+    monto = monto;
     return(monto);
 
 }
@@ -33,18 +37,14 @@ float CarritoCompras::get_MontoTotal() {
     return this->MontoTotal;
 }
 
-bool CarritoCompras::AgregarArticulos(Articulos miArticulo, Articulos ListaArticulos, Articulos ListaPedido)
-{   //se crearia la listapedido aca
-    unsigned int code = 0;
-    int x;//seria el valor del atributo del codigo de c/objeto
-code = rand() % 100;
-vector <Articulos> ListaPedido;
-if (code == x) {
-    
-        ListaPedido.push_back(miArticulo);
-}
-
-
+bool CarritoCompras::set_ListaArticulos(vector<Articulos>listaNuevosArt)
+{
+    for (int i = 0; i < listaNuevosArt.size(); i++)
+    {
+        ListaArticulos.push_back(listaNuevosArt[i]);
+        return true;
+    }
+    return false;
 }
 
 //const unsigned int CarritoCompras::get_Nro() {

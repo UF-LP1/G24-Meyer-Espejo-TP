@@ -10,7 +10,6 @@ Articulos::Articulos (float precio, unsigned int stock,unsigned int codigo) {
 
 }
 
-
 Articulos::~Articulos() {}
 
 //getters
@@ -26,12 +25,13 @@ unsigned int Articulos::get_Stock() {
 unsigned int Articulos::get_Codigo() {
 	return this->Codigo;
 }
-////setters
-//void Articulos::set_Precio(float precio) {
-//	this->Precio = precio;
-//}
-//
-//void Articulos::set_Stock(unsigned int stock) {
-//	this->Stock = stock;
-//}
+//setters
+
+void Articulos::set_Precio(float precio) {
+	this->Precio = precio;
+}
+
+void Articulos::set_Stock(unsigned int stock) {
+	this->Stock = stock;
+}
 

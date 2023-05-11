@@ -17,8 +17,8 @@ public:
     unsigned int get_Stock();
     unsigned int get_Codigo();
 
-   /* void set_Precio(float precio);
-    void set_Stock(unsigned int stock);*/
+   void set_Precio(float precio);
+   void set_Stock(unsigned int stock);
 
 protected:
     unsigned int Codigo;

@@ -5,14 +5,14 @@
 
 class AsistAutomatico {
 public:
-    AsistAutomatico(string NroTurno,eNecesidad Necesidad);
+    AsistAutomatico(string NroTurno,enum eNecesidad Necesidad);
     ~AsistAutomatico();
-   /* string ImprimirTicket(enum eNecesidad necesidad);
+   string ImprimirTicket(enum eNecesidad necesidad);
     void set_Necesidad(enum eNecesidad necesidad);
-    string get_NroTurno();*/
+    string get_NroTurno();
 
 private:
-    eNecesidad Necesidad;
+    enum eNecesidad Necesidad;
     string NroTurno;
 };
 

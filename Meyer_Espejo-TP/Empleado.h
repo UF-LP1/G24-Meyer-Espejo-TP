@@ -1,6 +1,7 @@
 #include "Libreria.h"
 #include "Cliente.h"
 #include "CarritoCompras.h"
+#include "Receta.h"
 #ifndef _EMPLEADO_H
 #define _EMPLEADO_H
 
@@ -15,10 +16,10 @@ public:
     float get_Sueldo();*/
     /*unsigned int LlamarPorTicket(Cliente miCliente);
     void ExpenderSolictado(Cliente miCliente);
-    float AplicarDescuento(Cliente miCliente);*/
+    
     float FacturaryGeneraTicket(CarritoCompras miCarrito);
     /*void set_HorarioLaboral(time_t horarioLaboral);*/
-
+    float CalcularDescuento(Receta miReceta,enum eObrasSocialesVarias);
 protected:
     string Nombre;
     string Apellido;
