@@ -30,10 +30,10 @@ Cliente::~Cliente() {
 
 
 ////getters
-//string Cliente::get_Mail()
-//{
-//	return this->Mail;
-//}
+string Cliente::get_Mail()
+{
+	return this->Mail;
+}
 
 string Cliente::get_DNI() {
 	return this->DNI;
@@ -43,9 +43,9 @@ eMetodoPago Cliente:: get_miMetodoPago() {
 	return this-> miMetodoPago;
 }
 //
-//unsigned int Cliente::get_CodigoSeguridad() {
-//	return this->CodigoSeguridad;
-//}
+unsigned int Cliente::get_CodigoSeguridad() {
+	return this->CodigoSeguridad;
+}
 //
 //
 //string Cliente::get_NroTicket() {

@@ -63,4 +63,4 @@ float Empleado::CalcularDescuento(Receta miReceta, enum eObrasSocialesVarias) {
 //
 //float Empleado::get_Sueldo() {
 //    return this->Sueldo;
-}
+//}

@@ -22,8 +22,8 @@ public:
 
 
     void AconsejaDosificacion(Articulos miArticulos);
-
-    unsigned int get_NroMatricula();*/
+    */
+    unsigned int get_NroMatricula();
 
 
 private:

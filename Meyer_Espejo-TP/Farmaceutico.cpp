@@ -27,7 +27,7 @@ Farmaceutico::~Farmaceutico() {}
 //
 //}
 //
-//unsigned int Farmaceutico::get_NroMatricula() {
-//    return this->NroMatricula;
-//}
+unsigned int Farmaceutico::get_NroMatricula() {
+    return this->NroMatricula;
+}
 

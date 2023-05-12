@@ -2,7 +2,7 @@
 #define _EMPLEADOORTOPEDIA_H
 
 #include "Empleado.h"
-#include "Articulos.h"
+//#include "Articulos.h"
 
 
 class EmpleadoOrtopedia : public Empleado {
