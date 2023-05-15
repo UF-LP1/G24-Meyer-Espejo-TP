@@ -4,34 +4,33 @@
 #include "Articulos.h"
 
 
-CarritoCompras::CarritoCompras( unsigned int Nro, vector<Articulos>listaarticulos) : Nro(Nro) {
+CarritoCompras::CarritoCompras( static unsigned int Nro, vector<Articulos>listaarticulos,float descuento) {
     for (int i = 0; i < listaarticulos.size(); i++)
     {
         this->ListaArticulos.push_back(listaarticulos[i]);
     }
-    this->MontoTotal = 0;
+    Nro++; //por ser static
+    CalcMontoTotal();
+    descuento = Empleado.set_PrecioFinal(CarritoCompras miCarrito);
 }
 
-CarritoCompras::~CarritoCompras() {}
+CarritoCompras::~CarritoCompras() {
+    Nro --; //por ser static
+}
 
 
 
-float CarritoCompras::CalcMontoTotal(vector<Articulos>ListaArticulos) {
-    float monto = 0;
-    int Tamanio = 0;
-    Tamanio = ListaArticulos.size();
-    for (int i = 0; i < Tamanio; i++) {
-        monto = monto + ListaArticulos[i].get_Precio();
+void CarritoCompras::CalcMontoTotal() {
+   
+    for (int i = 0; i < ListaArticulos.size(); i++) {
+        MontoTotal = MontoTotal + ListaArticulos[i].get_Precio();
     }
-    monto = monto;
-    return(monto);
-
 }
 
 
-//void CarritoCompras::set_MontoTotal(float montoTotal) {
-//    this->MontoTotal = montoTotal;
-//}
+void CarritoCompras::set_MontoTotal(float montoTotal) {
+    this->MontoTotal = montoTotal;
+}
 
 float CarritoCompras::get_MontoTotal() {
     return this->MontoTotal;
@@ -47,7 +46,7 @@ bool CarritoCompras::set_ListaArticulos(vector<Articulos>listaNuevosArt)
     return false;
 }
 
-//const unsigned int CarritoCompras::get_Nro() {
-//    return this->Nro;
-//}*/
+unsigned int CarritoCompras::get_Nro() {
+    return Nro;
+}
 

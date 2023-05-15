@@ -1,8 +1,8 @@
 
 #include "eMetodoPago.h"
-#include "Libreria.h"
+#include "Header.h"
 #include "CarritoCompras.h"
-#include "Empleado.h"
+
 
 
 #ifndef _TICKET_H
@@ -12,13 +12,15 @@ class Ticket {
 public:
 
 
-    Ticket(string DNI,enum eMetodoPago MetodoPago, string CUIT);
+    Ticket(bool Aprobada, string DNI,enum eMetodoPago MetodoPago, string CUIT);
     ~Ticket();
-    float set_PrecioFinal(CarritoCompras miCarrito, Empleado miEmpleado);
+    void set_PrecioFinal(float aux);
     float get_PrecioFinal();
+    bool get_Aprobada();
 
 private:
-    float PrecioFinal; //equivale a montototal (atr.Carrito) pero ya con el descuento aplicado
+    bool Aprobada; //true si fue existosa
+    float PrecioFinal; //equivale a montototal (atr.Carrito) mas el descuento aplicado
     const string DNI;
     eMetodoPago MetodoPago;
     const string CUIT;

@@ -4,7 +4,7 @@
 
 #include "Articulos.h"
 #include "eArticuloOrt.h"
-
+#include "Header.h"
 
 class Ortopedia : public Articulos {
 public:

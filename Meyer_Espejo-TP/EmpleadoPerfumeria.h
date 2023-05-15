@@ -3,7 +3,7 @@
 #define _EMPLEADOPERFUMERIA_H
 
 #include "Empleado.h"
-
+#include "Header.h"
 
 class EmpleadoPerfumeria : public Empleado {
 public:

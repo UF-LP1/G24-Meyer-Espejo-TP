@@ -5,6 +5,7 @@
 #include "Empleado.h"
 #include "Articulos.h"
 #include "Cliente.h"
+#include "Header.h"
 
 class Farmaceutico : public Empleado {
 public:

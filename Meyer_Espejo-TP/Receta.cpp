@@ -1,6 +1,7 @@
 #include "Receta.h"
+#include "eObrasSocialesVarias.h"
 
-Receta::Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, eObraSocialesVarias ObraSocial, string Dosificacion) :NroMatricula(NroMatricula) {
+Receta::Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, eObrasSocialesVarias ObraSocial, string Dosificacion):NroMatricula(NroMatricula){
     this->Medicamento = Medicamento;
     this->Medico = Medico;
     this->NroAfiliado = NroAfiliado;
@@ -22,7 +23,7 @@ string Receta::get_nroAfiliado() {
     return this->NroAfiliado;
 }
 
-eObraSocialesVarias Receta::get_obrasocial() {
+eObrasSocialesVarias Receta::get_obrasocial() {
     return this->ObraSocial;
 }
 

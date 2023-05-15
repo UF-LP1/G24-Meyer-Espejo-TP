@@ -2,7 +2,7 @@
 #define _CLEANER_H
 
 #include "Empleado.h"
-
+#include "Header.h"
 
 class Cleaner : public Empleado {
 public:

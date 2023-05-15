@@ -1,7 +1,8 @@
 
 #ifndef _LOCAL_H
 #define _LOCAL_H
-#include "Libreria.h"
+#include "Header.h"
+
 class Local {
 public:
     Local(string Nombre, string Direccion, time_t HorarioSemana, time_t HorarioFinDeSemana, string Contacto);

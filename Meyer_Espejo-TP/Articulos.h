@@ -1,6 +1,6 @@
 
-//listo
-#include "Libreria.h"
+#include "Header.h"
+
 #ifndef _ARTICULOS_H
 #define _ARTICULOS_H
 

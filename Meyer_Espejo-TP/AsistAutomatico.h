@@ -1,4 +1,4 @@
-#include "Libreria.h"
+#include "Header.h"
 #ifndef _ASISTAUTOMATICO_H
 #define _ASISTAUTOMATICO_H
 #include "eNecesidad.h"
@@ -12,7 +12,7 @@ public:
     string get_NroTurno();
 
 private:
-    enum eNecesidad Necesidad;
+    eNecesidad Necesidad;
     string NroTurno;
 };
 

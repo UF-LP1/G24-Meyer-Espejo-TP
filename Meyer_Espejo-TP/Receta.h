@@ -1,10 +1,12 @@
 
 #ifndef _RECETA_H
 #define _RECETA_H
-#include "Libreria.h"
+#include "Header.h"
+#include "eObrasSocialesVarias.h"
+
 class Receta {
 public:
-    Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, eObraSocialesVarias ObraSocial, string Dosificacion);
+    Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, eObrasSocialesVarias ObraSocial, string Dosificacion);
     ~Receta();
     string get_medicamento();
 
@@ -12,7 +14,7 @@ public:
 
     string get_nroAfiliado();
 
-    eObraSocialesVarias get_obrasocial();
+    eObrasSocialesVarias get_obrasocial();
 
     /*void set_ObraSocial(string obrasocial);
     void set_Dosificacion(string dosificacion);
@@ -23,7 +25,7 @@ private:
     string Medico;
     const unsigned int NroMatricula;
     string NroAfiliado;
-    enum eObraSocialesVarias ObraSocial;
+    eObrasSocialesVarias ObraSocial;
     string Dosificacion;
 };
 

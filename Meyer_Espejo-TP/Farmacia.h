@@ -3,6 +3,7 @@
 
 #include "Articulos.h"
 #include "eFarmacia.h"
+#include "Header.h"
 
 class Farmacia : public Articulos {
 public:

@@ -1,26 +1,26 @@
-#include "Libreria.h"
+#include "Header.h"
 #include "Articulos.h"
 #include <vector>
 
 
 #ifndef _CARRITOCOMPRAS_H
 #define _CARRITOCOMPRAS_H
-//act
+
 class CarritoCompras {
 public:
-    CarritoCompras(unsigned int Nro, vector<Articulos>listaarticulos);
+    CarritoCompras(static unsigned int Nro, vector<Articulos>listaarticulos,float descuento);
     ~CarritoCompras();
-    float CalcMontoTotal(vector<Articulos>ListaArticulos);
-    //void set_MontoTotal(float montoTotal);
+    void CalcMontoTotal();
+    void set_MontoTotal(float montoTotal);
     float get_MontoTotal();
     bool set_ListaArticulos(vector<Articulos>listaNuevosArt);
-    //const unsigned int get_Nro();
+    unsigned int get_Nro();
 
 private:
     float MontoTotal;
-    const unsigned int Nro;
+    static unsigned int Nro;
     vector<Articulos>ListaArticulos;
-
+    float descuento;
 };
 
 #endif //_CARRITOCOMPRAS_H

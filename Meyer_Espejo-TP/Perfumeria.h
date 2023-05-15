@@ -4,6 +4,7 @@
 
 #include "Articulos.h"
 #include "eArticuloPerf.h"
+#include "Header.h"
 
 class Perfumeria : public Articulos {
 
