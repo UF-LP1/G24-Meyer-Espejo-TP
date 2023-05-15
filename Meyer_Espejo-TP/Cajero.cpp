@@ -1,14 +1,12 @@
 #include "Cajero.h"
 #include "Ticket.h"
 
-
-
-Cajero::Cajero(string nombre, string apellido, time_t horario_Laboral, float sueldo) :Empleado(nombre,apellido, horario_Laboral,sueldo) {
+Cajero::Cajero(string nombre, string apellido, float sueldo):Empleado(nombre,apellido,sueldo) {
 
 }
 Cajero::~Cajero() {}  
 
-bool SaldoSuficiente(Cliente miCliente, float precio)
+bool Cajero:: SaldoSuficiente(Cliente miCliente, float precio)
 {
 
 	eMetodoPago metodoMiCliente = miCliente.get_miMetodoPago();
@@ -40,7 +38,8 @@ bool SaldoSuficiente(Cliente miCliente, float precio)
 	}
 }
 
-Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente) {
+Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente)
+{
 	float A_pagar;
 	float PrecioEfectivo;
 	
@@ -54,22 +53,41 @@ Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente) {
 		{
 			//aplicamos en caja el 10% de descuento por pagar en efectivo
 			PrecioEfectivo = A_pagar * 0.1;
-			Ticket ticketcompra (true,)
+			Ticket ticketcompraEf (true, PrecioEfectivo, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+			return ticketcompraEf;
 		}
 		else //pagar con tarjeta o MP (no tiene descuento)
 		{
-
+			Ticket ticketcompra(true,miTicket.get_PrecioFinal(), miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+			return ticketcompra;
 		}
 	}
 	else //no se pudo finalizar la compra
 	{
-		Ticket NoValido(false,);
-		return NoValido; 
+		Ticket NoValido(false,miTicket.get_PrecioFinal(), miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+		return NoValido;
+	}
+}
+
+Factura Cajero::EntregarFactura(CarritoCompras miCarrito, Cliente& miCliente,Ticket miTicket) {
+
+	bool Formato = miCliente.get_formato();
+
+	if (Formato == true)//formato fisico
+	{
+		Factura miFactura(miTicket.get_PrecioFinal(),miCliente.get_Nombre(),miCliente.get_Apellido(),true,miCarrito.get_lista());
+		miCliente.set_Factura(miFactura);
+	}
+	else //formato digital
+	{
+		string mailCliente = miCliente.get_Mail();
+		Factura miFactura(miTicket.get_PrecioFinal(), miCliente.get_Nombre(), miCliente.get_Apellido(), false, miCarrito.get_lista());
+		miCliente.set_Factura(miFactura);
+		//mandarle al mail la factura
+	}
+
 }
 
 
-//void Cajero::EntregarPedidoyRecibo(CarritoCompras miCarrito, Ticket miTicket) {}
-//
-//bool Cajero::EntregatRecibo(Cliente miCliente) {}
 
 

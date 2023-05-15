@@ -4,7 +4,7 @@
 
 
 
-AsistAutomatico::AsistAutomatico(string NroTurno, enum eNecesidad Necesidad) {
+AsistAutomatico::AsistAutomatico(string NroTurno,enum eNecesidad Necesidad) {
     this->NroTurno=NroTurno;
     this->Necesidad = Necesidad;
 }

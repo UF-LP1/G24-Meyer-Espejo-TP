@@ -8,8 +8,8 @@ public:
     AsistAutomatico(string NroTurno,enum eNecesidad Necesidad);
     ~AsistAutomatico();
    string ImprimirTicket(enum eNecesidad necesidad);
-    void set_Necesidad(enum eNecesidad necesidad);
-    string get_NroTurno();
+   void set_Necesidad(enum eNecesidad necesidad);
+   string get_NroTurno();
 
 private:
     eNecesidad Necesidad;

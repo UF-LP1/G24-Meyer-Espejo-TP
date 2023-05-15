@@ -5,12 +5,15 @@
 #include "Receta.h"
 #include "Ticket.h"
 #include "AsistAutomatico.h"
+#include "eMetodoPago.h"
+#include "Factura.h"
+#include "eNecesidad.h"
 
 class Cliente {
 public:
-    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, Ticket ticketauxi, Receta recetaauxi, string CUIL, bool facturafis);
+    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, Ticket ticketauxi, Receta recetaauxi, string CUIL, bool facturafis,eNecesidad necesidad);
     ~Cliente();
-    //unsigned int SacarTicket(AsistAutomatico miAsistAutomatico);
+    //void SacarTicket(AsistAutomatico miAsistAutomatico);
     //void EntregarSolicitado();
    // void Abonar(Ticket miTicket);
     string get_Mail();
@@ -23,8 +26,13 @@ public:
    double get_SaldoTarj();
    double get_SaldoMP();
    Receta get_Receta();
-   string get_CUIL();
-   void set_Ticket(Ticket aux);
+   string get_CUIT();
+   void set_Ticket(Ticket auxi);
+   void set_Factura (Factura aux);
+   eNecesidad get_miNecesidad();
+   bool get_formato();
+   string get_Nombre();
+   string get_Apellido();
 
 private:
     string Nombre;
@@ -38,9 +46,11 @@ private:
     double SaldoMP;
     double SaldoTarj;
     Receta miReceta;
-    const string CUIL;
+    const string CUIT;
     Ticket miTicket;
     bool FacturaFisica;
+    Factura miFactura;
+    eNecesidad miNecesidad;
 };
 
 #endif //_CLIENTE_H

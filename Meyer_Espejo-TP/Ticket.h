@@ -12,7 +12,8 @@ class Ticket {
 public:
 
 
-    Ticket(bool Aprobada, string DNI,enum eMetodoPago MetodoPago, string CUIT);
+    Ticket(bool aprobada, string DNI, enum eMetodoPago MetodoPago, string CUIT);
+    Ticket(bool aprobada, float preciofinal, string DNI, enum eMetodoPago MetodoPago, string CUIT);
     ~Ticket();
     void set_PrecioFinal(float aux);
     float get_PrecioFinal();
@@ -21,9 +22,9 @@ public:
 private:
     bool Aprobada; //true si fue existosa
     float PrecioFinal; //equivale a montototal (atr.Carrito) mas el descuento aplicado
-    const string DNI;
+     string DNI;
     eMetodoPago MetodoPago;
-    const string CUIT;
+    string CUIT;
 };
 
 #endif //_TICKET_H

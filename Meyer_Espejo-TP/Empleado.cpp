@@ -18,7 +18,7 @@ Empleado::~Empleado() {
 }
 void Empleado::FacturaryGeneraTicket(CarritoCompras miCarrito,Cliente &miCliente) {
     float preciofinal = ActualizarPrecio(miCliente.get_Receta(),miCarrito);
-    Ticket miTicket(false, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIL());
+    Ticket miTicket(false,preciofinal, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
     miCliente.set_Ticket(miTicket); 
 }
 

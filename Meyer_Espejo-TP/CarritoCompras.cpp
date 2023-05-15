@@ -36,6 +36,9 @@ float CarritoCompras::get_MontoTotal() {
     return this->MontoTotal;
 }
 
+vector<Articulos> CarritoCompras:: get_lista() {
+    return this->ListaArticulos;
+}
 bool CarritoCompras::set_ListaArticulos(vector<Articulos>listaNuevosArt)
 {
     for (int i = 0; i < listaNuevosArt.size(); i++)

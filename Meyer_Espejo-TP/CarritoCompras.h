@@ -15,6 +15,7 @@ public:
     float get_MontoTotal();
     bool set_ListaArticulos(vector<Articulos>listaNuevosArt);
     unsigned int get_Nro();
+    vector<Articulos> get_lista();
 
 private:
     float MontoTotal;

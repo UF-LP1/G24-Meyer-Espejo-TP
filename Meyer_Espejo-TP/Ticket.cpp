@@ -1,9 +1,20 @@
 #include "Ticket.h"
 
-Ticket::Ticket(bool aprobada, string DNI,enum eMetodoPago MetodoPago, string CUIT):DNI(DNI),CUIT(CUIT) {
+Ticket::Ticket(bool aprobada,string DNI,enum eMetodoPago MetodoPago, string CUIT) {
     this->PrecioFinal=0;
-    this->MetodoPago = MetodoPago;
     this->Aprobada = aprobada;
+    this->MetodoPago = MetodoPago;
+    this->Aprobada = false;
+    this->DNI = DNI;
+    this->CUIT = CUIT;
+}
+Ticket::Ticket(bool aprobada, float preciofinal, string DNI, enum eMetodoPago MetodoPago, string CUIT) {
+    this->PrecioFinal = preciofinal;
+    this->Aprobada = aprobada;
+    this->MetodoPago = MetodoPago;
+    this->Aprobada = false;
+    this->DNI = DNI;
+    this->CUIT = CUIT;
 }
 Ticket::~Ticket() {
 
