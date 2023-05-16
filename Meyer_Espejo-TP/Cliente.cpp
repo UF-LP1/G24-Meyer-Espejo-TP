@@ -8,13 +8,6 @@
 //	this-> NroTicket=
 //}
 
-//void Cliente::EntregarSolicitado() {
-//
-//}
-//
-//void Cliente::Abonar(Ticket miTicket) {
-//
-//}
 
 //constructor
 Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj,Ticket ticketauxi, Receta recetaauxi, string CUIL, bool facturafis,eNecesidad necesidad):CUIL(CUIL) {
@@ -95,6 +88,12 @@ string Cliente::get_Apellido() {
 	return this->Apellido;
 }
 
+
+CarritoCompras Cliente:: get_Carrito()
+{
+	return this->miCarrito;
+}
+
 //setters
 void Cliente::set_CodigoSeguridad(unsigned int codigoSeguridad) {
 	this->CodigoSeguridad = codigoSeguridad;
@@ -106,4 +105,9 @@ void Cliente::set_Ticket(Ticket auxi) {
 
 void Cliente::set_Factura(Factura aux) {
 	this->miFactura = aux;
+}
+
+void Cliente:: set_Carrito(CarritoCompras auxi)
+{
+	this->miCarrito = auxi;
 }

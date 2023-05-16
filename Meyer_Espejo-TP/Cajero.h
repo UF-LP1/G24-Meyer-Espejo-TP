@@ -13,10 +13,9 @@ public:
 
     Cajero(string nombre, string apellido, float sueldo);
     ~Cajero();
-
     bool SaldoSuficiente(Cliente miCliente,float precio);
     Ticket Cobrar(Ticket miTicket, Cliente miCliente);
-    Factura EntregarFactura(CarritoCompras miCarrito, Cliente& miCliente,Ticket miTicket);
+    Factura EntregarFactura(float precio, Cliente& miCliente);
     
 };
 

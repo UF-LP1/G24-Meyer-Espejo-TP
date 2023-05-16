@@ -54,38 +54,28 @@ Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente)
 			//aplicamos en caja el 10% de descuento por pagar en efectivo
 			PrecioEfectivo = A_pagar * 0.1;
 			Ticket ticketcompraEf (true, PrecioEfectivo, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+			EntregarFactura(PrecioEfectivo, miCliente);
 			return ticketcompraEf;
 		}
 		else //pagar con tarjeta o MP (no tiene descuento)
 		{
 			Ticket ticketcompra(true,miTicket.get_PrecioFinal(), miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+			EntregarFactura(miTicket.get_PrecioFinal(), miCliente);
 			return ticketcompra;
 		}
 	}
 	else //no se pudo finalizar la compra
 	{
 		Ticket NoValido(false,miTicket.get_PrecioFinal(), miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+		//no devuelvo factura porque no se puedo finalizar la compra
 		return NoValido;
 	}
 }
 
-Factura Cajero::EntregarFactura(CarritoCompras miCarrito, Cliente& miCliente,Ticket miTicket) {
+Factura Cajero::EntregarFactura(float precio, Cliente& miCliente) {
 
-	bool Formato = miCliente.get_formato();
-
-	if (Formato == true)//formato fisico
-	{
-		Factura miFactura(miTicket.get_PrecioFinal(),miCliente.get_Nombre(),miCliente.get_Apellido(),true,miCarrito.get_lista());
-		miCliente.set_Factura(miFactura);
-	}
-	else //formato digital
-	{
-		string mailCliente = miCliente.get_Mail();
-		Factura miFactura(miTicket.get_PrecioFinal(), miCliente.get_Nombre(), miCliente.get_Apellido(), false, miCarrito.get_lista());
-		miCliente.set_Factura(miFactura);
-		//mandarle al mail la factura
-	}
-
+	Factura FacturaActualizada(precio, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito());
+	miCliente.set_Factura(FacturaActualizada);
 }
 
 

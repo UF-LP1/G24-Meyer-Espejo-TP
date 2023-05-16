@@ -14,8 +14,6 @@ public:
     Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, Ticket ticketauxi, Receta recetaauxi, string CUIL, bool facturafis,eNecesidad necesidad);
     ~Cliente();
     //void SacarTicket(AsistAutomatico miAsistAutomatico);
-    //void EntregarSolicitado();
-   // void Abonar(Ticket miTicket);
     string get_Mail();
     void set_CodigoSeguridad(unsigned int codigoSeguridad);
     unsigned int get_CodigoSeguridad();
@@ -33,6 +31,8 @@ public:
    bool get_formato();
    string get_Nombre();
    string get_Apellido();
+   void set_Carrito(CarritoCompras auxi);
+   CarritoCompras get_Carrito();
 
 private:
     string Nombre;
@@ -51,6 +51,7 @@ private:
     bool FacturaFisica;
     Factura miFactura;
     eNecesidad miNecesidad;
+    CarritoCompras miCarrito;
 };
 
 #endif //_CLIENTE_H
