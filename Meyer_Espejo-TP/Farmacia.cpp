@@ -1,18 +1,20 @@
 #include "Farmacia.h"
 #include "eFarmacia.h"
 
-Farmacia::Farmacia(float precio, unsigned int stock, unsigned int codigo, enum eFarmacia artFarm):Articulos(precio, stock,codigo) {
+Farmacia::Farmacia(float precio, unsigned int stock, unsigned int codigo, enum eFarmacia artFarm, bool receta) :Articulos(precio, stock,codigo) {
 	
 	this->ArtFarm = artFarm;
+	this->ConReceta = receta;
 }
 Farmacia::~Farmacia() {}
 
-//enum Farmacia::get_ArtFarm(eFarmacia ArtFarm) {
-//    return this->ArtFarm;
-//}
-//
-//void Farmacia::setArtFarm(eFarmacia artfarm) {
-//    this->ArtFarm = artFarm;
-//}
+eFarmacia Farmacia::get_ArtFarm() {
+    return this->ArtFarm;
+}
+
+bool Farmacia::get_ObligReceta() {
+	return this->ConReceta;
+}
+
 
 

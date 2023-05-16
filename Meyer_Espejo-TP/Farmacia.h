@@ -7,13 +7,14 @@
 
 class Farmacia : public Articulos {
 public:
-    Farmacia(float precio, unsigned int stock, unsigned int codigo, enum eFarmacia artFarm);
+    Farmacia(float precio, unsigned int stock, unsigned int codigo, enum eFarmacia artFarm, bool receta);
     ~Farmacia();
-   // enum get_ArtFarm(enum eFarmacia ArtFarm);
-   // void setArtFarm(enum eFarmacia artfarm);
+   eFarmacia get_ArtFarm();
+   bool get_ObligReceta();
 
 private:
     enum eFarmacia ArtFarm;
+    bool ConReceta; 
 };
 
 #endif //_FARMACIA_H
