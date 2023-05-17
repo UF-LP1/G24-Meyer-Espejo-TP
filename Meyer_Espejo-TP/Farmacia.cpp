@@ -17,4 +17,15 @@ bool Farmacia::get_ObligReceta() {
 }
 
 
+float Farmacia:: get_Precio() {
+	return this->Precio;
+}
 
+unsigned int Farmacia::get_Codigo()
+{
+	return this->Codigo;
+}
+unsigned int Farmacia:: get_Stock()
+{
+	return this->Stock;
+}

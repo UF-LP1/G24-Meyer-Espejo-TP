@@ -8,7 +8,7 @@
 
 class CarritoCompras {
 public:
-    CarritoCompras(float montototal,static unsigned int Nro, vector<Articulos>listaarticulos,float descuento);
+    CarritoCompras(float montototal,unsigned int Nro, vector<Articulos>listaarticulos,float descuento);
     ~CarritoCompras();
     void CalcMontoTotal();
     void set_MontoTotal(float montoTotal);
@@ -16,10 +16,11 @@ public:
     void set_ListaArticulos(vector<Articulos>listaNuevosArt);
     unsigned int get_Nro();
     vector<Articulos> get_lista();
+    void set_UnArticulo(Articulos nuevoArticulo);
 
 private:
     float MontoTotal;
-    static unsigned int Nro;
+    unsigned int Nro;
     vector<Articulos>ListaArticulos;
     float Descuento;
 };

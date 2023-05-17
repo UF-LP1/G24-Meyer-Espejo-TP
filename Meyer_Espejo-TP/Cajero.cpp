@@ -74,7 +74,7 @@ Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente)
 
 Factura Cajero::EntregarFactura(float precio, Cliente& miCliente) {
 
-	Factura FacturaActualizada(precio, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito());
+	Factura FacturaActualizada(precio, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito().get_lista());
 	miCliente.set_Factura(FacturaActualizada);
 }
 

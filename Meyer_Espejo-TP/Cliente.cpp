@@ -1,6 +1,5 @@
 #include "Cliente.h"
-#include "Receta.h"
-#include "Ticket.h"
+
 
 //void Cliente::SacarTicket(AsistAutomatico miAsistAutomatico) {
 //	get_miNecesidad= 
@@ -10,7 +9,7 @@
 
 
 //constructor
-Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj,Ticket ticketauxi, Receta recetaauxi, string CUIL, bool facturafis,eNecesidad necesidad):CUIL(CUIL) {
+Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad,Receta _miReceta,Ticket _miTicket):CUIT(CUIL) {
 	this->Nombre = Nombre;
 	this->Apellido = Apellido;
 	this->DNI = DNI;
@@ -21,10 +20,11 @@ Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int Codigo
 	this->SaldoEf = saldoef;
 	this->SaldoMP = saldomp;
 	this->SaldoTarj = saaldotarj;
-	this->miReceta = recetaauxi;
-	this->miTicket = ticketauxi;
 	this->FacturaFisica = facturafis;
 	this->miNecesidad = necesidad;
+	this->miReceta = _miReceta;
+	this->miTicket = _miTicket;
+
 }
 
 //destructor

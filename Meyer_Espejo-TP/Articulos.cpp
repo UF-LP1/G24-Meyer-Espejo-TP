@@ -3,14 +3,17 @@
 
 #include "Articulos.h"
 
-Articulos::Articulos (float precio, unsigned int stock,unsigned int codigo) {
+
+
+Articulos::Articulos (float precio, unsigned int stock,unsigned int Codigo) {
 	this->Precio =precio;
 	this->Stock =stock;
-	this->Codigo = codigo;
+	this->Codigo = Codigo;
 
 }
 
-Articulos::~Articulos() {}
+Articulos::~Articulos() {
+}
 
 //getters
 
@@ -23,8 +26,10 @@ unsigned int Articulos::get_Stock() {
 }
 
 unsigned int Articulos::get_Codigo() {
-	return this->Codigo;
+	return this-> Codigo; 
 }
+
+
 //setters
 
 void Articulos::set_Precio(float precio) {

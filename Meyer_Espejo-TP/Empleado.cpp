@@ -24,11 +24,14 @@ void Empleado::FacturaryGeneraTicket(CarritoCompras miCarrito,Cliente &miCliente
 
 float CalculaDescuento(Receta miReceta) {
     
-    float discount;
+    float discount=0; //si es otra no tiene descuento, por eso inicializo en 0
 
-    if (miReceta.get_obrasocial() == 0) //OSDE
+    if (miReceta.get_obrasocial() == OSDE) 
         discount = 0.3;
-
+    if (miReceta.get_obrasocial() == SwissMedical)
+        discount = 0.2;
+    if (miReceta.get_obrasocial() == GALENO || miReceta.get_obrasocial() == MEDICUS)
+        discount = 0.1;
     
     return discount;
 }

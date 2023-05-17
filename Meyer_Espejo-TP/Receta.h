@@ -2,31 +2,26 @@
 #ifndef _RECETA_H
 #define _RECETA_H
 #include "Header.h"
-#include "eObrasSocialesVarias.h"
+#include "eOS.h"
 
 class Receta {
 public:
-    Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, eObrasSocialesVarias ObraSocial, string Dosificacion);
+    Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, enum eOS ObraSocial,bool vencida);
     ~Receta();
     string get_medicamento();
-
-    string get_dosificacion();
-
     string get_nroAfiliado();
-
-    eObrasSocialesVarias get_obrasocial();
-
-    /*void set_ObraSocial(string obrasocial);
-    void set_Dosificacion(string dosificacion);
-    void set_Medicamento(string medicamento);*/
+    eOS get_obrasocial();
+    void set_Medicamento(string medicamento);
+    bool get_Vencimiento();
 
 private:
     string Medicamento;
     string Medico;
     const unsigned int NroMatricula;
     string NroAfiliado;
-    eObrasSocialesVarias ObraSocial;
-    string Dosificacion;
+    eOS ObraSocial;
+    bool Vencida; //si es true pasaron la cantidad de dias para utilizarla, Invalida
+    
 };
 
 #endif //_RECETA_H

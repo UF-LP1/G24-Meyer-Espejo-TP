@@ -11,6 +11,9 @@ public:
     ~Farmacia();
    eFarmacia get_ArtFarm();
    bool get_ObligReceta();
+   float get_Precio();
+   unsigned int get_Codigo();
+   unsigned int get_Stock();
 
 private:
     enum eFarmacia ArtFarm;

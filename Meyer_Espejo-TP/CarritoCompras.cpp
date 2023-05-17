@@ -5,18 +5,18 @@
 
 
 
-CarritoCompras::CarritoCompras(float montototal, static unsigned int Nro, vector<Articulos>listaarticulos,float descuento) {
+CarritoCompras::CarritoCompras(float montototal, unsigned int Nro, vector<Articulos>listaarticulos,float descuento) {
     for (int i = 0; i < listaarticulos.size(); i++)
     {
         this->ListaArticulos.push_back(listaarticulos[i]);
     }
-    Nro++; //por ser static
+    this->Nro = Nro;
     this->MontoTotal = montototal;
     this->Descuento = descuento;
 }
 
 CarritoCompras::~CarritoCompras() {
-    Nro --; //por ser static
+    
 }
 
 
@@ -51,8 +51,12 @@ void CarritoCompras::set_ListaArticulos(vector<Articulos>listaNuevosArt)
     
 }
 
+void CarritoCompras:: set_UnArticulo(Articulos nuevoArticulo)
+{
+    this->ListaArticulos.push_back(nuevoArticulo);
+}
 
 unsigned int CarritoCompras::get_Nro() {
-    return Nro;
+    return this-> Nro;
 }
 
