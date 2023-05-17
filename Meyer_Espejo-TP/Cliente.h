@@ -15,6 +15,7 @@ public:
     Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis,eNecesidad necesidad,Receta _miReceta, Ticket _miTicket);
     ~Cliente();
     //void SacarTicket(AsistAutomatico miAsistAutomatico);
+    void Actualizar_Nro(unsigned int NroTurno, AsistAutomatico MiAsistAutomatico);
     string get_Mail();
     void set_CodigoSeguridad(unsigned int codigoSeguridad);
     unsigned int get_CodigoSeguridad();
