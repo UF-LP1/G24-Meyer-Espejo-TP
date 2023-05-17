@@ -12,7 +12,7 @@
 class Cliente {
 public:
     
-    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis,eNecesidad necesidad,Receta _miReceta, Ticket _miTicket);
+    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis,eNecesidad necesidad,Receta _miReceta, Ticket _miTicket, vector<Articulos>ProductosQuiero);
     ~Cliente();
     //void SacarTicket(AsistAutomatico miAsistAutomatico);
     void Actualizar_Nro(unsigned int NroTurno, AsistAutomatico MiAsistAutomatico);
@@ -54,6 +54,7 @@ private:
     Factura miFactura;
     eNecesidad miNecesidad;
     CarritoCompras miCarrito;
+    vector<Articulos>ProductosQuiero;
 };
 
 #endif //_CLIENTE_H

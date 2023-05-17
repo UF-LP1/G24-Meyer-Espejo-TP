@@ -10,7 +10,7 @@ public:
 
     EmpleadoPerfumeria(string nombre, string apellido, float sueldo);
     ~EmpleadoPerfumeria();
-
+    void revisionperf(Cliente MiCliente);
     /*void AsesorarPerfum(Articulos miArticulos);*/
 
 };

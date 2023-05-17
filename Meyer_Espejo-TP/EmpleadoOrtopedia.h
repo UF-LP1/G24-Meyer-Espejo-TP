@@ -10,7 +10,7 @@ public:
 
     EmpleadoOrtopedia(string nombre, string apellido, float sueldo);
     ~EmpleadoOrtopedia();
-
+    void  revisionort(Cliente MiCliente);
    /* void AsesorarArtOrtop(Articulos miArticulos);
 
     void Empacar(Articulos miArticulos);*/

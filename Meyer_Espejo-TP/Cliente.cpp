@@ -10,7 +10,7 @@
 
 
 //constructor
-Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad,Receta _miReceta,Ticket _miTicket):CUIT(CUIL) {
+Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad,Receta _miReceta,Ticket _miTicket, vector<Articulos>ProductosQuiero):CUIT(CUIL) {
 	this->Nombre = Nombre;
 	this->Apellido = Apellido;
 	this->DNI = DNI;
@@ -24,9 +24,13 @@ Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int Codigo
 	this->FacturaFisica = facturafis;
 	this->miNecesidad = necesidad;
 	this->miReceta = _miReceta;
-	this->miTicket = _miTicket;
-
+	this->miTicket = _miTicket;	
+	for (int i = 0; i < ProductosQuiero.size(); i++)
+	{
+		this->ProductosQuiero.push_back(ProductosQuiero[i]);
+	}
 }
+
 
 //destructor
 Cliente::~Cliente() {
