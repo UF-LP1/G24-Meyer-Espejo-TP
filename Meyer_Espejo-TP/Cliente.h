@@ -35,6 +35,7 @@ public:
    string get_Apellido();
    void set_Carrito(CarritoCompras auxi);
    CarritoCompras get_Carrito();
+   vector<Articulos>get_ProductosQuiero();
 
 private:
     string Nombre;

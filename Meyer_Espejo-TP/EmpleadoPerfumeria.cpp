@@ -9,13 +9,19 @@ EmpleadoPerfumeria::~EmpleadoPerfumeria() {}
 //void EmpleadoPerfumeria::AsesorarPerfum(Articulos miArticulos) {}
 
 void  revisionperf(Cliente MiCliente) {
-    for (int i = 0; i < ProductosQuiero.size(); i++)
+    vector<Articulos>aux;
+    aux = MiCliente.get_ProductosQuiero();
+    for (int i = 0; i < aux.size(); i++)
     {
-        if (Cliente::ProductosQuiero[i].Stock == 1) {
+        if (aux[i].get_Stock() > 1) {
             //aca agregar al carrito
-       }
-            
+        }
+
     }
+
+
+
+}
 
 
 

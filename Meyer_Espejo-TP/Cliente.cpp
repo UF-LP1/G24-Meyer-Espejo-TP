@@ -116,6 +116,19 @@ void Cliente:: set_Carrito(CarritoCompras auxi)
 {
 	this->miCarrito = auxi;
 }
+vector<Articulos> Cliente::get_ProductosQuiero() {
+	return this->ProductosQuiero;
+
+}
+
+
+
+
+
+
+
+
+
 void Cliente:: Actualizar_Nro(unsigned int NroTurno, AsistAutomatico MiAsistAutomatico) {//funcion entre cliente y asist automatico
 	int Nuevo_Numero = 0;//creo una variable para que no haya poroblemas
 	Nuevo_Numero = MiAsistAutomatico.get_NroTurno();//copio el numero de turno a la variable creada
