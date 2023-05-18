@@ -4,6 +4,7 @@
 #include "EmpleadoOrtopedia.h"
 #include "EmpleadoPerfumeria.h"
 #include "Farmaceutico.h"
+#include "eNecesidad.h"
 
 //esta clase seria el empleado que solo se encarga de generar ticket,calcular descuento,actualizar precio y asignar a donde va
 
@@ -14,5 +15,5 @@ public:
 	float ActualizarPrecio(Receta miReceta, CarritoCompras miCarrito);
 	Ticket FacturaryGeneraTicket(Cliente& miCliente, Local& miLocal);
 	float CalculaDescuento(Receta miReceta);
-	Cliente ReubicarCliente(Local miLocal,EmpleadoOrtopedia EmpOrtop, EmpleadoPerfumeria EmpPerf,Farmaceutico Farmaceutico);
+	void ReubicarCliente(Local miLocal,EmpleadoOrtopedia EmpOrtop, EmpleadoPerfumeria EmpPerf,Farmaceutico Farmaceutico);
 };

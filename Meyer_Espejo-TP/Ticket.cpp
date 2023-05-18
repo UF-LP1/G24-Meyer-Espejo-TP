@@ -8,6 +8,9 @@ Ticket::Ticket(bool aprobada,string DNI,enum eMetodoPago MetodoPago, string CUIT
     this->DNI = DNI;
     this->CUIT = CUIT;
 }
+Ticket::Ticket() {
+
+}
 Ticket::Ticket(bool aprobada, float preciofinal, string DNI, enum eMetodoPago MetodoPago, string CUIT) {
     this->PrecioFinal = preciofinal;
     this->Aprobada = aprobada;

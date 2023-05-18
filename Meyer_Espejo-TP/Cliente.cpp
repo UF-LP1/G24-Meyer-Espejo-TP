@@ -1,16 +1,11 @@
 #include "Cliente.h"
 
 
-//void Cliente::SacarTicket(AsistAutomatico miAsistAutomatico) {
-//	get_miNecesidad= 
-//	
-//	this-> NroTicket=
-//}
 
 
 
 //constructor
-Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad,Receta _miReceta):CUIT(CUIL) {
+Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad):CUIT(CUIL) {
 	this->Nombre = Nombre;
 	this->Apellido = Apellido;
 	this->DNI = DNI;
@@ -23,11 +18,25 @@ Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int Codigo
 	this->SaldoTarj = saaldotarj;
 	this->FacturaFisica = facturafis;
 	this->miNecesidad = necesidad;
-	this->miReceta = _miReceta;
+	
 	
 }
 
-
+Cliente::Cliente(CarritoCompras carrito,string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad) :CUIT(CUIL) {
+	this->Nombre = Nombre;
+	this->Apellido = Apellido;
+	this->DNI = DNI;
+	this->CodigoSeguridad = CodigoSeguridad;
+	this->Mail = mail;
+	this->NroTicket = NroTicket;
+	this->miMetodoPago = metodoAutilizar;
+	this->SaldoEf = saldoef;
+	this->SaldoMP = saldomp;
+	this->SaldoTarj = saaldotarj;
+	this->FacturaFisica = facturafis;
+	this->miNecesidad = necesidad;
+	this->miCarrito = carrito;
+}
 //destructor
 Cliente::~Cliente() {
 }
@@ -73,7 +82,7 @@ Receta Cliente::get_Receta() {
 	return this-> miReceta;
 }
 
-eNecesidad Cliente::get_miNecesidad() {
+enum eNecesidad Cliente::get_miNecesidad() {
 	return this->miNecesidad;
 }
 
@@ -112,18 +121,17 @@ void Cliente:: set_Carrito(CarritoCompras auxi)
 {
 	this->miCarrito = auxi;
 }
-vector<Articulos> Cliente::get_ProductosQuiero() {
+vector<string> Cliente::get_ProductosQuiero() {
 	return this->ProductosQuiero;
 
 }
 
 
-void Cliente:: Actualizar_Nro(unsigned int NroTurno, AsistAutomatico MiAsistAutomatico) {//funcion entre cliente y asist automatico
+void Cliente:: Actualizar_Nro(AsistAutomatico MiAsistAutomatico) {//funcion entre cliente y asist automatico
 	int Nuevo_Numero = 0;//creo una variable para que no haya poroblemas
 	Nuevo_Numero = MiAsistAutomatico.get_NroTurno();//copio el numero de turno a la variable creada
 
 	this->NroTicket = Nuevo_Numero;
 	//guardo el numero que le da el asist automatico y lo copio en cliente asi el cliente puede ser identificado por su numero
 
-	//ahi el cliente ya tiene un numero de turno"ticket"el cual sale de la necesidad
 }

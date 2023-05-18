@@ -8,6 +8,8 @@ Factura::Factura(float monto, string nombre, string apellido, bool formato, vect
 	this->ArticulosComprados = artcomprados;
 }
 
+Factura::Factura() {}
+
 Factura::~Factura() {
 
 }

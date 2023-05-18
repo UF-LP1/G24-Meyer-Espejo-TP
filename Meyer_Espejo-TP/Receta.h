@@ -6,8 +6,9 @@
 
 class Receta {
 public:
-    Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, enum eOS ObraSocial,bool vencida);
+    Receta(string Medicamento, string Medico,unsigned int NroMatricula, string NroAfiliado, enum eOS ObraSocial,bool vencida);
     ~Receta();
+    Receta();
     string get_medicamento();
     string get_nroAfiliado();
     eOS get_obrasocial();
@@ -17,7 +18,7 @@ public:
 private:
     string Medicamento;
     string Medico;
-    const unsigned int NroMatricula;
+    unsigned int NroMatricula;
     string NroAfiliado;
     eOS ObraSocial;
     bool Vencida; //si es true pasaron la cantidad de dias para utilizarla, Invalida

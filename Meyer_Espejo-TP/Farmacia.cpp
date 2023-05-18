@@ -1,7 +1,7 @@
 #include "Farmacia.h"
 #include "eFarmacia.h"
 
-Farmacia::Farmacia(float precio, unsigned int stock, unsigned int codigo, enum eFarmacia artFarm, bool receta) :Articulos(precio, stock,codigo) {
+Farmacia::Farmacia(float precio, unsigned int stock, unsigned int codigo, eNecesidad tipoarticulo,enum eFarmacia artFarm, bool receta) :Articulos(precio, stock,codigo,tipoarticulo) {
 	
 	this->ArtFarm = artFarm;
 	this->ConReceta = receta;

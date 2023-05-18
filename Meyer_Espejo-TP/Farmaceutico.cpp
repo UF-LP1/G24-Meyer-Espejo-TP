@@ -41,9 +41,11 @@ bool Farmaceutico::VentaMedicamentos(Cliente &miCliente,Farmacia miFarmacia) {
 
 	}
 	else //no es con receta (venta libre) 
-		Farmacia AgregarProducto1 (miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
+	{
+		Farmacia AgregarProducto1(miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
 		miCarrito.set_UnArticulo(AgregarProducto1);
 		miCliente.set_Carrito(miCarrito);
+	}
 }
 
 Cliente Farmaceutico:: revisionMed(Cliente miCliente)

@@ -1,14 +1,17 @@
 #include "Receta.h"
 #include "eOS.h"
 
-Receta::Receta(string Medicamento, string Medico, const unsigned int NroMatricula, string NroAfiliado, enum eOS ObraSocial,bool vencida):NroMatricula(NroMatricula){
+Receta::Receta(string Medicamento, string Medico, unsigned int NroMatricula, string NroAfiliado, enum eOS ObraSocial,bool vencida){
     this->Medicamento = Medicamento;
     this->Medico = Medico;
     this->NroAfiliado = NroAfiliado;
     this->ObraSocial = ObraSocial;
     this->Vencida = vencida;
-   
+    this->NroMatricula = NroMatricula;
 }
+
+Receta::Receta(){}
+
 
 Receta::~Receta() {}
 

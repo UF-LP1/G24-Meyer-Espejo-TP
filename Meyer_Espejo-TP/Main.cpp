@@ -9,18 +9,18 @@
 
 int main() {
 
-    //vector <Articulos> CarritoMartu;
+    vector <Articulos> CarritoPrueba;
 
-    //Articulos Prod1(1, 54.3, 12);
-    //Articulos Prod2(2, 43.0, 9);
-    //Articulos Prod3(3, 109.7, 3);
+    Articulos Prod1(1, 54.3, 12);
+    Articulos Prod2(2, 43.0, 9);
+    Articulos Prod3(3, 109.7, 3);
 
-    //CarritoMartu.push_back(Prod1);
-    //CarritoMartu.push_back(Prod2);
-    //CarritoMartu.push_back(Prod3);
+    CarritoPrueba.push_back(Prod1);
+    CarritoPrueba.push_back(Prod2);
+    CarritoPrueba.push_back(Prod3);
 
-    ////instancio un carrito, para probar metodos
-    //CarritoCompras CarritoMartu(207, 1, CarritoMartu, 0.5);
+    //instancio un carrito, para probar metodos
+    CarritoCompras Carrito(207, 1, CarritoPrueba);
 
 
     //receta
@@ -51,7 +51,8 @@ int main() {
     bool FacturaFisica = true;
     eNecesidad miNecesidad = Perfumeria;
     
-    Cliente ClienteMartu(Nombre, Apellido, DNI, CodigoSeguridad, NroTicket, miMetodoPago, Mail, SaldoEf, SaldoMP, SaldoTarj, CUIT, FacturaFisica, miNecesidad, RecetaMartu);
+    
+    Cliente ClienteMartu(Nombre,Apellido,DNI,CodigoSeguridad,NroTicket,miMetodoPago,Mail,SaldoEf,SaldoMP,SaldoTarj,CUIT,FacturaFisica,miNecesidad);
 
         
     //Cajero

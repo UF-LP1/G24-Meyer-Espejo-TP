@@ -77,6 +77,7 @@ Factura Cajero::EntregarFactura(float precio, Cliente& miCliente, Local& miLocal
 	Factura FacturaActualizada(precio, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito().get_lista());
 	miCliente.set_Factura(FacturaActualizada);
 	miLocal.AgregarFactura(FacturaActualizada);
+	return FacturaActualizada;
 }
 
 

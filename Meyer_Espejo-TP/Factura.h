@@ -14,5 +14,6 @@ private:
 public:
 	Factura(float monto, string nombre, string apellido, bool formato, vector<Articulos> artcomprados);
 	~Factura();
+	Factura();
 
 };

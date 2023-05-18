@@ -7,7 +7,7 @@
 
 class Farmacia : public Articulos {
 public:
-    Farmacia(float precio, unsigned int stock, unsigned int codigo, enum eFarmacia artFarm, bool receta);
+    Farmacia(float precio, unsigned int stock, unsigned int codigo, eNecesidad tipoarticulo, enum eFarmacia artFarm, bool receta);
     ~Farmacia();
    eFarmacia get_ArtFarm();
    bool get_ObligReceta();

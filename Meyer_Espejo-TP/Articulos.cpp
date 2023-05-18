@@ -5,11 +5,11 @@
 
 
 
-Articulos::Articulos (float precio, unsigned int stock,unsigned int Codigo) {
+Articulos::Articulos (float precio, unsigned int stock,unsigned int Codigo, eNecesidad tipoarticulo) {
 	this->Precio =precio;
 	this->Stock =stock;
 	this->Codigo = Codigo;
-
+	this->TipoArticulo = tipoarticulo;
 }
 
 Articulos::~Articulos() {
@@ -29,6 +29,9 @@ unsigned int Articulos::get_Codigo() {
 	return this-> Codigo; 
 }
 
+eNecesidad Articulos:: get_TipoArticulo() {
+	return this->TipoArticulo;
+}
 
 //setters
 

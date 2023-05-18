@@ -13,6 +13,7 @@ public:
 
 
     Ticket(bool aprobada, string DNI, enum eMetodoPago MetodoPago, string CUIT);
+    Ticket();
     Ticket(bool aprobada, float preciofinal, string DNI, enum eMetodoPago MetodoPago, string CUIT);
     ~Ticket();
     void set_PrecioFinal(float aux);

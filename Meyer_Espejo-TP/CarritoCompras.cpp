@@ -5,15 +5,17 @@
 
 
 
-CarritoCompras::CarritoCompras(float montototal, unsigned int Nro, vector<Articulos>listaarticulos,float descuento) {
+CarritoCompras::CarritoCompras(float montototal, unsigned int Nro, vector<Articulos>listaarticulos) {
     for (int i = 0; i < listaarticulos.size(); i++)
     {
         this->ListaArticulos.push_back(listaarticulos[i]);
     }
     this->Nro = Nro;
     this->MontoTotal = montototal;
-    this->Descuento = descuento;
+   
 }
+
+CarritoCompras::CarritoCompras(){}
 
 CarritoCompras::~CarritoCompras() {
     

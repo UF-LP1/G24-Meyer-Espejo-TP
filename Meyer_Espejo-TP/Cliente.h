@@ -11,10 +11,10 @@
 
 class Cliente {
 public:
-    
-    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad, Receta _miReceta);
-    //void SacarTicket(AsistAutomatico miAsistAutomatico);
-    void Actualizar_Nro(unsigned int NroTurno, AsistAutomatico MiAsistAutomatico);
+    ~Cliente();
+    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad);
+    Cliente(CarritoCompras carrito,string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad);
+    void Actualizar_Nro(AsistAutomatico MiAsistAutomatico);
     string get_Mail();
     void set_CodigoSeguridad(unsigned int codigoSeguridad);
     unsigned int get_CodigoSeguridad();
@@ -28,13 +28,13 @@ public:
    string get_CUIT();
    void set_Ticket(Ticket auxi);
    void set_Factura (Factura aux);
-   eNecesidad get_miNecesidad();
+   enum eNecesidad get_miNecesidad();
    bool get_formato();
    string get_Nombre();
    string get_Apellido();
    void set_Carrito(CarritoCompras auxi);
    CarritoCompras get_Carrito();
-   vector<Articulos>get_ProductosQuiero();
+   vector<string>get_ProductosQuiero();
 
 private:
     string Nombre;
@@ -54,7 +54,7 @@ private:
     Factura miFactura;
     eNecesidad miNecesidad;
     CarritoCompras miCarrito;
-    vector<Articulos>ProductosQuiero;
+    vector<string>ProductosQuiero;
 };
 
 #endif //_CLIENTE_H

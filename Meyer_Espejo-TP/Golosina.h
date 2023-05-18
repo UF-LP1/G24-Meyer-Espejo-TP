@@ -5,7 +5,7 @@
 
 class Golosina:public Articulos {
 public:
-	Golosina(float precio, unsigned int stock, unsigned int codigo, enum golosina artGolo);
+	Golosina(float precio, unsigned int stock, unsigned int codigo, eNecesidad tipoarticulo,enum golosina artGolo);
 	~Golosina();
 	/*enum getArtgolo(enum golosina Artgolo);
 	enum setArtgolo(enum golosina Artgolo);*/

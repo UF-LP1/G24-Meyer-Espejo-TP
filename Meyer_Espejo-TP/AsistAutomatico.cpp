@@ -4,18 +4,18 @@
 
 
 
-AsistAutomatico::AsistAutomatico(string NroTurno,enum eNecesidad Necesidad) {
+AsistAutomatico::AsistAutomatico(unsigned int NroTurno,enum eNecesidad Necesidad) {
     this->NroTurno=NroTurno;
     this->Necesidad = Necesidad;
 }
 
 AsistAutomatico::~AsistAutomatico() {}
 
-string AsistAutomatico::get_NroTurno() {
+unsigned int AsistAutomatico::get_NroTurno() {
    return this->NroTurno;
 }
 
-string AsistAutomatico::ImprimirTicket(enum eNecesidad necesidad) {
+string AsistAutomatico::ImprimirTicket() {
     if (Necesidad == 0)
         return "FarmaciaObraSocial";
     if (Necesidad == 1)
@@ -29,8 +29,6 @@ string AsistAutomatico::ImprimirTicket(enum eNecesidad necesidad) {
 
 }
 
-void AsistAutomatico::set_Necesidad(enum eNecesidad necesidad) {
-    this->Necesidad = necesidad;
-}
+
 
 
