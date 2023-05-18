@@ -31,3 +31,7 @@ float Ticket::get_PrecioFinal(){
 bool Ticket::get_Aprobada() {
     return this-> Aprobada;
 }
+
+string Ticket:: get_DNI() {
+    return this->DNI;
+}
