@@ -35,6 +35,7 @@ public:
    void set_Carrito(CarritoCompras auxi);
    CarritoCompras get_Carrito();
    vector<string>get_ProductosQuiero();
+   Ticket get_Ticket();
 
 private:
     string Nombre;

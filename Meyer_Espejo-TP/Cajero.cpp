@@ -37,38 +37,43 @@ bool Cajero:: SaldoSuficiente(Cliente miCliente, float precio)
 			return false;
 	}
 }
-
-Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente,Local miLocal)
+Factura Cajero:: Cobrar(Cliente miCliente,Local miLocal)
 {
 	float A_pagar;
 	float PrecioEfectivo;
 	
-	A_pagar = miTicket.get_PrecioFinal();
+	A_pagar = miCliente.get_Ticket().get_PrecioFinal();
+		
 	eMetodoPago PagarCon = miCliente.get_miMetodoPago();
 
 	//verificar con el metodo SaldoSuficiente que pueda pagar
-	if (SaldoSuficiente(miCliente, miTicket.get_PrecioFinal()) == true)
+	if (SaldoSuficiente(miCliente, A_pagar) == true)
 	{
 		if (PagarCon == 0) //seria Efectivo
 		{
 			//aplicamos en caja el 10% de descuento por pagar en efectivo
 			PrecioEfectivo = A_pagar * 0.1;
-			Ticket ticketcompraEf (true, PrecioEfectivo, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+			Factura FacturacompraEf(PrecioEfectivo, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito().get_lista());
+				//Ticket ticketcompraEf (true, PrecioEfectivo, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
 			EntregarFactura(PrecioEfectivo, miCliente,miLocal);
-			return ticketcompraEf;
+				//return ticketcompraEf;
+			return FacturacompraEf;
 		}
 		else //pagar con tarjeta o MP (no tiene descuento)
 		{
-			Ticket ticketcompra(true,miTicket.get_PrecioFinal(), miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
-			EntregarFactura(miTicket.get_PrecioFinal(), miCliente,miLocal);
-			return ticketcompra;
+				//Ticket ticketcompra(true,A_pagar, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+			Factura Facturacompra(A_pagar, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito().get_lista());
+			EntregarFactura(A_pagar, miCliente,miLocal);
+				//return ticketcompra;
+			return Facturacompra;
 		}
 	}
 	else //no se pudo finalizar la compra
 	{
-		Ticket NoValido(false,miTicket.get_PrecioFinal(), miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
-		//no devuelvo factura porque no se puedo finalizar la compra
-		return NoValido;
+		throw new exception("No se pudo finalizar compra");
+		//Ticket NoValido(false,A_pagar, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+			//no devuelvo factura porque no se puedo finalizar la compra
+		//return NoValido;
 	}
 }
 

@@ -14,3 +14,15 @@ Factura::~Factura() {
 
 }
 
+vector<Articulos> Factura:: get_ArtComprados()
+{
+	return this->ArticulosComprados;
+}
+float Factura::get_MontoFinal()
+{
+	return this->MontoFinal;
+}
+string Factura::get_NombreCliente()
+{
+	return this->NombreCliente;
+}

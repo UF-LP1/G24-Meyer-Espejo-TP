@@ -10,26 +10,22 @@ EmpleadoOrtopedia::EmpleadoOrtopedia(string nombre, string apellido, float sueld
 EmpleadoOrtopedia::~EmpleadoOrtopedia(){}
 
 
-//void EmpleadoOrtopedia::AsesorarArtOrtop(Articulos miArticulos) {
+
+
+
+//void EmpleadoOrtopedia:: revisionort(Cliente MiCliente) {
+//    vector<Articulos>aux;
+//    aux = MiCliente.get_ProductosQuiero();
+//    for (int i = 0; i < aux.size(); i++)
+//    {
+//        if (aux[i].get_Stock()>1) {
+//            //aca agregar al carrito
+//        }
+//
+//    }
+//
+//
 //
 //}
-//
-//void EmpleadoOrtopedia::Empacar(Articulos miArticulos) {
-
-//}
-void EmpleadoOrtopedia:: revisionort(Cliente MiCliente) {
-    vector<Articulos>aux;
-    aux = MiCliente.get_ProductosQuiero();
-    for (int i = 0; i < aux.size(); i++)
-    {
-        if (aux[i].get_Stock()>1) {
-            //aca agregar al carrito
-        }
-
-    }
-
-
-
-}
 
 

@@ -12,7 +12,7 @@ public:
 
     EmpleadoPerfumeria(string nombre, string apellido, float sueldo);
     ~EmpleadoPerfumeria();
-    bool revisionperf(Cliente MiCliente);
+    //bool revisionperf(Cliente MiCliente);
     
 
 };

@@ -11,9 +11,9 @@ int main() {
 
     vector <Articulos> CarritoPrueba;
 
-    Articulos Prod1(1, 54.3, 12);
-    Articulos Prod2(2, 43.0, 9);
-    Articulos Prod3(3, 109.7, 3);
+    Articulos Prod1(1, 54.3, 12,Perfumes);
+    Articulos Prod2(2, 43.0, 9,ArtOrtopedia);
+    Articulos Prod3(3, 109.7, 3,Medicamentos);
 
     CarritoPrueba.push_back(Prod1);
     CarritoPrueba.push_back(Prod2);
@@ -49,11 +49,12 @@ int main() {
     double SaldoTarj=900.4;
     const string CUIT="1234";
     bool FacturaFisica = true;
-    eNecesidad miNecesidad = Perfumeria;
+    eNecesidad miNecesidad = Perfumes;
     
     
     Cliente ClienteMartu(Nombre,Apellido,DNI,CodigoSeguridad,NroTicket,miMetodoPago,Mail,SaldoEf,SaldoMP,SaldoTarj,CUIT,FacturaFisica,miNecesidad);
-
+    
+    ClienteMartu.set_Carrito(Carrito);
         
     //Cajero
     string NombreC="Mateo";
@@ -84,13 +85,35 @@ int main() {
     cout << "Precio Final:" << prueba.get_PrecioFinal();
     cout << "\n Dni:" << prueba.get_DNI() << endl;
 
+   
 
+    //PRUEBO LOS METODOS MAS IMPORTANTES
 
-        //ticket
+    //metodo cobrar (Cajero)
 
-          //Ticket ticketMartu = CajeroMateo.Cobrar(ClienteMartu); 
+    Factura facturaprueba = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
 
-        //bloque try catch
+        //voy a intentar hacer bloque try catch
+    try {
+        Factura FacturaA = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
+        Factura FacturaB = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
+    }
+    catch (exception* e)
+    {
+        cout << "EXCEPTION" << e->what() << endl;
+    }
+
+    //imprimo Factura para verificar
+    cout << "Precio final:" << facturaprueba.get_MontoFinal();
+    
+    vector<Articulos>ListaArticulos;
+    ListaArticulos = facturaprueba.get_ArtComprados();
+    cout << "\n ListaArticulos es:" << endl;
+    for (int i = 0; i < ListaArticulos.size(); i++)
+    {
+        cout << i+1<<" -" << ListaArticulos[i].get_Precio() << endl;
+    }
+    cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
 
         return 0;
 }

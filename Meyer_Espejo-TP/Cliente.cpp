@@ -126,6 +126,10 @@ vector<string> Cliente::get_ProductosQuiero() {
 
 }
 
+Ticket Cliente::get_Ticket()
+{
+	return this->miTicket;
+}
 
 void Cliente:: Actualizar_Nro(AsistAutomatico MiAsistAutomatico) {//funcion entre cliente y asist automatico
 	int Nuevo_Numero = 0;//creo una variable para que no haya poroblemas

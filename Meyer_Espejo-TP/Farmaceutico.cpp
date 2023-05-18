@@ -34,7 +34,7 @@ bool Farmaceutico::VentaMedicamentos(Cliente &miCliente,Farmacia miFarmacia) {
 			return false;
 		else //la agrego al carrito
 		{
-		Farmacia AgregarProducto (miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
+		Farmacia AgregarProducto (miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(), miFarmacia.get_TipoArticulo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
 		miCarrito.set_UnArticulo(AgregarProducto);
 		miCliente.set_Carrito(miCarrito);
 		}	
@@ -42,7 +42,7 @@ bool Farmaceutico::VentaMedicamentos(Cliente &miCliente,Farmacia miFarmacia) {
 	}
 	else //no es con receta (venta libre) 
 	{
-		Farmacia AgregarProducto1(miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
+		Farmacia AgregarProducto1(miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(),miFarmacia.get_TipoArticulo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
 		miCarrito.set_UnArticulo(AgregarProducto1);
 		miCliente.set_Carrito(miCarrito);
 	}

@@ -16,4 +16,7 @@ public:
 	~Factura();
 	Factura();
 
+	vector<Articulos> get_ArtComprados();
+	float get_MontoFinal();
+	string get_NombreCliente();
 };
