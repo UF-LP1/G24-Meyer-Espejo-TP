@@ -4,7 +4,7 @@
 #include "EmpleadoOrtopedia.h"
 
 
-EmpleadoOrtopedia::EmpleadoOrtopedia(string nombre, string apellido, float sueldo) :Empleado(nombre,apellido,sueldo) {
+EmpleadoOrtopedia::EmpleadoOrtopedia(string nombre, string apellido, float sueldo) :Vendedor(nombre,apellido,sueldo) {
 
 }
 EmpleadoOrtopedia::~EmpleadoOrtopedia(){}
@@ -17,7 +17,7 @@ EmpleadoOrtopedia::~EmpleadoOrtopedia(){}
 //void EmpleadoOrtopedia::Empacar(Articulos miArticulos) {
 
 //}
-void  revisionort(Cliente MiCliente) {
+void EmpleadoOrtopedia:: revisionort(Cliente MiCliente) {
     vector<Articulos>aux;
     aux = MiCliente.get_ProductosQuiero();
     for (int i = 0; i < aux.size(); i++)

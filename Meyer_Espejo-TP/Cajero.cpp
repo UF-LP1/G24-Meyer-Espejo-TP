@@ -38,7 +38,7 @@ bool Cajero:: SaldoSuficiente(Cliente miCliente, float precio)
 	}
 }
 
-Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente)
+Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente,Local miLocal)
 {
 	float A_pagar;
 	float PrecioEfectivo;
@@ -54,13 +54,13 @@ Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente)
 			//aplicamos en caja el 10% de descuento por pagar en efectivo
 			PrecioEfectivo = A_pagar * 0.1;
 			Ticket ticketcompraEf (true, PrecioEfectivo, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
-			EntregarFactura(PrecioEfectivo, miCliente);
+			EntregarFactura(PrecioEfectivo, miCliente,miLocal);
 			return ticketcompraEf;
 		}
 		else //pagar con tarjeta o MP (no tiene descuento)
 		{
 			Ticket ticketcompra(true,miTicket.get_PrecioFinal(), miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
-			EntregarFactura(miTicket.get_PrecioFinal(), miCliente);
+			EntregarFactura(miTicket.get_PrecioFinal(), miCliente,miLocal);
 			return ticketcompra;
 		}
 	}
@@ -72,10 +72,11 @@ Ticket Cajero:: Cobrar(Ticket miTicket,Cliente miCliente)
 	}
 }
 
-Factura Cajero::EntregarFactura(float precio, Cliente& miCliente) {
+Factura Cajero::EntregarFactura(float precio, Cliente& miCliente, Local& miLocal) {
 
 	Factura FacturaActualizada(precio, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito().get_lista());
 	miCliente.set_Factura(FacturaActualizada);
+	miLocal.AgregarFactura(FacturaActualizada);
 }
 
 

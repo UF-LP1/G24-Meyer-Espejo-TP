@@ -12,5 +12,10 @@ Cleaner::~Cleaner() {
 
 }
 
-
+bool Cleaner::LimpiaryOrdenar(Local miLocal) {
+	if (miLocal.get_Limpio() == false)
+		return false;
+	else
+		return true;
+}
 

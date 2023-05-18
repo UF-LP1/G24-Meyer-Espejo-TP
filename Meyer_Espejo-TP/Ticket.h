@@ -18,6 +18,7 @@ public:
     void set_PrecioFinal(float aux);
     float get_PrecioFinal();
     bool get_Aprobada();
+    string get_DNI(); //la uso para probar el metodo (main)
 
 private:
     bool Aprobada; //true si fue existosa

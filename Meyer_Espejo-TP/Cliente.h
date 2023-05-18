@@ -12,8 +12,7 @@
 class Cliente {
 public:
     
-    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis,eNecesidad necesidad,Receta _miReceta, Ticket _miTicket, vector<Articulos>ProductosQuiero);
-    ~Cliente();
+    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad, Receta _miReceta);
     //void SacarTicket(AsistAutomatico miAsistAutomatico);
     void Actualizar_Nro(unsigned int NroTurno, AsistAutomatico MiAsistAutomatico);
     string get_Mail();

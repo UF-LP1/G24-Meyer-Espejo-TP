@@ -3,19 +3,16 @@
 
 #include "Empleado.h"
 #include "Header.h"
+#include "Vendedor.h"
 
 
-class EmpleadoOrtopedia : public Empleado {
+class EmpleadoOrtopedia : public Vendedor {
 public:
 
     EmpleadoOrtopedia(string nombre, string apellido, float sueldo);
     ~EmpleadoOrtopedia();
     void  revisionort(Cliente MiCliente);
-   /* void AsesorarArtOrtop(Articulos miArticulos);
-
-    void Empacar(Articulos miArticulos);*/
-
-
+   
 };
 
 #endif //_EMPLEADOORTOPEDIA_H

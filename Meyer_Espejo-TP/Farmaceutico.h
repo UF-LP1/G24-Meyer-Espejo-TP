@@ -7,18 +7,18 @@
 #include "Cliente.h"
 #include "Header.h"
 #include "Receta.h"
+#include "Vendedor.h"
 
-class Farmaceutico : public Empleado {
+class Farmaceutico : public Vendedor {
 public:
 
 
     Farmaceutico(string nombre, string apellido, float sueldo, unsigned int nroMatricula);
     ~Farmaceutico();
-   bool VentaMedicamentos(Cliente &miCliente, Articulos miArticulo);
+   bool VentaMedicamentos(Cliente &miCliente,Farmacia miFarmacia);
    bool VerificarReceta(Receta miReceta);
-
-    /*void RecomendacionVentaLibre(Articulos miArticulos);
-    void AconsejaDosificacion(Articulos miArticulos);*/
+   //bool RevisionMed(Receta miReceta, Farmacia miFarmacia);
+   Cliente revisionMed(Cliente miCliente);
    
     unsigned int get_NroMatricula();
 

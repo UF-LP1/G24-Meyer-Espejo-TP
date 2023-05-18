@@ -7,6 +7,7 @@
 #include "Ticket.h"
 #include "CarritoCompras.h"
 #include "Cliente.h"
+#include "Local.h"
 
 class Cajero : public Empleado {
 public:
@@ -14,8 +15,8 @@ public:
     Cajero(string nombre, string apellido, float sueldo);
     ~Cajero();
     bool SaldoSuficiente(Cliente miCliente,float precio);
-    Ticket Cobrar(Ticket miTicket, Cliente miCliente);
-    Factura EntregarFactura(float precio, Cliente& miCliente);
+    Ticket Cobrar(Ticket miTicket, Cliente miCliente, Local miLocal);
+    Factura EntregarFactura(float precio, Cliente& miCliente,Local& miLocal);
     
 };
 

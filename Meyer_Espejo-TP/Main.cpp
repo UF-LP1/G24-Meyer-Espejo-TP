@@ -5,21 +5,22 @@
 #include "Cliente.h"
 #include "Receta.h"
 #include "Cajero.h"
+#include "Manager.h"
 
 int main() {
 
-    vector <Articulos> CarritoMartu;
+    //vector <Articulos> CarritoMartu;
 
-    Articulos Prod1(1, 54.3, 12);
-    Articulos Prod2(2, 43.0, 9);
-    Articulos Prod3(3, 109.7, 3);
+    //Articulos Prod1(1, 54.3, 12);
+    //Articulos Prod2(2, 43.0, 9);
+    //Articulos Prod3(3, 109.7, 3);
 
-    CarritoMartu.push_back(Prod1);
-    CarritoMartu.push_back(Prod2);
-    CarritoMartu.push_back(Prod3);
+    //CarritoMartu.push_back(Prod1);
+    //CarritoMartu.push_back(Prod2);
+    //CarritoMartu.push_back(Prod3);
 
-    //instancio un carrito, para probar metodos
-    CarritoCompras CarritoMartu(207, 1, CarritoMartu, 0.5);
+    ////instancio un carrito, para probar metodos
+    //CarritoCompras CarritoMartu(207, 1, CarritoMartu, 0.5);
 
 
     //receta
@@ -28,11 +29,12 @@ int main() {
     const unsigned int NroMatricula= 31;
     string NroAfiliado="12345";
     eOS ObraSocial= OSDE;
+    bool vencida = false;
     
-    Receta RecetaMartu(Medicamento, Medico, NroMatricula, NroAfiliado, ObraSocial);
-     
+    //instancio un receta, para probar metodos
+    Receta RecetaMartu(Medicamento, Medico, NroMatricula, NroAfiliado, ObraSocial,vencida);
+
    
-      
     //ahora cliente
     
     string Nombre = "Martu";
@@ -47,22 +49,47 @@ int main() {
     double SaldoTarj=900.4;
     const string CUIT="1234";
     bool FacturaFisica = true;
-    eNecesidad miNecesidad = PAMI;
+    eNecesidad miNecesidad = Perfumeria;
     
-    //Cliente ClienteMartu(
-     
+    Cliente ClienteMartu(Nombre, Apellido, DNI, CodigoSeguridad, NroTicket, miMetodoPago, Mail, SaldoEf, SaldoMP, SaldoTarj, CUIT, FacturaFisica, miNecesidad, RecetaMartu);
+
+        
     //Cajero
-    string Nombre="Mateo";
-    string Apellido="Espejo";
-    float Sueldo=10000.0;
+    string NombreC="Mateo";
+    string ApellidoC="Espejo";
+    float SueldoC=10000.0;
 
-    Cajero CajeroMateo(Nombre, Apellido, Sueldo);
+    Cajero CajeroMateo(NombreC, ApellidoC, SueldoC);
     
-    //ticket
+    //Local
+    string NombreL = "Azul";
+    string Direccion="Sarmiento18";
+    string Contacto="1154678940";
+    bool limpio=true;
 
-        //Ticket ticketMartu = CajeroMateo.Cobrar(ClienteMartu); //NO LO PUEDO HACER HASTA QUE PUEDA INSTANCIAR CLIENTE MARTU
-    
-    //bloque try catch
+    Local LocalAzul(NombreL, Direccion, Contacto, limpio);
+
+    //Manager
+    string nombreM = "Luis";
+    string apellidoM = "Perez";
+    float sueldoM = 1000.0;
+
+    Manager ManagerLuis(nombreM, apellidoM, sueldoM);
+
+    Ticket prueba= ManagerLuis.FacturaryGeneraTicket(ClienteMartu, LocalAzul);
+
+    //para chequear imprimo ese ticket
+
+    cout << "Precio Final:" << prueba.get_PrecioFinal();
+    cout << "\n Dni:" << prueba.get_DNI() << endl;
 
 
+
+        //ticket
+
+          //Ticket ticketMartu = CajeroMateo.Cobrar(ClienteMartu); 
+
+        //bloque try catch
+
+        return 0;
 }

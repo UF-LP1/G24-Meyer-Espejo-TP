@@ -10,7 +10,7 @@
 
 
 //constructor
-Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad,Receta _miReceta,Ticket _miTicket, vector<Articulos>ProductosQuiero):CUIT(CUIL) {
+Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad,Receta _miReceta):CUIT(CUIL) {
 	this->Nombre = Nombre;
 	this->Apellido = Apellido;
 	this->DNI = DNI;
@@ -24,11 +24,7 @@ Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int Codigo
 	this->FacturaFisica = facturafis;
 	this->miNecesidad = necesidad;
 	this->miReceta = _miReceta;
-	this->miTicket = _miTicket;	
-	for (int i = 0; i < ProductosQuiero.size(); i++)
-	{
-		this->ProductosQuiero.push_back(ProductosQuiero[i]);
-	}
+	
 }
 
 
@@ -120,13 +116,6 @@ vector<Articulos> Cliente::get_ProductosQuiero() {
 	return this->ProductosQuiero;
 
 }
-
-
-
-
-
-
-
 
 
 void Cliente:: Actualizar_Nro(unsigned int NroTurno, AsistAutomatico MiAsistAutomatico) {//funcion entre cliente y asist automatico

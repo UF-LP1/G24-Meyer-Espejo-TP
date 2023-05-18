@@ -14,9 +14,11 @@ public:
    float get_Precio();
    unsigned int get_Codigo();
    unsigned int get_Stock();
+   vector<Farmacia> get_ArticulosFarm();
 
 private:
-    enum eFarmacia ArtFarm;
+    eFarmacia ArtFarm;
+    vector<Farmacia>ArticulosFarm; //cuidado no esta incluido en el constructor
     bool ConReceta; 
 };
 

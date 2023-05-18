@@ -5,6 +5,7 @@ Farmacia::Farmacia(float precio, unsigned int stock, unsigned int codigo, enum e
 	
 	this->ArtFarm = artFarm;
 	this->ConReceta = receta;
+	
 }
 Farmacia::~Farmacia() {}
 
@@ -28,4 +29,9 @@ unsigned int Farmacia::get_Codigo()
 unsigned int Farmacia:: get_Stock()
 {
 	return this->Stock;
+}
+
+vector<Farmacia> Farmacia::get_ArticulosFarm()
+{
+	return this->ArticulosFarm;
 }
