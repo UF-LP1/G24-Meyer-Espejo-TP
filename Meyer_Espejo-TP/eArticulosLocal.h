@@ -3,7 +3,10 @@
 #ifndef _EARTICULOSLOCAL_H
 #define _EARTICULOSLOCAL_H
 
-enum eArticulosLocal { Medicamento, Vitamina, Pastilla, Shampoo, Desodorante, Jabon, Cosmetica, Crema, Perfume, Maquillaje, EsmalteUnia, VendaElastica, Cabestrillo, Munequera, MediaComprension,Tintura,MaquinaAfeitar,Esponja,ProtectorSolar,Repelente,Gel,Suplementos};
+//enum eArticulosLocal { Medicamentos=0, Vitaminas, Pastillas, Shampo, Desodorantes, Jabones, Cosmeticos, Cremas, Perfumes, Maquillajes, EsmalteUnias, VendaElasticas, Cabestrillos, Munequeras, MediasComprension,Tintura,MaquinaAfeitar,Esponja,ProtectorSolar,Repelente,Gel,Suplementos};
+enum class eArticulosLocal { Medicamentos = 0, Vitaminas, Pastillas, Shampo, Desodorantes, Jabones, Cosmeticos, Cremas, Perfumes, Maquillajes, EsmalteUnias, VendaElasticas, Cabestrillos, Munequeras, MediasComprension, Tintura, MaquinaAfeitar, Esponja, ProtectorSolar, Repelente, Gel, Suplementos };
 //Importante del 0-14 del enum son Articulos que trabaja el local de ahi para adelante no tiene esos articulos (no entran, no es que no hay stock)
-
-#endif //_EFARMACIA_H
+//PERFUMERIA va de 3-10 
+//ORTOPEDIA va de 11-14
+//FARMACIA 0-2
+#endif //_EARTICULOSLOCAL_H

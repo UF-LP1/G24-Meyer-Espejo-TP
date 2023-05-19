@@ -121,7 +121,7 @@ void Cliente:: set_Carrito(CarritoCompras auxi)
 {
 	this->miCarrito = auxi;
 }
-vector<string> Cliente::get_ProductosQuiero() {
+vector<eArticulosLocal> Cliente::get_ProductosQuiero() {
 	return this->ProductosQuiero;
 
 }

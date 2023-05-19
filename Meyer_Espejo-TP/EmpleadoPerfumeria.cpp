@@ -13,8 +13,9 @@ bool EmpleadoPerfumeria:: revisionperf(Cliente MiCliente) {
     aux = MiCliente.get_ProductosQuiero();
     for (int i = 0; i < aux.size(); i++)
     {
-        if (aux[i] > 2 && aux[i]<11) {
+        if (int(aux[i]) > 2 && int(aux[i])<11) {
             //aca agregar al carrito
+            Perfumeria AgregarProductoPerf()
         }
 
     }

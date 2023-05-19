@@ -35,7 +35,7 @@ public:
    string get_Apellido();
    void set_Carrito(CarritoCompras auxi);
    CarritoCompras get_Carrito();
-   vector<eArticulosLocal>get_ProductosQuiero();
+   vector<eArticulosLocal> get_ProductosQuiero();
    Ticket get_Ticket();
 
 private:
@@ -56,7 +56,7 @@ private:
     Factura miFactura;
     eNecesidad miNecesidad;
     CarritoCompras miCarrito;
-    vector<string>ProductosQuiero;
+    vector<eArticulosLocal>ProductosQuiero;
 };
 
 #endif //_CLIENTE_H
