@@ -91,6 +91,8 @@ int main() {
 
     Local LocalAzul(NombreL, Direccion, Contacto, limpio);
 
+   
+
     //Manager
     string nombreM = "Luis";
     string apellidoM = "Perez";
@@ -144,5 +146,12 @@ int main() {
 
     LocalAzul.set_colaClientes(ColaLocal);
     
+
+    ManagerLuis.ReubicarCliente(LocalAzul.get_listaarticulos(), LocalAzul.PrimeroEnCola(), EmpOrtopJuan, EmpPerfPepe, FarmaJose);
+
+
+
+
+
         return 0;
 }

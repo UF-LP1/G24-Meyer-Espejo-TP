@@ -1,8 +1,8 @@
 #include "Receta.h"
 #include "eOS.h"
 
-Receta::Receta(string Medicamento, string Medico, unsigned int NroMatricula, string NroAfiliado, enum eOS ObraSocial,bool vencida){
-    this->Medicamento = Medicamento;
+Receta::Receta( enum eFarmacia ArtFarnacia, string Medico, unsigned int NroMatricula, string NroAfiliado, enum eOS ObraSocial,bool vencida){
+    this->ArtFarmacia=ArtFarnacia;
     this->Medico = Medico;
     this->NroAfiliado = NroAfiliado;
     this->ObraSocial = ObraSocial;
@@ -15,9 +15,7 @@ Receta::Receta(){}
 
 Receta::~Receta() {}
 
-string Receta::get_medicamento() {
-    return this->Medicamento;
-}
+
 
 
 
@@ -30,10 +28,11 @@ eOS Receta::get_obrasocial() {
 }
 
 
-void Receta::set_Medicamento(string medicamento) {
-    this->Medicamento = medicamento;
-}
 
 bool Receta:: get_Vencimiento() {
     return this->Vencida;
+}
+eFarmacia Receta:: getArtFarm() {
+    return this->ArtFarmacia;
+
 }

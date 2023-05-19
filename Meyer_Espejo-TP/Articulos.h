@@ -9,7 +9,7 @@
 class Articulos {
 
 public:
-    Articulos(float precio, unsigned int stock,unsigned int Codigo,eNecesidad tipoarticulo);
+    Articulos(float precio, unsigned int stock,unsigned int Codigo,eNecesidad tipoarticulo,enum eArticulosLocal _articuloslocal);
     ~Articulos();
     
         
@@ -25,6 +25,7 @@ protected:
     float Precio;
     unsigned int Stock;
     eNecesidad TipoArticulo;
+    eArticulosLocal articuloslocal;
 };
 
 #endif //_ARTICULO

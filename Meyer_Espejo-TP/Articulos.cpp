@@ -5,11 +5,12 @@
 
 
 
-Articulos::Articulos (float precio, unsigned int stock,unsigned int Codigo, eNecesidad tipoarticulo) {
+Articulos::Articulos (float precio, unsigned int stock,unsigned int Codigo, eNecesidad tipoarticulo,enum eArticulosLocal _articuloslocal) {
 	this->Precio =precio;
 	this->Stock =stock;
 	this->Codigo = Codigo;
 	this->TipoArticulo = tipoarticulo;
+	this->articuloslocal = _articuloslocal;
 }
 
 Articulos::~Articulos() {

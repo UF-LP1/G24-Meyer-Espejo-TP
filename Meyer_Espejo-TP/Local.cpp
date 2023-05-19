@@ -40,4 +40,13 @@ void Local:: AgregarFactura(Factura NuevaFactura)
 
 void Local::set_colaClientes(queue<Cliente> nuevaCola) {
 	this->cola_Clientes = nuevaCola;
+}   
+
+
+vector<Articulos>Local::get_listaarticulos() {
+	return this->ListaArticulosLocal;
+
+
+
+
 }

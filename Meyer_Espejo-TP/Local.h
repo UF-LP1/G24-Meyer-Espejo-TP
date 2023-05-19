@@ -17,7 +17,7 @@ public:
     Cliente PrimeroEnCola();
     void AgregarFactura(Factura NuevaFactura);
     void set_colaClientes(queue<Cliente> nuevaCola);
-
+    vector<Articulos>get_listaarticulos();
 private:
     string Nombre;
     string Direccion;
@@ -26,7 +26,7 @@ private:
     vector<Ticket>RegistroTickets; //se nos ocurrio que el local podria almacenar todos los ticket en una lista
     vector<Factura>RegistroFactura;
     queue<Cliente> cola_Clientes;
-    
+    vector<Articulos>ListaArticulosLocal;
 };
 
 #endif //_LOCAL_H

@@ -11,9 +11,8 @@ public:
     Ortopedia(float precio, unsigned int stock, unsigned int codigo, eNecesidad tipoarticulo,enum eArticuloOrt artOrtop);
     ~Ortopedia();
 
-   /* enum get_ArticuloOrt();
-    enum setArtOrt(enum eArticuloOrt artOrtop);*/
-
+   eArticuloOrt get_ArticuloOrt();
+  
 private:
    enum eArticuloOrt ArtOrtop;
 };

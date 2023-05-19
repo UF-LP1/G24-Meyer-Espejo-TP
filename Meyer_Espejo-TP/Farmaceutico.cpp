@@ -23,10 +23,10 @@ bool Farmaceutico::VerificarReceta(Receta miReceta) {
 //}
 
 
-bool Farmaceutico::VentaMedicamentos(Cliente &miCliente,Farmacia miFarmacia) {
+bool Farmaceutico::VentaMedicamentos(Cliente &miCliente) {
 	
 	CarritoCompras miCarrito = miCliente.get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
-		
+	
 	if (miFarmacia.get_ObligReceta() == true) //es con receta
 	{
 		bool Verificacion = VerificarReceta(miCliente.get_Receta());
@@ -48,10 +48,23 @@ bool Farmaceutico::VentaMedicamentos(Cliente &miCliente,Farmacia miFarmacia) {
 	}
 }
 
-Cliente Farmaceutico:: revisionMed(Cliente miCliente)
+bool Farmaceutico:: revisionMed(Cliente MiCliente)
 {
-	return miCliente;
+
+	//vector<eArticulosLocal>aux;
+	//aux = MiCliente.get_ProductosQuiero();
+	//for (int i = 0; i < aux.size(); i++)
+	//{
+	//	if (aux[i] >= 0 && aux[i] < 3) {
+	//		//aca agregar al carrito
+	//	}
+
+	//}
+
+
+
 }
+
 
 unsigned int Farmaceutico::get_NroMatricula() {
     return this->NroMatricula;

@@ -9,11 +9,9 @@ Perfumeria::Perfumeria(float precio, unsigned int stock, unsigned int codigo, eN
 }
 Perfumeria::~Perfumeria() {}
 
-//enum Perfumeria::get_ArticuloPerf( ) {
-//    return this->eArticuloPerf;
-//}
-//
-//
-//void Perfumeria::set_ArticuloPerf(enum eArticuloPerf artPerf) {
-//    this->ArtPerf = artPerf;
-//}
+eArticuloPerf Perfumeria::get_ArticuloPerf( ) {
+	return this->ArtPerf;
+}
+
+
+

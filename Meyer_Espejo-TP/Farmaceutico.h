@@ -15,10 +15,10 @@ public:
 
     Farmaceutico(string nombre, string apellido, float sueldo, unsigned int nroMatricula);
     ~Farmaceutico();
-   bool VentaMedicamentos(Cliente &miCliente,Farmacia miFarmacia);
+   bool VentaMedicamentos(Cliente &miCliente);
    bool VerificarReceta(Receta miReceta);
    //bool RevisionMed(Receta miReceta, Farmacia miFarmacia);
-   Cliente revisionMed(Cliente miCliente);
+   bool revisionMed(Cliente MiCliente);
    
     unsigned int get_NroMatricula();
 

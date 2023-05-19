@@ -31,7 +31,3 @@ unsigned int Farmacia:: get_Stock()
 	return this->Stock;
 }
 
-vector<Farmacia> Farmacia::get_ArticulosFarm()
-{
-	return this->ArticulosFarm;
-}
