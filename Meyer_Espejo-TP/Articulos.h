@@ -19,6 +19,7 @@ public:
    void set_Precio(float precio);
    void set_Stock(unsigned int stock);
    eNecesidad get_TipoArticulo();
+   eArticulosLocal get_articuloslocal();
 
 protected:
     unsigned int Codigo;

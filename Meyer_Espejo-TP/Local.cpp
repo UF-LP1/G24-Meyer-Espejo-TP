@@ -43,10 +43,6 @@ void Local::set_colaClientes(queue<Cliente> nuevaCola) {
 }   
 
 
-vector<Articulos>Local::get_listaarticulos() {
+vector<Articulos*>Local::get_listaarticulos() {
 	return this->ListaArticulosLocal;
-
-
-
-
 }

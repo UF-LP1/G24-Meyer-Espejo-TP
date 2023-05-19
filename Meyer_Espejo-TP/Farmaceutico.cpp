@@ -16,13 +16,6 @@ bool Farmaceutico::VerificarReceta(Receta miReceta) {
 		return true; //es valida
 }
 
-//bool Farmaceutico::RevisionMed(Receta miReceta,Farmacia miFarmacia) {
-//	string medicamento = miReceta.get_medicamento();
-//	
-//	
-//}
-
-
 bool Farmaceutico::VentaMedicamentos(Cliente &miCliente) {
 	
 	CarritoCompras miCarrito = miCliente.get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
@@ -48,21 +41,33 @@ bool Farmaceutico::VentaMedicamentos(Cliente &miCliente) {
 	}
 }
 
-bool Farmaceutico:: revisionMed(Cliente MiCliente)
+bool Farmaceutico:: revisionMed(Cliente MiCliente,vector<Articulos*>ListaArticuloslocal)
 {
+	vector<eArticulosLocal>AuxiliarDeseo;
+	AuxiliarDeseo = MiCliente.get_ProductosQuiero();
 
-	//vector<eArticulosLocal>aux;
-	//aux = MiCliente.get_ProductosQuiero();
-	//for (int i = 0; i < aux.size(); i++)
-	//{
-	//	if (aux[i] >= 0 && aux[i] < 3) {
-	//		//aca agregar al carrito
-	//	}
+	for (int i = 0; i < ListaArticuloslocal.size(); i++)
+	{
+		for (int j = 0; j < AuxiliarDeseo.size(); j++)
+		{
+			Articulos* auxiliar = ListaArticuloslocal[i];
 
-	//}
+			if ((*ListaArticuloslocal[i]).get_articuloslocal()== AuxiliarDeseo[j])
+			{
+				
+				if ((*ListaArticuloslocal[i]).get_Stock() > 1)
+				{
+					if (dynamic_cast<Farmacia*>(*ListaArticuloslocal[i])!=NULL) //ayuda mailen
+					{
 
+					}
+				}
 
+			}
 
+				
+		}
+	}
 }
 
 

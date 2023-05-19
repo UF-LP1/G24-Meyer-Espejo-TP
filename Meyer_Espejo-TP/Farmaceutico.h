@@ -17,9 +17,7 @@ public:
     ~Farmaceutico();
    bool VentaMedicamentos(Cliente &miCliente);
    bool VerificarReceta(Receta miReceta);
-   //bool RevisionMed(Receta miReceta, Farmacia miFarmacia);
-   bool revisionMed(Cliente MiCliente);
-   
+   bool revisionMed(Cliente MiCliente,vector<Articulos*>ListaArticuloslocal);
     unsigned int get_NroMatricula();
 
 
