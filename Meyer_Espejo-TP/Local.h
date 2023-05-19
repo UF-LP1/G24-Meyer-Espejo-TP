@@ -4,7 +4,7 @@
 #include "Header.h"
 #include <queue>
 #include "Cliente.h"
-
+#include <iterator>
 
 
 class Local {
@@ -16,6 +16,7 @@ public:
     void AgregarClienteCola(Cliente nuevoCliente);
     Cliente PrimeroEnCola();
     void AgregarFactura(Factura NuevaFactura);
+    void set_colaClientes(queue<Cliente> nuevaCola);
 
 private:
     string Nombre;

@@ -54,26 +54,26 @@ Factura Cajero:: Cobrar(Cliente miCliente,Local miLocal)
 			//aplicamos en caja el 10% de descuento por pagar en efectivo
 			PrecioEfectivo = A_pagar * 0.1;
 			Factura FacturacompraEf(PrecioEfectivo, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito().get_lista());
-				//Ticket ticketcompraEf (true, PrecioEfectivo, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+				
 			EntregarFactura(PrecioEfectivo, miCliente,miLocal);
-				//return ticketcompraEf;
+				
 			return FacturacompraEf;
 		}
 		else //pagar con tarjeta o MP (no tiene descuento)
 		{
-				//Ticket ticketcompra(true,A_pagar, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+				
 			Factura Facturacompra(A_pagar, miCliente.get_Nombre(), miCliente.get_Apellido(), miCliente.get_formato(), miCliente.get_Carrito().get_lista());
 			EntregarFactura(A_pagar, miCliente,miLocal);
-				//return ticketcompra;
+				
 			return Facturacompra;
 		}
 	}
 	else //no se pudo finalizar la compra
 	{
 		throw new exception("No se pudo finalizar compra");
-		//Ticket NoValido(false,A_pagar, miCliente.get_DNI(), miCliente.get_miMetodoPago(), miCliente.get_CUIT());
+		
 			//no devuelvo factura porque no se puedo finalizar la compra
-		//return NoValido;
+		
 	}
 }
 

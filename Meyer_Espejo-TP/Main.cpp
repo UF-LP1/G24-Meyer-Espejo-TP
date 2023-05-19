@@ -6,6 +6,7 @@
 #include "Receta.h"
 #include "Cajero.h"
 #include "Manager.h"
+#include <queue>
 
 int main() {
 
@@ -35,7 +36,7 @@ int main() {
     Receta RecetaMartu(Medicamento, Medico, NroMatricula, NroAfiliado, ObraSocial,vencida);
 
    
-    //ahora cliente
+    //ahora cliente1
     
     string Nombre = "Martu";
     string Apellido = "Meyer";
@@ -55,7 +56,26 @@ int main() {
     Cliente ClienteMartu(Nombre,Apellido,DNI,CodigoSeguridad,NroTicket,miMetodoPago,Mail,SaldoEf,SaldoMP,SaldoTarj,CUIT,FacturaFisica,miNecesidad);
     
     ClienteMartu.set_Carrito(Carrito);
-        
+
+    //ahora cliente2    
+    string Nombre2 = "Jazmin";
+    string Apellido2 = "Alvarez";
+    string DNI2 = "47654789";
+    unsigned int CodigoSeguridad2 = 05;
+    string Mail2 = "jazchu@gmail";
+    unsigned int NroTicket2 = 11;
+    eMetodoPago miMetodoPago2 = Tarjeta;
+    float SaldoEf2 =3000.5;
+    double SaldoMP2 = 1234.0;
+    double SaldoTarj2 = 3456.1;
+    const string CUIT2 = "6789";
+    bool FacturaFisica2 = false;
+    eNecesidad miNecesidad2 = Medicamentos;
+
+
+    Cliente ClienteJazmin(Nombre2, Apellido2, DNI2, CodigoSeguridad2, NroTicket2, miMetodoPago2, Mail2, SaldoEf2, SaldoMP2, SaldoTarj2, CUIT2, FacturaFisica2, miNecesidad2);
+
+    
     //Cajero
     string NombreC="Mateo";
     string ApellidoC="Espejo";
@@ -115,5 +135,14 @@ int main() {
     }
     cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
 
+    //creo cola de Cliente
+   
+    queue<Cliente> ColaLocal;
+
+    ColaLocal.push(ClienteMartu);
+    ColaLocal.push(ClienteJazmin);
+
+    LocalAzul.set_colaClientes(ColaLocal);
+    
         return 0;
 }

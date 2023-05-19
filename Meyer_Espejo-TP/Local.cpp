@@ -2,6 +2,7 @@
 #include "Local.h"
 #include <queue>
 
+
 Local::Local(string Nombre, string Direccion, string Contacto, bool _limpio) {
 	this->Nombre = Nombre;
 	this->Direccion = Direccion;
@@ -35,4 +36,8 @@ Cliente Local::PrimeroEnCola()
 void Local:: AgregarFactura(Factura NuevaFactura)
 {
 	this->RegistroFactura.push_back(NuevaFactura);
+}
+
+void Local::set_colaClientes(queue<Cliente> nuevaCola) {
+	this->cola_Clientes = nuevaCola;
 }

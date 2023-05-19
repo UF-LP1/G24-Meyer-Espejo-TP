@@ -8,6 +8,7 @@
 #include "eMetodoPago.h"
 #include "Factura.h"
 #include "eNecesidad.h"
+#include "eArticulosLocal.h"
 
 class Cliente {
 public:
@@ -34,7 +35,7 @@ public:
    string get_Apellido();
    void set_Carrito(CarritoCompras auxi);
    CarritoCompras get_Carrito();
-   vector<string>get_ProductosQuiero();
+   vector<eArticulosLocal>get_ProductosQuiero();
    Ticket get_Ticket();
 
 private:
