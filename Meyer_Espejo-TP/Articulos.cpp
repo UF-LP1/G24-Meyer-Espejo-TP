@@ -44,3 +44,6 @@ void Articulos::set_Stock(unsigned int stock) {
 	this->Stock = stock;
 }
 
+eArticulosLocal Articulos:: get_articuloslocal() {
+	this->articuloslocal;
+}
