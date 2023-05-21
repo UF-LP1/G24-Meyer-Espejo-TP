@@ -25,13 +25,7 @@ void Local::AgregarClienteCola(Cliente nuevoCliente) {
 	this->cola_Clientes.push(nuevoCliente);
 }
 
-Cliente Local::PrimeroEnCola()
-{
-	Cliente Primero = this->cola_Clientes.front(); //copio en auxiliar el primero de mi cola, para no perderlo
-	cola_Clientes.pop(); //pongo al segundo primero
 
-	return Primero;
-}
 
 void Local:: AgregarFactura(Factura NuevaFactura)
 {

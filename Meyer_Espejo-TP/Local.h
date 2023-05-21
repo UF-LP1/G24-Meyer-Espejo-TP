@@ -14,7 +14,7 @@ public:
     bool get_Limpio();
     void AgregarTicket(Ticket NuevoTicket);
     void AgregarClienteCola(Cliente nuevoCliente);
-    Cliente PrimeroEnCola();
+    
     void AgregarFactura(Factura NuevaFactura);
     void set_colaClientes(queue<Cliente> nuevaCola);
     vector<Articulos>get_listaarticulos();

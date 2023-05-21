@@ -7,7 +7,7 @@
 #include "Cajero.h"
 #include "Manager.h"
 #include <queue>
-
+Cliente PrimeroEnCola(queue<Cliente>cola);
 int main() {
 
     vector <Articulos> CarritoPrueba;
@@ -25,7 +25,7 @@ int main() {
 
 
     //receta
-    string Medicamento = "Vitamina";
+    eFarmacia ArtFarmacia = Vitamina;
     string Medico = "Dr.Perez";
     const unsigned int NroMatricula= 31;
     string NroAfiliado="12345";
@@ -33,7 +33,7 @@ int main() {
     bool vencida = false;
     
     //instancio un receta, para probar metodos
-    Receta RecetaMartu(Medicamento, Medico, NroMatricula, NroAfiliado, ObraSocial,vencida);
+    Receta RecetaMartu(ArtFarmacia, Medico, NroMatricula, NroAfiliado, ObraSocial,vencida);
 
    
     //ahora cliente1
@@ -91,6 +91,32 @@ int main() {
 
     Local LocalAzul(NombreL, Direccion, Contacto, limpio);
 
+    //empleado FArmaceutico
+    string NombreEF = "Jose";
+    string ApellidoEF = "Diaz";
+    float SueldoEF = 4000.0;
+    unsigned int NroMatriculaEF = 96457;
+
+        Farmaceutico FarmaJose(NombreEF, ApellidoEF, SueldoEF, NroMatriculaEF);
+
+        //Empleado Ortopedia
+        string NombreEO = "Juan";
+        string ApellidoEO = "Ferro";
+        float SueldoEO= 45666.6;
+
+        EmpleadoOrtopedia  EmpOrtopJuan(NombreEO, ApellidoEO, SueldoEO);
+
+
+
+        //Empelado Perfumeria
+        string NombreEP = "Pepe";
+        string ApellidoEP = "Mao";
+        float SueldoEP = 456766.6;
+
+        EmpleadoOrtopedia  EmpPerfPepe(NombreEP, ApellidoEP, SueldoEP);
+
+
+
    
 
     //Manager
@@ -146,6 +172,12 @@ int main() {
 
     LocalAzul.set_colaClientes(ColaLocal);
     
+   
+    Cliente PrimerCliente = PrimeroEnCola(ColaLocal);
+
+
+
+
 
     ManagerLuis.ReubicarCliente(LocalAzul.get_listaarticulos(), LocalAzul.PrimeroEnCola(), EmpOrtopJuan, EmpPerfPepe, FarmaJose);
 
@@ -154,4 +186,14 @@ int main() {
 
 
         return 0;
+}
+
+
+//Funcion Para obtener primero en la cola
+Cliente PrimeroEnCola(queue<Cliente>cola)
+{
+    Cliente Primero = cola.front();        //copio en auxiliar el primero de mi cola, para no perderlo
+    cola.pop(); //pongo al segundo primero
+
+    return Primero;
 }
