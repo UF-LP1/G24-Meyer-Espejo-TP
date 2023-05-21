@@ -15,5 +15,5 @@ public:
 	float ActualizarPrecio(Receta miReceta, CarritoCompras miCarrito);
 	Ticket FacturaryGeneraTicket(Cliente& miCliente, Local& miLocal);
 	float CalculaDescuento(Receta miReceta);
-	void ReubicarCliente(Local miLocal,EmpleadoOrtopedia EmpOrtop, EmpleadoPerfumeria EmpPerf,Farmaceutico Farmaceutico);
+	void ReubicarCliente(Cliente ClienteIngresante, vector<Articulos*>ListaArticulosLocal, EmpleadoOrtopedia EmpOrtop, EmpleadoPerfumeria EmpPerf, Farmaceutico Farmaceutico);
 };

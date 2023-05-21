@@ -26,7 +26,7 @@ protected:
     float Precio;
     unsigned int Stock;
     eNecesidad TipoArticulo;
-    eArticulosLocal articuloslocal;
+    eArticulosLocal articuloslocal; // a tener en cuenta, del 0-14 son articulos que tiene el local
 };
 
 #endif //_ARTICULO

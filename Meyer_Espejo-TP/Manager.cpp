@@ -38,16 +38,16 @@ float Manager::ActualizarPrecio(Receta miReceta, CarritoCompras miCarrito)
     return aux;
 }
 
-void Manager::ReubicarCliente(Local miLocal, EmpleadoOrtopedia EmpOrtop, EmpleadoPerfumeria EmpPerf, Farmaceutico Farmaceutico) {
-    Cliente ClienteIngresante = miLocal.PrimeroEnCola(); //me traigo el que le tocaba (primero en cola)
+void Manager::ReubicarCliente(Cliente ClienteIngresante,vector<Articulos*>ListaArticulosLocal, EmpleadoOrtopedia EmpOrtop, EmpleadoPerfumeria EmpPerf, Farmaceutico Farmaceutico) {
     
+ 
     if (ClienteIngresante.get_miNecesidad() == 1) //perfumeria
-       //bool Funciono= EmpPerf.revisionperf(ClienteIngresante); //derivo a Empleado de Perfumeria
+       EmpPerf.revisionperf(ClienteIngresante,ListaArticulosLocal); //derivo a Empleado de Perfumeria
         
     if(ClienteIngresante.get_miNecesidad() == ArtOrtopedia)
-       // EmpOrtop.revisionort(ClienteIngresante);//derivo a Empleado de Ortopedia
+       EmpOrtop.revisionort(ClienteIngresante,ListaArticulosLocal);//derivo a Empleado de Ortopedia
 
     if (ClienteIngresante.get_miNecesidad() == 0)
-        Farmaceutico.revisionMed(ClienteIngresante); //derivo a Farmaceutico
+       Farmaceutico.revisionMed(ClienteIngresante,ListaArticulosLocal); //derivo a Farmaceutico
     
 }

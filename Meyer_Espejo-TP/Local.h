@@ -9,7 +9,7 @@
 
 class Local {
 public:
-    Local(string Nombre, string Direccion, string Contacto,bool _limpio);
+    Local(string Nombre, string Direccion, string Contacto,bool _limpio, vector<Articulos*>ListaArticulosLocal);
     ~Local();
     bool get_Limpio();
     void AgregarTicket(Ticket NuevoTicket);
@@ -18,6 +18,7 @@ public:
     void AgregarFactura(Factura NuevaFactura);
     void set_colaClientes(queue<Cliente> nuevaCola);
     vector<Articulos*>get_listaarticulos();
+
 private:
     string Nombre;
     string Direccion;

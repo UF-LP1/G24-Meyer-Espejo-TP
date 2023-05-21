@@ -13,7 +13,7 @@ EmpleadoOrtopedia::~EmpleadoOrtopedia(){}
 
 
 
-void EmpleadoOrtopedia:: revisionort(Cliente MiCliente) {
+void EmpleadoOrtopedia:: revisionort(Cliente MiCliente, vector<Articulos*>ListaArticuloslocal) {
     vector<eArticulosLocal>aux;
     aux = MiCliente.get_ProductosQuiero();
     for (int i = 0; i < aux.size(); i++)

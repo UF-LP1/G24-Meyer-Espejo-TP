@@ -3,11 +3,12 @@
 #include <queue>
 
 
-Local::Local(string Nombre, string Direccion, string Contacto, bool _limpio) {
+Local::Local(string Nombre, string Direccion, string Contacto, bool _limpio, vector<Articulos*>ListaArticulosLocal) {
 	this->Nombre = Nombre;
 	this->Direccion = Direccion;
 	this->Contacto = Contacto;
 	this->limpio = _limpio;
+	this->ListaArticulosLocal = ListaArticulosLocal;
 }
 
 Local::~Local() {}

@@ -7,14 +7,16 @@
 #include "Cajero.h"
 #include "Manager.h"
 #include <queue>
+#include "eArticulosLocal.h"
+
 Cliente PrimeroEnCola(queue<Cliente>cola);
 int main() {
 
     vector <Articulos> CarritoPrueba;
 
-    Articulos Prod1(1, 54.3, 12,Perfumes);
-    Articulos Prod2(2, 43.0, 9,ArtOrtopedia);
-    Articulos Prod3(3, 109.7, 3,Medicamentos);
+    Articulos Prod1(54.3, 12, 1, Perfumes, eArticulosLocal::Cremas);
+    Articulos Prod2(43.0, 9, 2, Perfumes, eArticulosLocal::Maquillajes);
+    Articulos Prod3(109.7, 32, 3, ArtOrtopedia, eArticulosLocal::Munequeras);
 
     CarritoPrueba.push_back(Prod1);
     CarritoPrueba.push_back(Prod2);
@@ -89,7 +91,21 @@ int main() {
     string Contacto="1154678940";
     bool limpio=true;
 
-    Local LocalAzul(NombreL, Direccion, Contacto, limpio);
+    vector<Articulos*>ArticulosLocal;
+    Articulos Local1(54.3, 12, 1, Perfumes, eArticulosLocal::Cremas);
+    Articulos Local2(43.0, 9, 2, Perfumes, eArticulosLocal::Maquillajes);
+    Articulos Local3(109.7, 32, 3, ArtOrtopedia, eArticulosLocal::Munequeras);
+    Articulos Local4(108.5, 3, 4, Medicamentos, eArticulosLocal::Pastillas);
+    Articulos Local5(234.6, 100, 5, ArtOrtopedia, eArticulosLocal::VendaElasticas);
+
+  ArticulosLocal.push_back(Local1);
+  ArticulosLocal.push_back(Local2);
+  ArticulosLocal.push_back(Local3);
+  ArticulosLocal.push_back(Local4);
+  ArticulosLocal.push_back(Local5);
+
+    Local LocalAzul(NombreL, Direccion, Contacto, limpio,ArticulosLocal);
+
 
     //empleado FArmaceutico
     string NombreEF = "Jose";
@@ -113,7 +129,7 @@ int main() {
         string ApellidoEP = "Mao";
         float SueldoEP = 456766.6;
 
-        EmpleadoOrtopedia  EmpPerfPepe(NombreEP, ApellidoEP, SueldoEP);
+        EmpleadoPerfumeria  EmpPerfPepe(NombreEP, ApellidoEP, SueldoEP);
 
 
 
@@ -126,16 +142,20 @@ int main() {
 
     Manager ManagerLuis(nombreM, apellidoM, sueldoM);
 
-    Ticket prueba= ManagerLuis.FacturaryGeneraTicket(ClienteMartu, LocalAzul);
-
-    //para chequear imprimo ese ticket
-
-    cout << "Precio Final:" << prueba.get_PrecioFinal();
-    cout << "\n Dni:" << prueba.get_DNI() << endl;
+   
 
    
 
     //PRUEBO LOS METODOS MAS IMPORTANTES
+
+    //metodo Facturar y Generar Ticket
+
+    Ticket prueba = ManagerLuis.FacturaryGeneraTicket(ClienteMartu, LocalAzul);
+
+        //para chequear imprimo ese ticket
+
+    cout << "Precio Final:" << prueba.get_PrecioFinal();
+    cout << "\n Dni:" << prueba.get_DNI() << endl;
 
     //metodo cobrar (Cajero)
 
@@ -151,7 +171,7 @@ int main() {
         cout << "EXCEPTION" << e->what() << endl;
     }
 
-    //imprimo Factura para verificar
+        //imprimo Factura para verificar
     cout << "Precio final:" << facturaprueba.get_MontoFinal();
     
     vector<Articulos>ListaArticulos;
@@ -163,6 +183,10 @@ int main() {
     }
     cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
 
+    
+    
+    
+    
     //creo cola de Cliente
    
     queue<Cliente> ColaLocal;
@@ -172,14 +196,13 @@ int main() {
 
     LocalAzul.set_colaClientes(ColaLocal);
     
-   
     Cliente PrimerCliente = PrimeroEnCola(ColaLocal);
 
 
 
+    //metodo para asignar a el Empleado correspondiente (Manager)
 
-
-    ManagerLuis.ReubicarCliente(LocalAzul.get_listaarticulos(), LocalAzul.PrimeroEnCola(), EmpOrtopJuan, EmpPerfPepe, FarmaJose);
+    ManagerLuis.ReubicarCliente(PrimerCliente,ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
 
 
 

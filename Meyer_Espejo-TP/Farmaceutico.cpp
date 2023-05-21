@@ -52,20 +52,22 @@ bool Farmaceutico:: revisionMed(Cliente MiCliente,vector<Articulos*>ListaArticul
 		{
 			Articulos* auxiliar = ListaArticuloslocal[i];
 
-			if ((*ListaArticuloslocal[i]).get_articuloslocal()== AuxiliarDeseo[j])
+			if ((*ListaArticuloslocal[i]).get_articuloslocal() == AuxiliarDeseo[j])
 			{
-				
-				if ((*ListaArticuloslocal[i]).get_Stock() > 1)
+				if (int(AuxiliarDeseo[i]) >=0 && int(AuxiliarDeseo[i]) < 3) //verifico que sea un producto de la parte de medicamentos 
 				{
-					if (dynamic_cast<Farmacia*>(*ListaArticuloslocal[i])!=NULL) //ayuda mailen
-					{
 
+					if ((*ListaArticuloslocal[i]).get_Stock() > 1) //verifico q haya stock
+					{
+						if (dynamic_cast<Farmacia*>(*ListaArticuloslocal[i]) != NULL) //ayuda mailen
+						{
+							//agrego al carrito
+						}
 					}
+
 				}
 
 			}
-
-				
 		}
 	}
 }

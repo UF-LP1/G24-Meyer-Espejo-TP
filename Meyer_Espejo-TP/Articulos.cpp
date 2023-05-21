@@ -45,5 +45,6 @@ void Articulos::set_Stock(unsigned int stock) {
 }
 
 eArticulosLocal Articulos:: get_articuloslocal() {
-	this->articuloslocal;
+	if(articuloslocal>=0 && articuloslocal<15) //solo imprimo esos porque son los Articulos del Local
+		this->articuloslocal;
 }

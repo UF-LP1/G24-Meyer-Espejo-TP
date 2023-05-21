@@ -11,7 +11,7 @@ public:
 
     EmpleadoOrtopedia(string nombre, string apellido, float sueldo);
     ~EmpleadoOrtopedia();
-   void  revisionort(Cliente MiCliente);
+   void  revisionort(Cliente MiCliente, vector<Articulos*>ListaArticuloslocal);
    
 };
 
