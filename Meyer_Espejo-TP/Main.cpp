@@ -8,7 +8,8 @@
 #include "Manager.h"
 #include <queue>
 #include "eArticulosLocal.h"
-#include <iostream>
+
+
 using namespace std;
 
 Cliente PrimeroEnCola(queue<Cliente>cola);
@@ -134,9 +135,6 @@ int main() {
     EmpleadoPerfumeria  EmpPerfPepe(NombreEP, ApellidoEP, SueldoEP);
 
 
-
-
-
     //Manager
     string nombreM = "Luis";
     string apellidoM = "Perez";
@@ -200,7 +198,8 @@ int main() {
 
     Cliente PrimerCliente = PrimeroEnCola(ColaLocal);
 
-
+   
+    
 
     //metodo para asignar a el Empleado correspondiente (Manager)
 
@@ -210,25 +209,53 @@ int main() {
     //ingreso por consola
     char Answer;
     int i = 0;
-    string Respuesta;
-    unsigned int var1;
-    var1 = 0;
-    cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no ";
+    string NombreP;
+    string ApellidoP;
+    string DNIP;
+    string MailP;
+    unsigned int NroTicketP;
+    unsigned int necesidad;
+    eNecesidad NecesidadP;
+    bool FacturaFisicaP;
+    unsigned int CodigoSeguridadP;
+   
+    cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no "<<endl;
     cin >> Answer;
     if (Answer == 'N') {
-        cout << "gracias por haver visitado Farmacias Azul,que tenga un buen dia";
+        cout << "gracias por haver visitado Farmacias Azul,que tenga un buen dia"<<endl;
     }
     else {
+
+        cout << "ingrese su nombre" << endl;
+        cin >> NombreP;
+       
+        cout << "ingrese su apellido" << endl;
+        cin >> ApellidoP;
+        
+        cout << "ingrese su DNI" << endl;
+        cin >> DNIP;
+
+        cout << "ingrese su mail" << endl;
+        cin >> MailP;
+
+        cout << "ingrese su NroTicket" << endl;
+        cin >> NroTicketP;
+
+        cout << "Codigo Seguridad" << endl;
+        cin >> CodigoSeguridadP;
+
         do {
             i++;
             cout << "ingrese su necesidad" << endl;
-            cout << "1.Perfumeria" << endl;
-            cout << "2.Ortopedia" << endl;
-            cout << "3.Medicamentos" << endl;
+            cout << "0.Medicamentos" << endl;
+            cout << "2.Perfumes" << endl;
+            cout << "3.ArtOrtopedia" << endl;
             cout << "4.Golosina" << endl;
 
-            //Esto seria rebubicar cliente
-            cin >> Answer;
+            cin >> necesidad;
+
+            NecesidadP = eNecesidad(necesidad);
+
             // switch on the user's choice
             switch (Answer) {
             case  '1':
@@ -249,22 +276,8 @@ int main() {
             }
             i++;
         } while (Answer == '5' && i < 1);
-        //Llamar a reubicar cliente
-       /* cout << "ingrese su nombre";
-        cin >> Respuesta;
-        Nombre1 = Respuesta;
-        cout << "ingrese su apellido";
-        cin >> Respuesta;
-        Apellido1 = Respuesta;
-        cout << "ingrese su DNI";
-        cin >> Respuesta;
-        DNI1 = Respuesta;
-        cout << "ingrese su mail";
-        cin >> Respuesta;
-        Mail1 = Respuesta;
-        cout << "ingrese su nro de ticket";
-        cin >> var1;
-        NroTicket1 = var1*/
+
+
         do {
             cout << "ingrese su metodo de pago,las opciones son " << endl;
             cout << "1.Efectivo" << endl;
@@ -287,19 +300,20 @@ int main() {
                 cout << "Invalid choice." << endl;
             }
         } while (Answer == '4');
+
+          cout << "porfavor indique si desea su facturea fisica o no,con una S confirme y con una N niege";
+          cin >> Answer;
+          if (Answer == 'S')
+          {
+              FacturaFisicaP = true;
+          }
+
+          else
+          {
+              FacturaFisicaP = false;
+          }
     }
-    /*  cout << "porfavor indique si desea su facturea fisica o no,con una S confirme y con una N niege";
-      cin >> Answer;
-      if (Answer == 'S')
-      {
-
-          FacturaFisica = true;
-      }
-
-      else
-      {
-          FacturaFisica = false;
-      }*/
+    Cliente ClienteConsola(NombreP, ApellidoP, DNIP, CodigoSeguridadP, NroTicketP, miMetodoPagoa, MailP, SaldoEfa, SaldoMPa, SaldoTarja, CUITa, FacturaFisicaP, NecesidadadP);}
 }
 
 //Funcion Para obtener primero en la cola
