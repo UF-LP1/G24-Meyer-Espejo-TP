@@ -95,14 +95,18 @@ int main() {
     bool limpio = true;
 
     vector<Articulos*>ArticulosLocal;
-    Articulos Local1(54.3, 12, 1, Perfumes, eArticulosLocal::Cremas);
+   /* Articulos Local1(54.3, 12, 1, Perfumes, eArticulosLocal::Cremas);*/
     Articulos Local2(43.0, 9, 2, Perfumes, eArticulosLocal::Maquillajes);
     Articulos Local3(109.7, 32, 3, ArtOrtopedia, eArticulosLocal::Munequeras);
     Articulos Local4(108.5, 3, 4, Medicamentos, eArticulosLocal::Pastillas);
     Articulos Local5(234.6, 100, 5, ArtOrtopedia, eArticulosLocal::VendaElasticas);
 
-    ArticulosLocal.push_back(Local1);
-    ArticulosLocal.push_back(Local2);
+   Perfumeria Local1(54.3,12, 1, Perfumes,"100ml", Crema);
+   
+
+
+    ArticulosLocal.push_back(&Local1);
+    ArticulosLocal.push_back(&Local2);
     ArticulosLocal.push_back(Local3);
     ArticulosLocal.push_back(Local4);
     ArticulosLocal.push_back(Local5);
@@ -208,6 +212,7 @@ int main() {
 
     //ingreso por consola
     char Answer;
+    eMetodoPago MetododePagoP;
     int i = 0;
     string NombreP;
     string ApellidoP;
@@ -218,6 +223,10 @@ int main() {
     eNecesidad NecesidadP;
     bool FacturaFisicaP;
     unsigned int CodigoSeguridadP;
+    string  CUITP;
+    double SaldoP;
+    float SaldoEP;
+
    
     cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no "<<endl;
     cin >> Answer;
@@ -234,7 +243,8 @@ int main() {
         
         cout << "ingrese su DNI" << endl;
         cin >> DNIP;
-
+        cout << "ingrese su CUIT" << endl;
+        cin >> CUITP;
         cout << "ingrese su mail" << endl;
         cin >> MailP;
 
@@ -257,7 +267,7 @@ int main() {
             NecesidadP = eNecesidad(necesidad);
 
             // switch on the user's choice
-            switch (Answer) {
+            switch (necesidad) {
             case  '1':
                 cout << "Su selecion fue Perfumeria." << endl;
                 break;
@@ -275,31 +285,31 @@ int main() {
                 i++;
             }
             i++;
-        } while (Answer == '5' && i < 1);
+        } while (necesidad == '5' && i < 1);
 
 
         do {
             cout << "ingrese su metodo de pago,las opciones son " << endl;
-            cout << "1.Efectivo" << endl;
-            cout << "2.Tarjeta" << endl;
-            cout << "3.MercadoPago" << endl;
+            cout << "0.Efectivo" << endl;
+            cout << "1.Tarjeta" << endl;
+            cout << "2.MercadoPago" << endl;
             cin >> Answer;
-
+            MetododePagoP = eMetodoPago(Answer);
             // switch on the user's choice
             switch (Answer) {
-            case '1':
+            case '0':
                 cout << "You chose option Efectivo." << endl;
                 break;
-            case '2':
+            case '1':
                 cout << "You chose option Tarjeta." << endl;
                 break;
-            case'3':
+            case'2':
                 cout << "You chose option MercadoPago." << endl;
                 break;
-            case '4':
+            case '3':
                 cout << "Invalid choice." << endl;
             }
-        } while (Answer == '4');
+        } while (Answer == '3');
 
           cout << "porfavor indique si desea su facturea fisica o no,con una S confirme y con una N niege";
           cin >> Answer;
@@ -313,7 +323,23 @@ int main() {
               FacturaFisicaP = false;
           }
     }
-    Cliente ClienteConsola(NombreP, ApellidoP, DNIP, CodigoSeguridadP, NroTicketP, miMetodoPagoa, MailP, SaldoEfa, SaldoMPa, SaldoTarja, CUITa, FacturaFisicaP, NecesidadadP);}
+    Cliente ClienteConsola(NombreP, ApellidoP, DNIP, CodigoSeguridadP, NroTicketP, MetododePagoP, MailP, CUITP, FacturaFisicaP,NecesidadP);
+    //seteamos saldo en base a su metodo de pago
+    if (MetododePagoP == 0) {
+        cout << "ingrese saldo en efectivo"<<endl;
+        cin >> SaldoEP;
+        ClienteConsola.set_SaldoEf(SaldoEP);
+    }if(MetododePagoP == 1) {
+        cout << "ingrese saldo en Tarjeta" << endl;
+        cin >> SaldoP;
+        ClienteConsola.set_SaldoTarj(SaldoP);
+    }
+    else {
+        cout << "ingrese saldo en Mercado Pago" << endl;
+        cin >> SaldoP;
+        ClienteConsola.set_SaldoMP(SaldoP);
+    }
+
 }
 
 //Funcion Para obtener primero en la cola

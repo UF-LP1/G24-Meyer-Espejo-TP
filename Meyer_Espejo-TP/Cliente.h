@@ -14,6 +14,7 @@ class Cliente {
 public:
     ~Cliente();
     Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad);
+    Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, string CUIL, bool facturafis, eNecesidad necesidad);
     Cliente(CarritoCompras carrito,string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad);
     void Actualizar_Nro(AsistAutomatico MiAsistAutomatico);
     string get_Mail();
@@ -33,6 +34,11 @@ public:
    bool get_formato();
    string get_Nombre();
    string get_Apellido();
+   void set_SaldoEf(float SaldoEf);
+   void set_SaldoTarj(double SaldoTarj);
+   void set_SaldoMP(double SaldoMP);
+
+
    void set_Carrito(CarritoCompras auxi);
    CarritoCompras get_Carrito();
    vector<eArticulosLocal> get_ProductosQuiero();

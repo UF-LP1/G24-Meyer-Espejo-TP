@@ -21,7 +21,19 @@ Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int Codigo
 	
 	
 }
+Cliente::Cliente(string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, string CUIL, bool facturafis, eNecesidad necesidad) :CUIT(CUIL) {
+	this->Nombre = Nombre;
+	this->Apellido = Apellido;
+	this->DNI = DNI;
+	this->CodigoSeguridad = CodigoSeguridad;
+	this->Mail = mail;
+	this->NroTicket = NroTicket;
+	this->miMetodoPago = metodoAutilizar;
+	this->FacturaFisica = facturafis;
+	this->miNecesidad = necesidad;
 
+
+}
 Cliente::Cliente(CarritoCompras carrito,string Nombre, string Apellido, string DNI, unsigned int CodigoSeguridad, unsigned int NroTicket, enum eMetodoPago metodoAutilizar, string mail, float saldoef, double saldomp, double saaldotarj, string CUIL, bool facturafis, eNecesidad necesidad) :CUIT(CUIL) {
 	this->Nombre = Nombre;
 	this->Apellido = Apellido;
@@ -138,4 +150,14 @@ void Cliente:: Actualizar_Nro(AsistAutomatico MiAsistAutomatico) {//funcion entr
 	this->NroTicket = Nuevo_Numero;
 	//guardo el numero que le da el asist automatico y lo copio en cliente asi el cliente puede ser identificado por su numero
 
+}
+void Cliente::set_SaldoEf(float _SaldoEf) {
+	this->SaldoEf = _SaldoEf;
+}
+void Cliente:: set_SaldoTarj(double _SaldoTarj) {
+	this->SaldoTarj = _SaldoTarj;
+}
+void Cliente::set_SaldoMP(double _SaldoMP) {
+	this->SaldoMP = _SaldoMP;
+		
 }
