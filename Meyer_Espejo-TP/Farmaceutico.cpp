@@ -16,7 +16,7 @@ bool Farmaceutico::VerificarReceta(Receta miReceta) {
 		return true; //es valida
 }
 
-void Farmaceutico::VentaMedicamentos(Cliente &miCliente, Farmacia miFarmacia) {
+void Farmaceutico:: VentaMedicamentos(Cliente &miCliente, Farmacia miFarmacia) {
 	
 	CarritoCompras miCarrito = miCliente.get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
 	
@@ -51,18 +51,20 @@ void Farmaceutico:: revisionMed(Cliente MiCliente,vector<Articulos*>ListaArticul
 		{
 			Articulos* nuevo = ListaArticuloslocal[j];
 			ptr_aux = ListaArticuloslocal[j];
+			if (aux[i] == nuevo->get_articuloslocal()) {
 
-			if (int(aux[i]) > 10 && int(aux[i]) < 15) { //verfico que sea un Producto de ortopedia
-			
+				if (int(aux[i]) > 10 && int(aux[i]) < 15) { //verfico que sea un Producto de farmacia
+
 					if ((*ListaArticuloslocal[j]).get_Stock() > 1) //verifico q haya stock
 					{
-						if (dynamic_cast<Farmacia*>(ptr_aux) != NULL) 
-						{	
-							
+						if (dynamic_cast<Farmacia*>(ptr_aux) != NULL)
+						{
+
 							VentaMedicamentos(MiCliente, ); //aca tengo que pasarle la farmacia como parametro y no se como hacerlo
 						}
 					}
-				
+
+				}
 			}
 		}
 

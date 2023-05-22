@@ -19,17 +19,19 @@ void EmpleadoPerfumeria:: revisionperf(Cliente MiCliente, vector<Articulos*>List
         {
             Articulos* nuevo= ListaArticuloslocal[j];
             ptr_aux = ListaArticuloslocal[j];
+            if (aux[i] == nuevo->get_articuloslocal()) {
 
-            if (int(aux[i]) > 2 && int(aux[i]) < 11) { //verfico que sea un Producto de Perfumeria
-                if ((*ListaArticuloslocal[j]).get_Stock() > 1) //verifico q haya stock
-                {
-                    if (dynamic_cast<Perfumeria*>(ptr_aux) != NULL) 
+                if (int(aux[i]) > 2 && int(aux[i]) < 11) { //verfico que sea un Producto de Perfumeria
+                    if ((*ListaArticuloslocal[j]).get_Stock() > 1) //verifico q haya stock
                     {
-                        //aca agregar al carrito
-                        Perfumeria AgregarProductoPerf();
+                        if (dynamic_cast<Perfumeria*>(ptr_aux) != NULL)
+                        {
+                            //aca agregar al carrito
+                            Perfumeria AgregarProductoPerf(nuevo->get_Precio(),nuevo->get_Stock(),nuevo->get_Codigo(),nuevo->get_TipoArticulo(),);
+                        }
                     }
+
                 }
-               
             }
         }
 

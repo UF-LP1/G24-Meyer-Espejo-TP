@@ -24,17 +24,18 @@ void EmpleadoOrtopedia:: revisionort(Cliente MiCliente, vector<Articulos*>ListaA
         {
             Articulos* nuevo = ListaArticuloslocal[j];
             ptr_aux = ListaArticuloslocal[j];
-
-            if (int(aux[i]) > 10 && int(aux[i]) < 15) { //verfico que sea un Producto de ortopedia
-                if ((*ListaArticuloslocal[j]).get_Stock() > 1) //verifico q haya stock
-                {
-                    if (dynamic_cast<Ortopedia*>(ptr_aux) != NULL)
+            if (aux[i] == nuevo->get_articuloslocal()) {
+                if (int(aux[i]) > 10 && int(aux[i]) < 15) { //verfico que sea un Producto de ortopedia
+                    if ((*ListaArticuloslocal[j]).get_Stock() > 1) //verifico q haya stock
                     {
-                        //aca agregar al carrito
-                        Ortopedia AgregarProductoOrtop();
+                        if (dynamic_cast<Ortopedia*>(ptr_aux) != NULL)
+                        {
+                            //aca agregar al carrito
+                            Ortopedia AgregarProductoOrtop(nuevo->get_Precio(), nuevo->get_Stock(), nuevo->get_Codigo(), nuevo->get_TipoArticulo());
+                        }
                     }
-                }
 
+                }
             }
         }
 
