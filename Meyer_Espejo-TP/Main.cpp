@@ -31,17 +31,17 @@ int main() {
     //receta
     eFarmacia ArtFarmacia = Vitamina;
     string Medico = "Dr.Perez";
-    const unsigned int NroMatricula= 31;
-    string NroAfiliado="12345";
-    eOS ObraSocial= OSDE;
+    const unsigned int NroMatricula = 31;
+    string NroAfiliado = "12345";
+    eOS ObraSocial = OSDE;
     bool vencida = false;
-    
-    //instancio un receta, para probar metodos
-    Receta RecetaMartu(ArtFarmacia, Medico, NroMatricula, NroAfiliado, ObraSocial,vencida);
 
-   
+    //instancio un receta, para probar metodos
+    Receta RecetaMartu(ArtFarmacia, Medico, NroMatricula, NroAfiliado, ObraSocial, vencida);
+
+
     //ahora cliente1
-    
+
     string Nombre = "Martu";
     string Apellido = "Meyer";
     string DNI = "45233789";
@@ -50,15 +50,15 @@ int main() {
     unsigned int NroTicket = 10;
     eMetodoPago miMetodoPago = Efectivo;
     float SaldoEf = 100.0;
-    double SaldoMP=1100.3;
-    double SaldoTarj=900.4;
-    const string CUIT="1234";
+    double SaldoMP = 1100.3;
+    double SaldoTarj = 900.4;
+    const string CUIT = "1234";
     bool FacturaFisica = true;
     eNecesidad miNecesidad = Perfumes;
-    
-    
-    Cliente ClienteMartu(Nombre,Apellido,DNI,CodigoSeguridad,NroTicket,miMetodoPago,Mail,SaldoEf,SaldoMP,SaldoTarj,CUIT,FacturaFisica,miNecesidad);
-    
+
+
+    Cliente ClienteMartu(Nombre, Apellido, DNI, CodigoSeguridad, NroTicket, miMetodoPago, Mail, SaldoEf, SaldoMP, SaldoTarj, CUIT, FacturaFisica, miNecesidad);
+
     ClienteMartu.set_Carrito(Carrito);
 
     //ahora cliente2    
@@ -69,7 +69,7 @@ int main() {
     string Mail2 = "jazchu@gmail";
     unsigned int NroTicket2 = 11;
     eMetodoPago miMetodoPago2 = Tarjeta;
-    float SaldoEf2 =3000.5;
+    float SaldoEf2 = 3000.5;
     double SaldoMP2 = 1234.0;
     double SaldoTarj2 = 3456.1;
     const string CUIT2 = "6789";
@@ -79,19 +79,19 @@ int main() {
 
     Cliente ClienteJazmin(Nombre2, Apellido2, DNI2, CodigoSeguridad2, NroTicket2, miMetodoPago2, Mail2, SaldoEf2, SaldoMP2, SaldoTarj2, CUIT2, FacturaFisica2, miNecesidad2);
 
-    
+
     //Cajero
-    string NombreC="Mateo";
-    string ApellidoC="Espejo";
-    float SueldoC=10000.0;
+    string NombreC = "Mateo";
+    string ApellidoC = "Espejo";
+    float SueldoC = 10000.0;
 
     Cajero CajeroMateo(NombreC, ApellidoC, SueldoC);
-    
+
     //Local
     string NombreL = "Azul";
-    string Direccion="Sarmiento18";
-    string Contacto="1154678940";
-    bool limpio=true;
+    string Direccion = "Sarmiento18";
+    string Contacto = "1154678940";
+    bool limpio = true;
 
     vector<Articulos*>ArticulosLocal;
     Articulos Local1(54.3, 12, 1, Perfumes, eArticulosLocal::Cremas);
@@ -100,13 +100,13 @@ int main() {
     Articulos Local4(108.5, 3, 4, Medicamentos, eArticulosLocal::Pastillas);
     Articulos Local5(234.6, 100, 5, ArtOrtopedia, eArticulosLocal::VendaElasticas);
 
-  ArticulosLocal.push_back(Local1);
-  ArticulosLocal.push_back(Local2);
-  ArticulosLocal.push_back(Local3);
-  ArticulosLocal.push_back(Local4);
-  ArticulosLocal.push_back(Local5);
+    ArticulosLocal.push_back(Local1);
+    ArticulosLocal.push_back(Local2);
+    ArticulosLocal.push_back(Local3);
+    ArticulosLocal.push_back(Local4);
+    ArticulosLocal.push_back(Local5);
 
-    Local LocalAzul(NombreL, Direccion, Contacto, limpio,ArticulosLocal);
+    Local LocalAzul(NombreL, Direccion, Contacto, limpio, ArticulosLocal);
 
 
     //empleado FArmaceutico
@@ -115,27 +115,27 @@ int main() {
     float SueldoEF = 4000.0;
     unsigned int NroMatriculaEF = 96457;
 
-        Farmaceutico FarmaJose(NombreEF, ApellidoEF, SueldoEF, NroMatriculaEF);
+    Farmaceutico FarmaJose(NombreEF, ApellidoEF, SueldoEF, NroMatriculaEF);
 
-        //Empleado Ortopedia
-        string NombreEO = "Juan";
-        string ApellidoEO = "Ferro";
-        float SueldoEO= 45666.6;
+    //Empleado Ortopedia
+    string NombreEO = "Juan";
+    string ApellidoEO = "Ferro";
+    float SueldoEO = 45666.6;
 
-        EmpleadoOrtopedia  EmpOrtopJuan(NombreEO, ApellidoEO, SueldoEO);
-
-
-
-        //Empelado Perfumeria
-        string NombreEP = "Pepe";
-        string ApellidoEP = "Mao";
-        float SueldoEP = 456766.6;
-
-        EmpleadoPerfumeria  EmpPerfPepe(NombreEP, ApellidoEP, SueldoEP);
+    EmpleadoOrtopedia  EmpOrtopJuan(NombreEO, ApellidoEO, SueldoEO);
 
 
 
-   
+    //Empelado Perfumeria
+    string NombreEP = "Pepe";
+    string ApellidoEP = "Mao";
+    float SueldoEP = 456766.6;
+
+    EmpleadoPerfumeria  EmpPerfPepe(NombreEP, ApellidoEP, SueldoEP);
+
+
+
+
 
     //Manager
     string nombreM = "Luis";
@@ -144,9 +144,9 @@ int main() {
 
     Manager ManagerLuis(nombreM, apellidoM, sueldoM);
 
-   
 
-   
+
+
 
     //PRUEBO LOS METODOS MAS IMPORTANTES
 
@@ -154,7 +154,7 @@ int main() {
 
     Ticket prueba = ManagerLuis.FacturaryGeneraTicket(ClienteMartu, LocalAzul);
 
-        //para chequear imprimo ese ticket
+    //para chequear imprimo ese ticket
 
     cout << "Precio Final:" << prueba.get_PrecioFinal();
     cout << "\n Dni:" << prueba.get_DNI() << endl;
@@ -163,7 +163,7 @@ int main() {
 
     Factura facturaprueba = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
 
-        //voy a intentar hacer bloque try catch
+    //voy a intentar hacer bloque try catch
     try {
         Factura FacturaA = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
         Factura FacturaB = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
@@ -173,39 +173,41 @@ int main() {
         cout << "EXCEPTION" << e->what() << endl;
     }
 
-        //imprimo Factura para verificar
+    //imprimo Factura para verificar
     cout << "Precio final:" << facturaprueba.get_MontoFinal();
-    
+
     vector<Articulos>ListaArticulos;
     ListaArticulos = facturaprueba.get_ArtComprados();
     cout << "\n ListaArticulos es:" << endl;
     for (int i = 0; i < ListaArticulos.size(); i++)
     {
-        cout << i+1<<" -" << ListaArticulos[i].get_Precio() << endl;
+        cout << i + 1 << " -" << ListaArticulos[i].get_Precio() << endl;
     }
     cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
 
-    
-    
-    
-    
+
+
+
+
     //creo cola de Cliente
-   
+
     queue<Cliente> ColaLocal;
 
     ColaLocal.push(ClienteMartu);
     ColaLocal.push(ClienteJazmin);
 
     LocalAzul.set_colaClientes(ColaLocal);
-    
+
     Cliente PrimerCliente = PrimeroEnCola(ColaLocal);
 
 
 
     //metodo para asignar a el Empleado correspondiente (Manager)
 
-    ManagerLuis.ReubicarCliente(PrimerCliente,ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
+    ManagerLuis.ReubicarCliente(PrimerCliente, ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
 
+
+    //ingreso por consola
     char Answer;
     int i = 0;
     string Respuesta;
@@ -286,19 +288,19 @@ int main() {
             }
         } while (Answer == '4');
     }
-        /*  cout << "porfavor indique si desea su facturea fisica o no,con una S confirme y con una N niege";
-          cin >> Answer;
-          if (Answer == 'S')
-          {
+    /*  cout << "porfavor indique si desea su facturea fisica o no,con una S confirme y con una N niege";
+      cin >> Answer;
+      if (Answer == 'S')
+      {
 
-              FacturaFisica = true;
-          }
+          FacturaFisica = true;
+      }
 
-          else
-          {
-              FacturaFisica = false;
-          }*/
-
+      else
+      {
+          FacturaFisica = false;
+      }*/
+}
 
 //Funcion Para obtener primero en la cola
 Cliente PrimeroEnCola(queue<Cliente>cola)

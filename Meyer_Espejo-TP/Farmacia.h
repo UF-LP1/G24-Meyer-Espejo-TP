@@ -14,7 +14,10 @@ public:
    float get_Precio();
    unsigned int get_Codigo();
    unsigned int get_Stock();
-   bool checkReceta(Cliente MiCliente);
+   float get_Precio();
+   unsigned int get_Stock();
+   unsigned int get_Codigo();
+
 private:
     eFarmacia ArtFarm;
     bool ConReceta; 

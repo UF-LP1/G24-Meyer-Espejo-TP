@@ -12,7 +12,9 @@ public:
     Perfumeria(float precio, unsigned int stock,unsigned int codigo, eNecesidad tipoarticulo,string size,enum eArticuloPerf artPerf);
     ~Perfumeria();
     eArticuloPerf get_ArticuloPerf();
-  
+    float get_Precio();
+    unsigned int get_Stock();
+    unsigned int get_Codigo();
 
 private:
     enum eArticuloPerf ArtPerf;

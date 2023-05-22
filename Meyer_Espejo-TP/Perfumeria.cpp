@@ -14,4 +14,15 @@ eArticuloPerf Perfumeria::get_ArticuloPerf( ) {
 }
 
 
+float Perfumeria:: get_Precio() {
+	return this->Precio;
+}
 
+unsigned int Perfumeria::get_Stock()
+{
+	return this->Stock;
+}
+unsigned int Perfumeria::get_Codigo()
+{
+	return this->Codigo;
+}

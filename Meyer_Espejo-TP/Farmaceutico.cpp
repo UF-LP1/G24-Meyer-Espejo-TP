@@ -16,20 +16,18 @@ bool Farmaceutico::VerificarReceta(Receta miReceta) {
 		return true; //es valida
 }
 
-bool Farmaceutico::VentaMedicamentos(Cliente &miCliente) {
+void Farmaceutico::VentaMedicamentos(Cliente &miCliente, Farmacia miFarmacia) {
 	
 	CarritoCompras miCarrito = miCliente.get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
 	
 	if (miFarmacia.get_ObligReceta() == true) //es con receta
 	{
 		bool Verificacion = VerificarReceta(miCliente.get_Receta());
-		if (Verificacion == false) //no valida
-			return false;
-		else //la agrego al carrito
-		{
-		Farmacia AgregarProducto (miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(), miFarmacia.get_TipoArticulo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
-		miCarrito.set_UnArticulo(AgregarProducto);
-		miCliente.set_Carrito(miCarrito);
+		if (Verificacion == true)
+		{	
+			Farmacia AgregarProducto (miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(), miFarmacia.get_TipoArticulo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
+			miCarrito.set_UnArticulo(AgregarProducto);
+			miCliente.set_Carrito(miCarrito);
 		}	
 
 	}
@@ -41,36 +39,36 @@ bool Farmaceutico::VentaMedicamentos(Cliente &miCliente) {
 	}
 }
 
-bool Farmaceutico:: revisionMed(Cliente MiCliente,vector<Articulos*>ListaArticuloslocal)
+void Farmaceutico:: revisionMed(Cliente MiCliente,vector<Articulos*>ListaArticuloslocal)
 {
-	vector<eArticulosLocal>AuxiliarDeseo;
-	AuxiliarDeseo = MiCliente.get_ProductosQuiero();
+	vector<eArticulosLocal>aux;
+	aux = MiCliente.get_ProductosQuiero();
+	Articulos* ptr_aux = nullptr;
 
-	for (int i = 0; i < ListaArticuloslocal.size(); i++)
+	for (int i = 0; i < aux.size(); i++)
 	{
-		for (int j = 0; j < AuxiliarDeseo.size(); j++)
+		for (int j = 0; j < ListaArticuloslocal.size(); j++)
 		{
-			Articulos* auxiliar = ListaArticuloslocal[i];
+			Articulos* nuevo = ListaArticuloslocal[j];
+			ptr_aux = ListaArticuloslocal[j];
 
-			if ((*ListaArticuloslocal[i]).get_articuloslocal() == AuxiliarDeseo[j])
-			{
-				if (int(AuxiliarDeseo[i]) >=0 && int(AuxiliarDeseo[i]) < 3) //verifico que sea un producto de la parte de medicamentos 
-				{
-
-					if ((*ListaArticuloslocal[i]).get_Stock() > 1) //verifico q haya stock
+			if (int(aux[i]) > 10 && int(aux[i]) < 15) { //verfico que sea un Producto de ortopedia
+			
+					if ((*ListaArticuloslocal[j]).get_Stock() > 1) //verifico q haya stock
 					{
-						if (dynamic_cast<Farmacia*>(*ListaArticuloslocal[i]) != NULL) //ayuda mailen
-						{
-							//agrego al carrito
+						if (dynamic_cast<Farmacia*>(ptr_aux) != NULL) 
+						{	
+							
+							VentaMedicamentos(MiCliente, ); //aca tengo que pasarle la farmacia como parametro y no se como hacerlo
 						}
 					}
-
-				}
-
+				
 			}
 		}
+
 	}
 }
+
 
 
 unsigned int Farmaceutico::get_NroMatricula() {

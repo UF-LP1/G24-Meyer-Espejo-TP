@@ -4,6 +4,7 @@
 #include "Empleado.h"
 #include "Header.h"
 #include "Vendedor.h"
+#include "Ortopedia.h"
 
 
 class EmpleadoOrtopedia : public Vendedor {
@@ -11,7 +12,7 @@ public:
 
     EmpleadoOrtopedia(string nombre, string apellido, float sueldo);
     ~EmpleadoOrtopedia();
-   void  revisionort(Cliente MiCliente, vector<Articulos*>ListaArticuloslocal);
+   void revisionort(Cliente MiCliente, vector<Articulos*>ListaArticuloslocal);
    
 };
 

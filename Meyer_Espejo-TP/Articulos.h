@@ -11,13 +11,12 @@ class Articulos {
 public:
     Articulos(float precio, unsigned int stock,unsigned int Codigo,eNecesidad tipoarticulo,enum eArticulosLocal _articuloslocal);
     ~Articulos();
-    
-        
-    float get_Precio();
-  unsigned int get_Stock();
-   unsigned int get_Codigo();
-   void set_Precio(float precio);
-   void set_Stock(unsigned int stock);
+         
+   virtual float get_Precio();
+  virtual unsigned int get_Stock();
+   virtual unsigned int get_Codigo();
+    void set_Precio(float precio);
+    void set_Stock(unsigned int stock);
    eNecesidad get_TipoArticulo();
    eArticulosLocal get_articuloslocal();
 

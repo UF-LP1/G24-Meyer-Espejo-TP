@@ -11,3 +11,15 @@ eArticuloOrt Ortopedia::get_ArticuloOrt() {
     return this->ArtOrtop;
 }
 
+float Ortopedia::get_Precio() {
+	return this->Precio;
+}
+
+unsigned int Ortopedia::get_Stock()
+{
+	return this->Stock;
+}
+unsigned int Ortopedia::get_Codigo()
+{
+	return this->Codigo;
+}
