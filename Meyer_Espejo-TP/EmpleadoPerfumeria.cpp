@@ -23,7 +23,7 @@ void EmpleadoPerfumeria:: revisionperf(Cliente MiCliente, vector<Articulos*>List
                     if (dynamic_cast<Perfumeria*>(*ListaArticuloslocal[i]) != NULL) //ayuda mailen
                     {
                         //aca agregar al carrito
-                        Perfumeria AgregarProductoPerf()
+                        Perfumeria AgregarProductoPerf();
                     }
                 }
                

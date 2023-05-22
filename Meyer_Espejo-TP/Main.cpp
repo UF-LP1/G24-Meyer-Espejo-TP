@@ -8,6 +8,8 @@
 #include "Manager.h"
 #include <queue>
 #include "eArticulosLocal.h"
+#include <iostream>
+using namespace std;
 
 Cliente PrimeroEnCola(queue<Cliente>cola);
 int main() {
@@ -204,12 +206,98 @@ int main() {
 
     ManagerLuis.ReubicarCliente(PrimerCliente,ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
 
+    char Answer;
+    int i = 0;
+    string Respuesta;
+    unsigned int var1;
+    var1 = 0;
+    cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no ";
+    cin >> Answer;
+    if (Answer == 'N') {
+        cout << "gracias por haver visitado Farmacias Azul,que tenga un buen dia";
+    }
+    else {
+        do {
+            i++;
+            cout << "ingrese su necesidad" << endl;
+            cout << "1.Perfumeria" << endl;
+            cout << "2.Ortopedia" << endl;
+            cout << "3.Medicamentos" << endl;
+            cout << "4.Golosina" << endl;
 
+            //Esto seria rebubicar cliente
+            cin >> Answer;
+            // switch on the user's choice
+            switch (Answer) {
+            case  '1':
+                cout << "Su selecion fue Perfumeria." << endl;
+                break;
+            case '2':
+                cout << "Su selecion fue Ortopedia." << endl;
+                break;
+            case '3':
+                cout << "Su selecion fue Medicamentos." << endl;
+                break;
+            case '4':
+                cout << "Su selecion fue Golisina." << endl;
+                break;
+            case '5':
+                cout << "Selecion invalida." << endl;
+                i++;
+            }
+            i++;
+        } while (Answer == '5' && i < 1);
+        //Llamar a reubicar cliente
+       /* cout << "ingrese su nombre";
+        cin >> Respuesta;
+        Nombre1 = Respuesta;
+        cout << "ingrese su apellido";
+        cin >> Respuesta;
+        Apellido1 = Respuesta;
+        cout << "ingrese su DNI";
+        cin >> Respuesta;
+        DNI1 = Respuesta;
+        cout << "ingrese su mail";
+        cin >> Respuesta;
+        Mail1 = Respuesta;
+        cout << "ingrese su nro de ticket";
+        cin >> var1;
+        NroTicket1 = var1*/
+        do {
+            cout << "ingrese su metodo de pago,las opciones son " << endl;
+            cout << "1.Efectivo" << endl;
+            cout << "2.Tarjeta" << endl;
+            cout << "3.MercadoPago" << endl;
+            cin >> Answer;
 
+            // switch on the user's choice
+            switch (Answer) {
+            case '1':
+                cout << "You chose option Efectivo." << endl;
+                break;
+            case '2':
+                cout << "You chose option Tarjeta." << endl;
+                break;
+            case'3':
+                cout << "You chose option MercadoPago." << endl;
+                break;
+            case '4':
+                cout << "Invalid choice." << endl;
+            }
+        } while (Answer == '4');
+    }
+        /*  cout << "porfavor indique si desea su facturea fisica o no,con una S confirme y con una N niege";
+          cin >> Answer;
+          if (Answer == 'S')
+          {
 
+              FacturaFisica = true;
+          }
 
-        return 0;
-}
+          else
+          {
+              FacturaFisica = false;
+          }*/
 
 
 //Funcion Para obtener primero en la cola
