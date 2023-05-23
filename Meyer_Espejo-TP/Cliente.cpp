@@ -161,3 +161,30 @@ void Cliente::set_SaldoMP(double _SaldoMP) {
 	this->SaldoMP = _SaldoMP;
 		
 }
+
+Cliente& Cliente::operator=(const Cliente& cliente)  //lo hacemos para poder usarlo en el main para probar las funciones
+{
+	if (&cliente != this)
+	{
+		Nombre = cliente.Nombre;
+		Apellido = cliente.Apellido;
+		DNI=cliente.DNI;
+		CodigoSeguridad=cliente.CodigoSeguridad;
+		Mail=cliente.Mail;
+		NroTicket=cliente.NroTicket;
+		miMetodoPago=cliente.miMetodoPago;
+		SaldoEf=cliente.SaldoEf;
+		SaldoMP=cliente.SaldoMP;
+		SaldoTarj=cliente.SaldoTarj;
+		miReceta=cliente.miReceta;
+		//const string CUIT;
+		miTicket=cliente.miTicket;
+		FacturaFisica=cliente.FacturaFisica;
+		miFactura=cliente.miFactura;
+		miNecesidad=cliente.miNecesidad;
+		miCarrito=cliente.miCarrito;
+		ProductosQuiero=cliente.ProductosQuiero;
+		
+	}
+	return* this;
+}

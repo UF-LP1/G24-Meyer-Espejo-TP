@@ -43,6 +43,7 @@ public:
    CarritoCompras get_Carrito();
    vector<eArticulosLocal> get_ProductosQuiero();
    Ticket get_Ticket();
+   Cliente& operator=(const Cliente&);
 
 private:
     string Nombre;

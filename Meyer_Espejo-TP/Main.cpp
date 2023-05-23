@@ -189,7 +189,7 @@ int main() {
 
     //creo cola de Cliente
 
-    queue<Cliente> ColaLocal;
+    queue<Cliente>ColaLocal;
 
     ColaLocal.push(ClienteMartu);
     ColaLocal.push(ClienteJazmin);

@@ -1,6 +1,6 @@
 
 #include "Local.h"
-#include <queue>
+
 
 
 Local::Local(string Nombre, string Direccion, string Contacto, bool _limpio, vector<Articulos*>ListaArticulosLocal) {
