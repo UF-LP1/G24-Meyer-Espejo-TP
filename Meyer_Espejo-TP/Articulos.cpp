@@ -12,6 +12,17 @@ Articulos::Articulos (float precio, unsigned int stock,unsigned int Codigo, eNec
 	this->TipoArticulo = tipoarticulo;
 	this->articuloslocal = _articuloslocal;
 }
+Articulos::Articulos(float precio, unsigned int stock, unsigned int Codigo, eNecesidad tipoarticulo) {
+	this->Precio = precio;
+	this->Stock = stock;
+	this->Codigo = Codigo;
+	this->TipoArticulo = tipoarticulo;
+	
+}
+
+
+
+
 
 Articulos::~Articulos() {
 }
@@ -45,6 +56,6 @@ void Articulos::set_Stock(unsigned int stock) {
 }
 
 eArticulosLocal Articulos:: get_articuloslocal() {
-	if(articuloslocal>=0 && articuloslocal<15) //solo imprimo esos porque son los Articulos del Local
-		this->articuloslocal;
+	
+	return	this->articuloslocal;
 }

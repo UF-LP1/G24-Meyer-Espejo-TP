@@ -22,8 +22,11 @@ void Local:: AgregarTicket(Ticket NuevoTicket) {
 	RegistroTickets.push_back(NuevoTicket);
 }
 
-void Local::AgregarClienteCola(Cliente nuevoCliente) {
-	this->cola_Clientes.push(nuevoCliente);
+//void Local::AgregarClienteCola(Cliente nuevoCliente) {
+	//this->cola_Clientes.push(nuevoCliente);
+//}
+void Local:: Agregarclientestack(Cliente nuevoCliente) {
+	this->Stack_Clientes.push(nuevoCliente);
 }
 
 
@@ -33,10 +36,12 @@ void Local:: AgregarFactura(Factura NuevaFactura)
 	this->RegistroFactura.push_back(NuevaFactura);
 }
 
-void Local::set_colaClientes(queue<Cliente> nuevaCola) {
-	this->cola_Clientes = nuevaCola;
-}   
-
+//void Local::set_colaClientes(queue<Cliente> nuevaCola) {
+//	this->cola_Clientes = nuevaCola;
+//}   
+void Local:: set_stackClientes(stack<Cliente>StackClientes) {
+	this->Stack_Clientes = StackClientes;
+}
 
 vector<Articulos*>Local::get_listaarticulos() {
 	return this->ListaArticulosLocal;

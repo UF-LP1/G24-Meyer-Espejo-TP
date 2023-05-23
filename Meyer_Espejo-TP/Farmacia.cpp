@@ -31,15 +31,3 @@ unsigned int Farmacia:: get_Stock()
 	return this->Stock;
 }
 
-float Farmacia::get_Precio() {
-	return this->Precio;
-}
-
-unsigned int Farmacia::get_Stock()
-{
-	return this->Stock;
-}
-unsigned int Farmacia::get_Codigo()
-{
-	return this->Codigo;
-}

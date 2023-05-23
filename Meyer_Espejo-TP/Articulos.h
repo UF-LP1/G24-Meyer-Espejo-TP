@@ -1,6 +1,7 @@
 
 #include "Header.h"
 #include "eNecesidad.h"
+#include "eArticulosLocal.h"
 #ifndef _ARTICULOS_H
 #define _ARTICULOS_H
 
@@ -10,6 +11,7 @@ class Articulos {
 
 public:
     Articulos(float precio, unsigned int stock,unsigned int Codigo,eNecesidad tipoarticulo,enum eArticulosLocal _articuloslocal);
+    Articulos(float precio, unsigned int stock, unsigned int Codigo, eNecesidad tipoarticulo);
     ~Articulos();
          
    virtual float get_Precio();

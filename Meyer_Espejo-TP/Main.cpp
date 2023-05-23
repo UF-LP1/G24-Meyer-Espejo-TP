@@ -12,7 +12,8 @@
 
 using namespace std;
 
-Cliente PrimeroEnCola(queue<Cliente>cola);
+//Cliente PrimeroEnCola(queue<Cliente>cola);
+Cliente PrimeroenStack(stack<Cliente>Stack__Clientes);
 int main() {
 
     vector <Articulos> CarritoPrueba;
@@ -105,8 +106,8 @@ int main() {
    
 
 
-    ArticulosLocal.push_back(&Local1);
-    ArticulosLocal.push_back(&Local2);
+    ArticulosLocal.push_back(Local1);
+    ArticulosLocal.push_back(Local2);
     ArticulosLocal.push_back(Local3);
     ArticulosLocal.push_back(Local4);
     ArticulosLocal.push_back(Local5);
@@ -193,15 +194,20 @@ int main() {
 
     //creo cola de Cliente
 
-    queue<Cliente> ColaLocal;
+    /*queue<Cliente> ColaLocal;
 
     ColaLocal.push(ClienteMartu);
     ColaLocal.push(ClienteJazmin);
 
     LocalAzul.set_colaClientes(ColaLocal);
 
-    Cliente PrimerCliente = PrimeroEnCola(ColaLocal);
-
+    Cliente PrimerCliente = PrimeroEnCola(ColaLocal);*/
+     stack<Cliente>pilitaLocal;
+        
+     pilitaLocal.push(ClienteMartu);
+     pilitaLocal.push(ClienteJazmin);
+     LocalAzul.set_stackClientes(pilitaLocal);
+     Cliente PrimerCliente = PrimeroenStack(pilitaLocal);
    
     
 
@@ -226,7 +232,7 @@ int main() {
     string  CUITP;
     double SaldoP;
     float SaldoEP;
-
+    eArticulosLocal Respuesta;
    
     cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no "<<endl;
     cin >> Answer;
@@ -340,13 +346,44 @@ int main() {
         ClienteConsola.set_SaldoMP(SaldoP);
     }
 
+    vector<eArticulosLocal>ListaDeseo;
+    cout << "ingrese alguno de esto articulos,una vez terminado escribir T" << endl;
+    cout << " Medicamentos=0, Vitaminas=1, Pastillas=3, Shampo=4, Desodorantes=5, Jabones=6, Cosmeticos=7, Cremas=8, Perfumes=9, Maquillajes=10, EsmalteUnias=11, VendaElasticas=12, Cabestrillos=13, Munequeras=14, MediasComprension=15, Tintura=16, MaquinaAfeitar=17, Esponja=18, ProtectorSolar=19, Repelente=20, Gel=21, Suplementos=23 " << endl;
+    do
+    {
+        
+        cin >> Answer;
+        if (Answer != 'T') {
+            Respuesta = eArticulosLocal(Answer);
+
+            ListaDeseo[i] = Respuesta;
+            i++;
+        }
+        
+
+    } while (Answer != 'T');
+        
+
+
+
+
+
+    return(0);
 }
 
-//Funcion Para obtener primero en la cola
-Cliente PrimeroEnCola(queue<Cliente>cola)
-{
-    Cliente Primero = cola.front();        //copio en auxiliar el primero de mi cola, para no perderlo
-    cola.pop(); //pongo al segundo primero
 
+//Funcion Para obtener primero en la cola
+//Cliente PrimeroEnCola(queue<Cliente>cola)
+//{
+//    Cliente Primero = cola.front();        //copio en auxiliar el primero de mi cola, para no perderlo
+//    cola.pop(); //pongo al segundo primero
+//
+//    return Primero;
+//}
+Cliente PrimeroenStack(stack<Cliente>Stack__Clientes) {
+
+
+    Cliente Primero = Stack__Clientes.top();
+    Stack__Clientes.pop();
     return Primero;
 }

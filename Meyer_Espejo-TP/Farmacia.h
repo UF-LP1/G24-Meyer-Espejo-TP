@@ -14,9 +14,9 @@ public:
    float get_Precio();
    unsigned int get_Codigo();
    unsigned int get_Stock();
-   float get_Precio();
-   unsigned int get_Stock();
-   unsigned int get_Codigo();
+  
+   
+  
 
 private:
     eFarmacia ArtFarm;
