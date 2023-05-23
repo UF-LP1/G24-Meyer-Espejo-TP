@@ -101,7 +101,7 @@ int main() {
    Perfumeria Local1(54.3,12, 1, Perfumes,"100ml",Crema);
    Ortopedia  Local2(54.3, 8, 4, ArtOrtopedia, Munequera);
    Farmacia   Local3(45.6, 5, 67, Medicamentos, Vitamina, true);
-
+   //minimo hasta el 14
     ArticulosLocal.push_back(&Local1);
     ArticulosLocal.push_back(&Local2);
     ArticulosLocal.push_back(&Local3);
@@ -152,36 +152,36 @@ int main() {
 
     Ticket prueba = ManagerLuis.FacturaryGeneraTicket(ClienteMartu, LocalAzul);
 
-    //para chequear imprimo ese ticket
+    ////para chequear imprimo ese ticket
 
-    cout << "Precio Final:" << prueba.get_PrecioFinal();
-    cout << "\n Dni:" << prueba.get_DNI() << endl;
+    //cout << "Precio Final:" << prueba.get_PrecioFinal();
+    //cout << "\n Dni:" << prueba.get_DNI() << endl;
 
-    //metodo cobrar (Cajero)
+    ////metodo cobrar (Cajero)
 
-    Factura facturaprueba = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
+    //Factura facturaprueba = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
 
-    //voy a intentar hacer bloque try catch
-    try {
-        Factura FacturaA = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
-        Factura FacturaB = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
-    }
-    catch (exception* e)
-    {
-        cout << "EXCEPTION" << e->what() << endl;
-    }
+    ////voy a intentar hacer bloque try catch
+    //try {
+    //    Factura FacturaA = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
+    //    Factura FacturaB = CajeroMateo.Cobrar(ClienteMartu, LocalAzul);
+    //}
+    //catch (exception* e)
+    //{
+    //    cout << "EXCEPTION" << e->what() << endl;
+    //}
 
-    //imprimo Factura para verificar
-    cout << "Precio final:" << facturaprueba.get_MontoFinal();
+    ////imprimo Factura para verificar
+    //cout << "Precio final:" << facturaprueba.get_MontoFinal();
 
-    vector<Articulos>ListaArticulos;
-    ListaArticulos = facturaprueba.get_ArtComprados();
-    cout << "\n ListaArticulos es:" << endl;
-    for (int i = 0; i < ListaArticulos.size(); i++)
-    {
-        cout << i + 1 << " -" << ListaArticulos[i].get_Precio() << endl;
-    }
-    cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
+    //vector<Articulos>ListaArticulos;
+    //ListaArticulos = facturaprueba.get_ArtComprados();
+    //cout << "\n ListaArticulos es:" << endl;
+    //for (int i = 0; i < ListaArticulos.size(); i++)
+    //{
+    //    cout << i + 1 << " -" << ListaArticulos[i].get_Precio() << endl;
+    //}
+    //cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
 
 
 
@@ -202,12 +202,7 @@ int main() {
      
     
      
-   
-    
-
-    //metodo para asignar a el Empleado correspondiente (Manager)
-
-    ManagerLuis.ReubicarCliente(PrimerCliente, ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
+ 
 
 
     //ingreso por consola
@@ -231,7 +226,7 @@ int main() {
     cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no "<<endl;
     cin >> Answer;
     if (Answer == 'N') {
-        cout << "gracias por haver visitado Farmacias Azul,que tenga un buen dia"<<endl;
+        cout << "gracias por haber visitado Farmacias Azul,que tenga un buen dia"<<endl;
     }
     else {
 
@@ -294,7 +289,7 @@ int main() {
             cout << "1.Tarjeta" << endl;
             cout << "2.MercadoPago" << endl;
             cin >> Answer;
-            MetododePagoP = eMetodoPago(Answer);
+            MetododePagoP = eMetodoPago(Answer); //por ahi no le gusta esto
             // switch on the user's choice
             switch (Answer) {
             case '0':
@@ -324,12 +319,14 @@ int main() {
           }
     }
     Cliente ClienteConsola(NombreP, ApellidoP, DNIP, CodigoSeguridadP, NroTicketP, MetododePagoP, MailP, CUITP, FacturaFisicaP,NecesidadP);
+    
     //seteamos saldo en base a su metodo de pago
     if (MetododePagoP == 0) {
         cout << "ingrese saldo en efectivo"<<endl;
         cin >> SaldoEP;
         ClienteConsola.set_SaldoEf(SaldoEP);
-    }if(MetododePagoP == 1) {
+    }
+    if(MetododePagoP == 1) {
         cout << "ingrese saldo en Tarjeta" << endl;
         cin >> SaldoP;
         ClienteConsola.set_SaldoTarj(SaldoP);
@@ -340,7 +337,7 @@ int main() {
         ClienteConsola.set_SaldoMP(SaldoP);
     }
 
-    vector<eArticulosLocal>ListaDeseo;
+   /* vector<eArticulosLocal>ListaDeseo;
     cout << "ingrese alguno de esto articulos,una vez terminado escribir T" << endl;
     cout << " Medicamentos=0, Vitaminas=1, Pastillas=3, Shampo=4, Desodorantes=5, Jabones=6, Cosmeticos=7, Cremas=8, Perfumes=9, Maquillajes=10, EsmalteUnias=11, VendaElasticas=12, Cabestrillos=13, Munequeras=14, MediasComprension=15, Tintura=16, MaquinaAfeitar=17, Esponja=18, ProtectorSolar=19, Repelente=20, Gel=21, Suplementos=23 " << endl;
     do
@@ -355,8 +352,39 @@ int main() {
         }
         
 
-    } while (Answer != 'T');
+    } while (Answer == 'T');*/
         
+    ManagerLuis.ReubicarCliente(ClienteConsola, ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
+    Ticket prueba1 = ManagerLuis.FacturaryGeneraTicket(ClienteConsola, LocalAzul);
+   
+    cout << "Precio Final:" << prueba1.get_PrecioFinal();
+    cout << "\n Dni:" << prueba1.get_DNI() << endl;
+
+    //metodo cobrar (Cajero)
+
+    Factura facturaprueba = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+
+    //voy a intentar hacer bloque try catch
+    try {
+        Factura FacturaA = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+        Factura FacturaB = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+    }
+    catch (exception* e)
+    {
+        cout << "EXCEPTION" << e->what() << endl;
+    }
+
+    //imprimo Factura para verificar
+    cout << "Precio final:" << facturaprueba.get_MontoFinal();
+
+    vector<Articulos>ListaArticulos;
+    ListaArticulos = facturaprueba.get_ArtComprados();
+    cout << "\n ListaArticulos es:" << endl;
+    for (int i = 0; i < ListaArticulos.size(); i++)
+    {
+        cout << i + 1 << " -" << ListaArticulos[i].get_Precio() << endl;
+    }
+    cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
 
 
 
