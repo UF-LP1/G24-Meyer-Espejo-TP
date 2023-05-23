@@ -16,16 +16,16 @@ bool Farmaceutico::VerificarReceta(Receta miReceta) {
 		return true; //es valida
 }
 
-void Farmaceutico:: VentaMedicamentos(Cliente &miCliente, Farmacia miFarmacia) {
+void Farmaceutico:: VentaMedicamentos(Cliente &miCliente, Farmacia* miFarmacia) {
 	
 	CarritoCompras miCarrito = miCliente.get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
 	
-	if (miFarmacia.get_ObligReceta() == true) //es con receta
+	if (miFarmacia->get_ObligReceta() == true) //es con receta
 	{
 		bool Verificacion = VerificarReceta(miCliente.get_Receta());
 		if (Verificacion == true)
 		{	
-			Farmacia AgregarProducto (miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(), miFarmacia.get_TipoArticulo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
+			Farmacia AgregarProducto (miFarmacia->get_Precio(), miFarmacia->get_Stock(), miFarmacia->get_Codigo(), miFarmacia->get_TipoArticulo(), miFarmacia->get_ArtFarm(), miFarmacia->get_ObligReceta());
 			miCarrito.set_UnArticulo(AgregarProducto);
 			miCliente.set_Carrito(miCarrito);
 		}	
@@ -33,7 +33,7 @@ void Farmaceutico:: VentaMedicamentos(Cliente &miCliente, Farmacia miFarmacia) {
 	}
 	else //no es con receta (venta libre) 
 	{
-		Farmacia AgregarProducto1(miFarmacia.get_Precio(), miFarmacia.get_Stock(), miFarmacia.get_Codigo(),miFarmacia.get_TipoArticulo(), miFarmacia.get_ArtFarm(), miFarmacia.get_ObligReceta());
+		Farmacia AgregarProducto1(miFarmacia->get_Precio(), miFarmacia->get_Stock(), miFarmacia->get_Codigo(),miFarmacia->get_TipoArticulo(), miFarmacia->get_ArtFarm(), miFarmacia->get_ObligReceta());
 		miCarrito.set_UnArticulo(AgregarProducto1);
 		miCliente.set_Carrito(miCarrito);
 	}
@@ -59,8 +59,7 @@ void Farmaceutico:: revisionMed(Cliente MiCliente,vector<Articulos*>ListaArticul
 					{
 						if (dynamic_cast<Farmacia*>(ptr_aux) != NULL)
 						{
-
-							VentaMedicamentos(MiCliente, ); //aca tengo que pasarle la farmacia como parametro y no se como hacerlo
+							VentaMedicamentos(MiCliente, dynamic_cast<Farmacia*>(ptr_aux)); //aca tengo que pasarle la farmacia como parametro y no se como hacerlo
 						}
 					}
 

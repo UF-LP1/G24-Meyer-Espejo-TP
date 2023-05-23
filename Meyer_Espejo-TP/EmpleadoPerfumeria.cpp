@@ -12,6 +12,7 @@ void EmpleadoPerfumeria:: revisionperf(Cliente MiCliente, vector<Articulos*>List
     vector<eArticulosLocal>aux;
     aux = MiCliente.get_ProductosQuiero();
     Articulos* ptr_aux = nullptr;
+    CarritoCompras miCarrito = MiCliente.get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
 
     for (int i = 0; i < aux.size(); i++)
     {
@@ -26,8 +27,12 @@ void EmpleadoPerfumeria:: revisionperf(Cliente MiCliente, vector<Articulos*>List
                     {
                         if (dynamic_cast<Perfumeria*>(ptr_aux) != NULL)
                         {
+                            eArticuloPerf nombreEnum = dynamic_cast<Perfumeria*>(ptr_aux)->get_ArticuloPerf();
+                            string tamanio = dynamic_cast<Perfumeria*>(ptr_aux)->get_Size();
                             //aca agregar al carrito
-                            Perfumeria AgregarProductoPerf(nuevo->get_Precio(),nuevo->get_Stock(),nuevo->get_Codigo(),nuevo->get_TipoArticulo(),);
+                            Perfumeria AgregarProductoPerf(nuevo->get_Precio(),nuevo->get_Stock(),nuevo->get_Codigo(),nuevo->get_TipoArticulo(),tamanio,nombreEnum);
+                            miCarrito.set_UnArticulo(AgregarProductoPerf);
+                            MiCliente.set_Carrito(miCarrito);
                         }
                     }
 

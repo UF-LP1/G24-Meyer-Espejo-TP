@@ -17,7 +17,7 @@ void EmpleadoOrtopedia:: revisionort(Cliente MiCliente, vector<Articulos*>ListaA
     vector<eArticulosLocal>aux;
     aux = MiCliente.get_ProductosQuiero();
     Articulos* ptr_aux = nullptr;
-
+    CarritoCompras miCarrito = MiCliente.get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
     for (int i = 0; i < aux.size(); i++)
     {
         for (int j = 0; j < ListaArticuloslocal.size(); j++)
@@ -30,8 +30,11 @@ void EmpleadoOrtopedia:: revisionort(Cliente MiCliente, vector<Articulos*>ListaA
                     {
                         if (dynamic_cast<Ortopedia*>(ptr_aux) != NULL)
                         {
+                            eArticuloOrt nombreEnum=dynamic_cast<Ortopedia*>(ptr_aux)->get_ArticuloOrt();
                             //aca agregar al carrito
-                            Ortopedia AgregarProductoOrtop(nuevo->get_Precio(), nuevo->get_Stock(), nuevo->get_Codigo(), nuevo->get_TipoArticulo());
+                            Ortopedia AgregarProductoOrtop(nuevo->get_Precio(), nuevo->get_Stock(), nuevo->get_Codigo(), nuevo->get_TipoArticulo(),nombreEnum);
+                            miCarrito.set_UnArticulo(AgregarProductoOrtop);
+                            MiCliente.set_Carrito(miCarrito);
                         }
                     }
 

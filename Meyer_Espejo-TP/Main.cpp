@@ -12,8 +12,8 @@
 
 using namespace std;
 
-//Cliente PrimeroEnCola(queue<Cliente>cola);
-Cliente PrimeroenStack(stack<Cliente>Stack__Clientes);
+Cliente PrimeroEnCola(queue<Cliente>cola);
+
 int main() {
 
     vector <Articulos> CarritoPrueba;
@@ -96,21 +96,16 @@ int main() {
     bool limpio = true;
 
     vector<Articulos*>ArticulosLocal;
-   /* Articulos Local1(54.3, 12, 1, Perfumes, eArticulosLocal::Cremas);*/
-    Articulos Local2(43.0, 9, 2, Perfumes, eArticulosLocal::Maquillajes);
-    Articulos Local3(109.7, 32, 3, ArtOrtopedia, eArticulosLocal::Munequeras);
-    Articulos Local4(108.5, 3, 4, Medicamentos, eArticulosLocal::Pastillas);
-    Articulos Local5(234.6, 100, 5, ArtOrtopedia, eArticulosLocal::VendaElasticas);
+  
 
-   Perfumeria Local1(54.3,12, 1, Perfumes,"100ml", Crema);
+   Perfumeria Local1(54.3,12, 1, Perfumes,"100ml",Crema);
+   Ortopedia  Local2(54.3, 8, 4, ArtOrtopedia, Munequera);
+   Farmacia   Local3(45.6, 5, 67, Medicamentos, Vitamina, true);
+
+    ArticulosLocal.push_back(&Local1);
+    ArticulosLocal.push_back(&Local2);
+    ArticulosLocal.push_back(&Local3);
    
-
-
-    ArticulosLocal.push_back(Local1);
-    ArticulosLocal.push_back(Local2);
-    ArticulosLocal.push_back(Local3);
-    ArticulosLocal.push_back(Local4);
-    ArticulosLocal.push_back(Local5);
 
     Local LocalAzul(NombreL, Direccion, Contacto, limpio, ArticulosLocal);
 
@@ -194,20 +189,19 @@ int main() {
 
     //creo cola de Cliente
 
-    /*queue<Cliente> ColaLocal;
+    queue<Cliente> ColaLocal;
 
     ColaLocal.push(ClienteMartu);
     ColaLocal.push(ClienteJazmin);
 
     LocalAzul.set_colaClientes(ColaLocal);
 
-    Cliente PrimerCliente = PrimeroEnCola(ColaLocal);*/
-     stack<Cliente>pilitaLocal;
+    Cliente PrimerCliente = PrimeroEnCola(ColaLocal);
+     
         
-     pilitaLocal.push(ClienteMartu);
-     pilitaLocal.push(ClienteJazmin);
-     LocalAzul.set_stackClientes(pilitaLocal);
-     Cliente PrimerCliente = PrimeroenStack(pilitaLocal);
+     
+    
+     
    
     
 
@@ -373,17 +367,10 @@ int main() {
 
 
 //Funcion Para obtener primero en la cola
-//Cliente PrimeroEnCola(queue<Cliente>cola)
-//{
-//    Cliente Primero = cola.front();        //copio en auxiliar el primero de mi cola, para no perderlo
-//    cola.pop(); //pongo al segundo primero
-//
-//    return Primero;
-//}
-Cliente PrimeroenStack(stack<Cliente>Stack__Clientes) {
+Cliente PrimeroEnCola(queue<Cliente>cola)
+{
+    Cliente Primero = cola.front();        //copio en auxiliar el primero de mi cola, para no perderlo
+    cola.pop(); //pongo al segundo primero
 
-
-    Cliente Primero = Stack__Clientes.top();
-    Stack__Clientes.pop();
     return Primero;
 }

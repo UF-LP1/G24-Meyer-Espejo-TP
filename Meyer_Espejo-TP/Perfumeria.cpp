@@ -26,3 +26,6 @@ unsigned int Perfumeria::get_Codigo()
 {
 	return this->Codigo;
 }
+string Perfumeria:: get_Size() {
+	return this->Size;
+}

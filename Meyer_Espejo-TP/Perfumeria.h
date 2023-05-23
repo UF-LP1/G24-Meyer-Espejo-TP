@@ -15,6 +15,7 @@ public:
     float get_Precio();
     unsigned int get_Stock();
     unsigned int get_Codigo();
+    string get_Size();
 
 private:
     enum eArticuloPerf ArtPerf;
