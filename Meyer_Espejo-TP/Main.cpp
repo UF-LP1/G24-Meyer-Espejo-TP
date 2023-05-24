@@ -6,7 +6,6 @@
 #include "Receta.h"
 #include "Cajero.h"
 #include "Manager.h"
-#include <queue>
 #include "eArticulosLocal.h"
 
 
@@ -96,16 +95,16 @@ int main() {
     bool limpio = true;
 
     vector<Articulos*>ArticulosLocal;
-  
 
-   Perfumeria Local1(54.3,12, 1, Perfumes,"100ml",Crema);
-   Ortopedia  Local2(54.3, 8, 4, ArtOrtopedia, Munequera);
-   Farmacia   Local3(45.6, 5, 67, Medicamentos, Vitamina, true);
-   //minimo hasta el 14
+
+    Perfumeria Local1(54.3, 12, 1, Perfumes, "100ml", Crema);
+    Ortopedia  Local2(54.3, 8, 4, ArtOrtopedia, Munequera);
+    Farmacia   Local3(45.6, 5, 67, Medicamentos, Vitamina, true);
+    //minimo hasta el 14
     ArticulosLocal.push_back(&Local1);
     ArticulosLocal.push_back(&Local2);
     ArticulosLocal.push_back(&Local3);
-   
+
 
     Local LocalAzul(NombreL, Direccion, Contacto, limpio, ArticulosLocal);
 
@@ -197,17 +196,17 @@ int main() {
     LocalAzul.set_colaClientes(ColaLocal);
 
     Cliente PrimerCliente = PrimeroEnCola(ColaLocal);
-     
-        
-     
-    
-     
- 
+
+
+
+
+
+
 
 
     //ingreso por consola
     char Answer;
-    eMetodoPago MetododePagoP;
+    eMetodoPago MetododePagoP{};
     int i = 0;
     string NombreP;
     string ApellidoP;
@@ -222,40 +221,47 @@ int main() {
     double SaldoP;
     float SaldoEP;
     eArticulosLocal Respuesta;
-   
-    cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no "<<endl;
+    int variable1 = 0;
+    static_cast<eMetodoPago>(variable1);
+    int variable2 = 0;
+    static_cast<eArticulosLocal>(variable2);
+
+    cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no " << endl;
     cin >> Answer;
+    system("cls");
     if (Answer == 'N') {
-        cout << "gracias por haber visitado Farmacias Azul,que tenga un buen dia"<<endl;
+        cout << "gracias por haber visitado Farmacias Azul,que tenga un buen dia" << endl;
     }
     else {
 
         cout << "ingrese su nombre" << endl;
         cin >> NombreP;
-       
+        system("cls");
         cout << "ingrese su apellido" << endl;
         cin >> ApellidoP;
-        
+        system("cls");
         cout << "ingrese su DNI" << endl;
         cin >> DNIP;
+        system("cls");
         cout << "ingrese su CUIT" << endl;
         cin >> CUITP;
+        system("cls");
         cout << "ingrese su mail" << endl;
         cin >> MailP;
-
+        system("cls");
         cout << "ingrese su NroTicket" << endl;
         cin >> NroTicketP;
-
+        system("cls");
         cout << "Codigo Seguridad" << endl;
         cin >> CodigoSeguridadP;
-
+        system("cls");
         do {
             i++;
             cout << "ingrese su necesidad" << endl;
             cout << "0.Medicamentos" << endl;
-            cout << "2.Perfumes" << endl;
-            cout << "3.ArtOrtopedia" << endl;
-            cout << "4.Golosina" << endl;
+            cout << "1.Perfumes" << endl;
+            cout << "2.ArtOrtopedia" << endl;
+            cout << "3.Golosina" << endl;
 
             cin >> necesidad;
 
@@ -263,35 +269,36 @@ int main() {
 
             // switch on the user's choice
             switch (necesidad) {
-            case  '1':
+            case  '0':
                 cout << "Su selecion fue Perfumeria." << endl;
                 break;
-            case '2':
+            case '1':
                 cout << "Su selecion fue Ortopedia." << endl;
                 break;
-            case '3':
+            case '2':
                 cout << "Su selecion fue Medicamentos." << endl;
                 break;
-            case '4':
+            case '3':
                 cout << "Su selecion fue Golisina." << endl;
                 break;
-            case '5':
+            case '4':
                 cout << "Selecion invalida." << endl;
-                i++;
+                
             }
             i++;
-        } while (necesidad == '5' && i < 1);
+        } while (necesidad == '4' && i < 1);
 
-
+       
         do {
             cout << "ingrese su metodo de pago,las opciones son " << endl;
             cout << "0.Efectivo" << endl;
             cout << "1.Tarjeta" << endl;
             cout << "2.MercadoPago" << endl;
-            cin >> Answer;
-            MetododePagoP = eMetodoPago(Answer); //por ahi no le gusta esto
+            cin >> variable1;
+           
+            //por ahi no le gusta esto
             // switch on the user's choice
-            switch (Answer) {
+            switch (variable1) {
             case '0':
                 cout << "You chose option Efectivo." << endl;
                 break;
@@ -304,99 +311,105 @@ int main() {
             case '3':
                 cout << "Invalid choice." << endl;
             }
-        } while (Answer == '3');
+        } while (variable1 == '3');
 
-          cout << "porfavor indique si desea su facturea fisica o no,con una S confirme y con una N niege";
-          cin >> Answer;
-          if (Answer == 'S')
-          {
-              FacturaFisicaP = true;
-          }
+        cout << "porfavor indique si desea su facturea fisica o no,con una S confirme y con una N niege";
+        cin >> Answer;
+        if (Answer == 'S')
+        {
+            FacturaFisicaP = true;
+        }
 
-          else
-          {
-              FacturaFisicaP = false;
-          }
+        else
+        {
+            FacturaFisicaP = false;
+        }
     }
-    Cliente ClienteConsola(NombreP, ApellidoP, DNIP, CodigoSeguridadP, NroTicketP, MetododePagoP, MailP, CUITP, FacturaFisicaP,NecesidadP);
-    
+    Cliente ClienteConsola(NombreP, ApellidoP, DNIP, CodigoSeguridadP, NroTicketP, MetododePagoP, MailP, CUITP, FacturaFisicaP, NecesidadP);
+
     //seteamos saldo en base a su metodo de pago
-    if (MetododePagoP == 0) {
-        cout << "ingrese saldo en efectivo"<<endl;
+    if (variable1 == 0) {
+        cout << "ingrese saldo en efectivo" << endl;
         cin >> SaldoEP;
         ClienteConsola.set_SaldoEf(SaldoEP);
-    }
-    if(MetododePagoP == 1) {
-        cout << "ingrese saldo en Tarjeta" << endl;
-        cin >> SaldoP;
-        ClienteConsola.set_SaldoTarj(SaldoP);
+
     }
     else {
-        cout << "ingrese saldo en Mercado Pago" << endl;
-        cin >> SaldoP;
-        ClienteConsola.set_SaldoMP(SaldoP);
-    }
+        if (variable1 == 1) {
+            cout << "ingrese saldo en Tarjeta" << endl;
+            cin >> SaldoP;
+            ClienteConsola.set_SaldoTarj(SaldoP);
 
-   /* vector<eArticulosLocal>ListaDeseo;
-    cout << "ingrese alguno de esto articulos,una vez terminado escribir T" << endl;
-    cout << " Medicamentos=0, Vitaminas=1, Pastillas=3, Shampo=4, Desodorantes=5, Jabones=6, Cosmeticos=7, Cremas=8, Perfumes=9, Maquillajes=10, EsmalteUnias=11, VendaElasticas=12, Cabestrillos=13, Munequeras=14, MediasComprension=15, Tintura=16, MaquinaAfeitar=17, Esponja=18, ProtectorSolar=19, Repelente=20, Gel=21, Suplementos=23 " << endl;
-    do
-    {
-        
-        cin >> Answer;
-        if (Answer != 'T') {
-            Respuesta = eArticulosLocal(Answer);
-
-            ListaDeseo[i] = Respuesta;
-            i++;
         }
-        
+        else {
+            cout << "ingrese saldo en Mercado Pago" << endl;
+            cin >> SaldoP;
+            ClienteConsola.set_SaldoMP(SaldoP);
+        }
+    }
+       
 
-    } while (Answer == 'T');*/
-        
-    ManagerLuis.ReubicarCliente(ClienteConsola, ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
-    Ticket prueba1 = ManagerLuis.FacturaryGeneraTicket(ClienteConsola, LocalAzul);
+         vector<eArticulosLocal>ListaDeseo;
+         cout << "ingrese alguno de esto articulos,una vez terminado escribir 99" << endl;
+         cout << " Medicamentos=0, Vitaminas=1, Pastillas=3, Shampo=4, Desodorantes=5, Jabones=6, Cosmeticos=7, Cremas=8, Perfumes=9, Maquillajes=10, EsmalteUnias=11, VendaElasticas=12, Cabestrillos=13, Munequeras=14, MediasComprension=15, Tintura=16, MaquinaAfeitar=17, Esponja=18, ProtectorSolar=19, Repelente=20, Gel=21, Suplementos=23 " << endl;
    
-    cout << "Precio Final:" << prueba1.get_PrecioFinal();
-    cout << "\n Dni:" << prueba1.get_DNI() << endl;
+         do
+         {
 
-    //metodo cobrar (Cajero)
+             cin >> variable2;
+             if (variable2 != 99) {
+                 Respuesta = eArticulosLocal(variable2);
 
-    Factura facturaprueba = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+                 ListaDeseo.push_back(Respuesta);
+                
+             }
 
-    //voy a intentar hacer bloque try catch
-    try {
-        Factura FacturaA = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
-        Factura FacturaB = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+
+         } while (variable2  != 99);
+
+        ManagerLuis.ReubicarCliente(ClienteConsola, ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
+        Ticket prueba1 = ManagerLuis.FacturaryGeneraTicket(ClienteConsola, LocalAzul);
+
+        cout << "Precio Final:" << prueba1.get_PrecioFinal();
+        cout << "\n Dni:" << prueba1.get_DNI() << endl;
+
+        ////metodo cobrar (Cajero)
+
+        //Factura facturaprueba = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+
+        ////voy a intentar hacer bloque try catch
+        //try {
+        //    Factura FacturaA = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+        //    Factura FacturaB = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+        //}
+        //catch (exception* e)
+        //{
+        //    cout << "EXCEPTION" << e->what() << endl;
+        //}
+
+        ////imprimo Factura para verificar
+        //cout << "Precio final:" << facturaprueba.get_MontoFinal();
+
+        //vector<Articulos>ListaArticulos;
+        //ListaArticulos = facturaprueba.get_ArtComprados();
+        //cout << "\n ListaArticulos es:" << endl;
+        //for (int i = 0; i < ListaArticulos.size(); i++)
+        //{
+        //    cout << i + 1 << " -" << ListaArticulos[i].get_Precio() << endl;
+        //}
+        //cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
+
+
+
+
+
+        return(0);
     }
-    catch (exception* e)
-    {
-        cout << "EXCEPTION" << e->what() << endl;
-    }
-
-    //imprimo Factura para verificar
-    cout << "Precio final:" << facturaprueba.get_MontoFinal();
-
-    vector<Articulos>ListaArticulos;
-    ListaArticulos = facturaprueba.get_ArtComprados();
-    cout << "\n ListaArticulos es:" << endl;
-    for (int i = 0; i < ListaArticulos.size(); i++)
-    {
-        cout << i + 1 << " -" << ListaArticulos[i].get_Precio() << endl;
-    }
-    cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
-
-
-
-
-
-    return(0);
-}
 
 
 //Funcion Para obtener primero en la cola
-Cliente PrimeroEnCola(queue<Cliente>cola)
-{
+    Cliente PrimeroEnCola(queue<Cliente>cola)
+    {
     Cliente Primero = cola.front();        //copio en auxiliar el primero de mi cola, para no perderlo
     cola.pop(); //pongo al segundo primero
 
