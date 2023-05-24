@@ -42,7 +42,7 @@ void Manager::ReubicarCliente(Cliente ClienteIngresante,vector<Articulos*>ListaA
     
  
     if (ClienteIngresante.get_miNecesidad() == 1) //perfumeria
-       EmpPerf.revisionperf(ClienteIngresante,ListaArticulosLocal); //derivo a Empleado de Perfumeria
+       EmpPerf.revisionperf(&ClienteIngresante,ListaArticulosLocal); //derivo a Empleado de Perfumeria
         
     if(ClienteIngresante.get_miNecesidad() == ArtOrtopedia)
        EmpOrtop.revisionort(ClienteIngresante,ListaArticulosLocal);//derivo a Empleado de Ortopedia

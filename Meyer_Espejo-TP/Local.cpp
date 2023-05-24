@@ -39,3 +39,6 @@ void Local::set_colaClientes(queue<Cliente> nuevaCola) {
 vector<Articulos*>Local::get_listaarticulos() {
 	return this->ListaArticulosLocal;
 }
+//void set_ArticulosLocal(vector<Articulos*>lista) {
+//	this->ListaArticulosLocal = lista;
+//}

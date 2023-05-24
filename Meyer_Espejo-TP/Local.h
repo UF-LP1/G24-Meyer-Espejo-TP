@@ -16,8 +16,9 @@ public:
   void AgregarClienteCola(Cliente nuevoCliente);
     void AgregarFactura(Factura NuevaFactura);
     vector<Articulos*>get_listaarticulos();
+ /*   void set_ArticulosLocal(vector<Articulos*>lista);*/
     void set_colaClientes(queue<Cliente> nuevaCola);
-
+    
 private:
     string Nombre;
     string Direccion;

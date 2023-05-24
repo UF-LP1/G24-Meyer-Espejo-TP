@@ -136,14 +136,18 @@
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="EmpleadoOrtopedia.cpp" />
     <ClCompile Include="EmpleadoPerfumeria.cpp" />
+    <ClCompile Include="Factura.cpp" />
     <ClCompile Include="Farmaceutico.cpp" />
     <ClCompile Include="Farmacia.cpp" />
     <ClCompile Include="Golosina.cpp" />
     <ClCompile Include="Local.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Ortopedia.cpp" />
     <ClCompile Include="Perfumeria.cpp" />
     <ClCompile Include="Receta.cpp" />
     <ClCompile Include="Ticket.cpp" />
+    <ClCompile Include="Vendedor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Articulos.h" />
@@ -154,20 +158,26 @@
     <ClInclude Include="Cliente.h" />
     <ClInclude Include="eArticuloOrt.h" />
     <ClInclude Include="eArticuloPerf.h" />
+    <ClInclude Include="eArticulosLocal.h" />
     <ClInclude Include="eFarmacia.h" />
     <ClInclude Include="eMetodoPago.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="EmpleadoOrtopedia.h" />
     <ClInclude Include="EmpleadoPerfumeria.h" />
     <ClInclude Include="eNecesidad.h" />
+    <ClInclude Include="eOS.h" />
+    <ClInclude Include="Factura.h" />
     <ClInclude Include="Farmaceutico.h" />
     <ClInclude Include="Farmacia.h" />
     <ClInclude Include="Golosina.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Local.h" />
+    <ClInclude Include="Manager.h" />
     <ClInclude Include="Ortopedia.h" />
     <ClInclude Include="Perfumeria.h" />
     <ClInclude Include="Receta.h" />
     <ClInclude Include="Ticket.h" />
+    <ClInclude Include="Vendedor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,11 +8,11 @@ EmpleadoPerfumeria::~EmpleadoPerfumeria() {}
 
 
 //Redefino el metodo virtual en Perfumeria 
-void EmpleadoPerfumeria:: revisionperf(Cliente MiCliente, vector<Articulos*>ListaArticuloslocal) {
+void EmpleadoPerfumeria:: revisionperf(Cliente *MiCliente, vector<Articulos*>ListaArticuloslocal) {
     vector<eArticulosLocal>aux;
-    aux = MiCliente.get_ProductosQuiero();
+    aux = MiCliente->get_ProductosQuiero();
     Articulos* ptr_aux = nullptr;
-    CarritoCompras miCarrito = MiCliente.get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
+    CarritoCompras *miCarrito = &MiCliente->get_Carrito(); //lo copio en una variable asi se que es su carrito (simplicidad para escribir)
 
     for (int i = 0; i < aux.size(); i++)
     {
@@ -31,8 +31,8 @@ void EmpleadoPerfumeria:: revisionperf(Cliente MiCliente, vector<Articulos*>List
                             string tamanio = dynamic_cast<Perfumeria*>(ptr_aux)->get_Size();
                             //aca agregar al carrito
                             Perfumeria AgregarProductoPerf(nuevo->get_Precio(),nuevo->get_Stock(),nuevo->get_Codigo(),nuevo->get_TipoArticulo(),tamanio,nombreEnum);
-                            miCarrito.set_UnArticulo(AgregarProductoPerf);
-                            MiCliente.set_Carrito(miCarrito);
+                           miCarrito->set_UnArticulo(AgregarProductoPerf);
+                            MiCliente->set_Carrito(*miCarrito);
                         }
                     }
 

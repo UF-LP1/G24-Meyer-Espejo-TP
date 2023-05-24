@@ -100,14 +100,38 @@ int main() {
     Perfumeria Local1(54.3, 12, 1, Perfumes, "100ml", Crema);
     Ortopedia  Local2(54.3, 8, 4, ArtOrtopedia, Munequera);
     Farmacia   Local3(45.6, 5, 67, Medicamentos, Vitamina, true);
+    Farmacia   Local4(50.6, 7, 34, Medicamentos, Pastilla, true);
+    Ortopedia  Local5(23.4, 2, 12, ArtOrtopedia, Cabestrillo);
+    Perfumeria Local6(89.4, 67, 45, Perfumes,"250ml", Shampoo);
+    Perfumeria Local7(83.5, 87, 41, Perfumes, "150ml", Jabon);
+    Perfumeria Local8(12.6, 85, 23, Perfumes, "350ml", Desodorante);
+    Perfumeria Local9(123.6, 586, 79, Perfumes, "10g", Maquillaje);
+    Perfumeria Local10(85.7, 162, 90, Perfumes, "50ml", Cosmetica);
+    Perfumeria Local11(354.6,867, 94, Perfumes, "50g", EsmalteUnia);
+    Perfumeria Local12(1000.6, 908, 678, Perfumes, "250ml", Perfume);
+    Ortopedia  Local13(3458, 23, 235, ArtOrtopedia, VendaElastica);
+    Ortopedia  Local14(5000, 346, 2344, ArtOrtopedia, MediaComprension);
+
     //minimo hasta el 14
     ArticulosLocal.push_back(&Local1);
     ArticulosLocal.push_back(&Local2);
     ArticulosLocal.push_back(&Local3);
+    ArticulosLocal.push_back(&Local4);
+    ArticulosLocal.push_back(&Local5);
+    ArticulosLocal.push_back(&Local6);
+    ArticulosLocal.push_back(&Local7);
+    ArticulosLocal.push_back(&Local8);
+    ArticulosLocal.push_back(&Local9);
+    ArticulosLocal.push_back(&Local10);
+    ArticulosLocal.push_back(&Local11);
+    ArticulosLocal.push_back(&Local12);
+    ArticulosLocal.push_back(&Local13);
+    ArticulosLocal.push_back(&Local14);
+    
 
 
     Local LocalAzul(NombreL, Direccion, Contacto, limpio, ArticulosLocal);
-
+   /* LocalAzul.set_ArticulosLocal(ArticulosLocal);*/
 
     //empleado FArmaceutico
     string NombreEF = "Jose";
@@ -225,6 +249,7 @@ int main() {
     static_cast<eMetodoPago>(variable1);
     int variable2 = 0;
     static_cast<eArticulosLocal>(variable2);
+
 
     cout << "porfavor ingrese los datos que se le van a pedir proximamente para poder realizar una compra aqui en farmacia azul, Marque S si desea continuar, N si no " << endl;
     cin >> Answer;
@@ -370,12 +395,15 @@ int main() {
         ManagerLuis.ReubicarCliente(ClienteConsola, ArticulosLocal, EmpOrtopJuan, EmpPerfPepe, FarmaJose);
         Ticket prueba1 = ManagerLuis.FacturaryGeneraTicket(ClienteConsola, LocalAzul);
 
+
+
+
         cout << "Precio Final:" << prueba1.get_PrecioFinal();
         cout << "\n Dni:" << prueba1.get_DNI() << endl;
 
-        ////metodo cobrar (Cajero)
+        //metodo cobrar (Cajero)
 
-        //Factura facturaprueba = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
+        Factura facturaprueba = CajeroMateo.Cobrar(ClienteConsola, LocalAzul);
 
         ////voy a intentar hacer bloque try catch
         //try {
@@ -387,17 +415,17 @@ int main() {
         //    cout << "EXCEPTION" << e->what() << endl;
         //}
 
-        ////imprimo Factura para verificar
-        //cout << "Precio final:" << facturaprueba.get_MontoFinal();
+        //imprimo Factura para verificar
+        cout << "Precio final:" << facturaprueba.get_MontoFinal();
 
-        //vector<Articulos>ListaArticulos;
-        //ListaArticulos = facturaprueba.get_ArtComprados();
-        //cout << "\n ListaArticulos es:" << endl;
-        //for (int i = 0; i < ListaArticulos.size(); i++)
-        //{
-        //    cout << i + 1 << " -" << ListaArticulos[i].get_Precio() << endl;
-        //}
-        //cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
+        vector<Articulos>ListaArticulos;
+        ListaArticulos = facturaprueba.get_ArtComprados();
+        cout << "\n ListaArticulos es:" << endl;
+        for (int i = 0; i < ListaArticulos.size(); i++)
+        {
+            cout << i + 1 << " -" << ListaArticulos[i].get_Precio() << endl;
+        }
+        cout << "\nNombre Cliente:" << facturaprueba.get_NombreCliente() << endl;
 
 
 

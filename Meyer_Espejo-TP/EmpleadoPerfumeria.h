@@ -12,7 +12,7 @@ public:
 
     EmpleadoPerfumeria(string nombre, string apellido, float sueldo);
     ~EmpleadoPerfumeria();
-    void revisionperf(Cliente MiCliente, vector<Articulos*>ListaArticuloslocal);
+    void revisionperf(Cliente *MiCliente, vector<Articulos*>ListaArticuloslocal);
     
 
 };
